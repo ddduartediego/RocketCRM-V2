@@ -1,26 +1,228 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ========================================
+   RocketCRM - Paleta de Cores "Galáxia Rosa"
+   ======================================== */
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Core - Cores principais do tema */
+  --primary: #e4027d;
+  --primary-hover: #b60163;
+  --primary-soft: #fd72be;
+  --primary-foreground: #ffffff;
+
+  --secondary: #341c44;
+  --secondary-hover: #3e2151;
+  --secondary-soft: #5d327a;
+  --secondary-foreground: #ffffff;
+
+  /* Neutros "galáxia" (modo claro) */
+  --background: #fff9fc;
+  --foreground: #1f1028;
+
+  --card: #ffffff;
+  --card-foreground: #1f1028;
+
+  --popover: #ffffff;
+  --popover-foreground: #1f1028;
+
+  --muted: #f4e7f2;
+  --muted-foreground: #6b506e;
+
+  --accent: #ffe3f3;
+  --accent-foreground: #1f1028;
+
+  --border: #edd3ea;
+  --input: #e7c6e5;
+  --ring: #e4027d;
+
+  /* Semânticas */
+  --success: #22c55e;
+  --success-foreground: #ffffff;
+  --warning: #eab308;
+  --warning-foreground: #1f1028;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --info: #0ea5e9;
+  --info-foreground: #ffffff;
+
+  /* Charts */
+  --chart-1: #e4027d;
+  --chart-2: #341c44;
+  --chart-3: #22c55e;
+  --chart-4: #eab308;
+  --chart-5: #0ea5e9;
+
+  /* Sidebar - Tema escuro para contraste */
+  --sidebar: #341c44;
+  --sidebar-background: #341c44;
+  --sidebar-foreground: #f4e7f2;
+  --sidebar-primary: #e4027d;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #3e2151;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #5d327a;
+  --sidebar-ring: #e4027d;
+  --sidebar-muted: #5d327a;
+  --sidebar-muted-foreground: #edd3ea;
+
+  /* Radius */
+  --radius: 0.625rem;
 }
 
 @theme inline {
+  /* Background & Foreground */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+  /* Card */
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  /* Popover */
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  /* Primary */
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-soft: var(--primary-soft);
+  --color-primary-foreground: var(--primary-foreground);
+
+  /* Secondary */
+  --color-secondary: var(--secondary);
+  --color-secondary-hover: var(--secondary-hover);
+  --color-secondary-soft: var(--secondary-soft);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  /* Muted */
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  /* Accent */
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  /* Destructive */
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  /* Success */
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+
+  /* Warning */
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+
+  /* Info */
+  --color-info: var(--info);
+  --color-info-foreground: var(--info-foreground);
+
+  /* Border, Input, Ring */
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Charts */
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  /* Sidebar */
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-background: var(--sidebar-background);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-muted: var(--sidebar-muted);
+  --color-sidebar-muted-foreground: var(--sidebar-muted-foreground);
+
+  /* Typography */
+  --font-sans: var(--font-plus-jakarta), system-ui, sans-serif;
+
+  /* Radius */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Dark mode - mantendo tema galáxia mas invertido */
+.dark {
+  --background: #1f1028;
+  --foreground: #f4e7f2;
+
+  --card: #2a1535;
+  --card-foreground: #f4e7f2;
+
+  --popover: #2a1535;
+  --popover-foreground: #f4e7f2;
+
+  --muted: #341c44;
+  --muted-foreground: #edd3ea;
+
+  --accent: #3e2151;
+  --accent-foreground: #f4e7f2;
+
+  --border: #5d327a;
+  --input: #5d327a;
+  --ring: #fd72be;
+
+  --sidebar: #1f1028;
+  --sidebar-background: #1f1028;
+  --sidebar-foreground: #f4e7f2;
+  --sidebar-border: #341c44;
+  --sidebar-primary: #e4027d;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #3e2151;
+  --sidebar-accent-foreground: #f4e7f2;
+  --sidebar-ring: #fd72be;
+  --sidebar-muted: #341c44;
+  --sidebar-muted-foreground: #edd3ea;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Scrollbar customizado */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--muted);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted-foreground);
+}
+
+/* Selection */
+::selection {
+  background-color: var(--primary-soft);
+  color: var(--secondary);
 }
