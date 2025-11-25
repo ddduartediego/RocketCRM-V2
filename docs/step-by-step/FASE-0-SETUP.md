@@ -272,3 +272,21 @@ npm run dev
 - [x] Criar middleware de autenticação
 - [x] Criar documentação step-by-step
 
+---
+
+## 🐛 Correções de Deploy
+
+### Conflito de Dependências @tremor/react (25/11/2025)
+
+**Problema:** Erro no deploy do Vercel - `@tremor/react@3.18.7` não suporta React 19.
+
+```
+npm error ERESOLVE could not resolve
+npm error peer react@"^18.0.0" from @tremor/react@3.18.7
+```
+
+**Solução:** Removida dependência `@tremor/react` do `package.json` pois não estava sendo utilizada no projeto. O projeto já utiliza `recharts` para gráficos, que é compatível com React 19.
+
+**Arquivos modificados:**
+- `package.json` - removida linha `"@tremor/react": "^3.18.7"`
+
