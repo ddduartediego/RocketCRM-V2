@@ -73,11 +73,10 @@ export function EventoForm({ open, onOpenChange, evento }: EventoFormProps) {
     resolver: zodResolver(eventoSchema) as Resolver<EventoFormData>,
     defaultValues: {
       nome: "",
-      tipo: "viagem_pedagogica",
+      tipo: "colonia_ferias",
       descricao: "",
       cliente_id: null,
       organizacao_id: null,
-      turma_serie: "",
       data_inicio: "",
       data_fim: "",
       hora_inicio: "",
@@ -116,7 +115,6 @@ export function EventoForm({ open, onOpenChange, evento }: EventoFormProps) {
         descricao: evento.descricao || "",
         cliente_id: evento.cliente_id,
         organizacao_id: evento.organizacao_id,
-        turma_serie: evento.turma_serie || "",
         data_inicio: evento.data_inicio,
         data_fim: evento.data_fim || "",
         hora_inicio: evento.hora_inicio || "",
@@ -134,11 +132,10 @@ export function EventoForm({ open, onOpenChange, evento }: EventoFormProps) {
     } else {
       form.reset({
         nome: "",
-        tipo: "viagem_pedagogica",
+        tipo: "colonia_ferias",
         descricao: "",
         cliente_id: null,
         organizacao_id: null,
-        turma_serie: "",
         data_inicio: "",
         data_fim: "",
         hora_inicio: "",
@@ -312,7 +309,7 @@ export function EventoForm({ open, onOpenChange, evento }: EventoFormProps) {
                       <FormItem className="col-span-2">
                         <FormLabel>Nome do Evento *</FormLabel>
                         <FormControl>
-                          <Input placeholder="Ex: Viagem Escola ABC - 9º ano" {...field} />
+                          <Input placeholder="Ex: Colônia de Férias - Verão 2025" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -382,7 +379,7 @@ export function EventoForm({ open, onOpenChange, evento }: EventoFormProps) {
                     name="organizacao_id"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Organização/Escola</FormLabel>
+                        <FormLabel>Organização</FormLabel>
                         <Select onValueChange={field.onChange} value={field.value || ""}>
                           <FormControl>
                             <SelectTrigger>
@@ -422,20 +419,6 @@ export function EventoForm({ open, onOpenChange, evento }: EventoFormProps) {
                             ))}
                           </SelectContent>
                         </Select>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-
-                  <FormField
-                    control={form.control}
-                    name="turma_serie"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Turma/Série</FormLabel>
-                        <FormControl>
-                          <Input placeholder="Ex: 9º ano" {...field} value={field.value || ""} />
-                        </FormControl>
                         <FormMessage />
                       </FormItem>
                     )}

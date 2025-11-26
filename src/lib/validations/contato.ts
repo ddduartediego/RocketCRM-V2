@@ -2,7 +2,7 @@ import { z } from "zod";
 
 export const contatoSchema = z.object({
   nome: z.string().min(2, "Nome deve ter pelo menos 2 caracteres"),
-  tipo: z.enum(["pessoa_fisica", "escola", "empresa", "fornecedor"]),
+  tipo: z.enum(["pessoa_fisica", "empresa", "fornecedor"]),
   telefone: z.string().optional().nullable(),
   whatsapp: z.string().optional().nullable(),
   email: z.string().email("Email inválido").optional().nullable().or(z.literal("")),
@@ -19,7 +19,6 @@ export type ContatoFormData = z.infer<typeof contatoSchema>;
 
 export const tipoContatoOptions = [
   { value: "pessoa_fisica", label: "Pessoa Física" },
-  { value: "escola", label: "Escola" },
   { value: "empresa", label: "Empresa" },
   { value: "fornecedor", label: "Fornecedor" },
 ] as const;

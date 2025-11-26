@@ -36,8 +36,6 @@ interface GoogleTokens {
 
 // Mapeamento de tipos de evento para cores do Google Calendar
 const eventColorMap: Record<string, string> = {
-  viagem_pedagogica: "9",  // Azul
-  viagem_formatura: "5",   // Amarelo
   colonia_ferias: "10",    // Verde
   festa_infantil: "6",     // Laranja
   gincana: "3",            // Roxo

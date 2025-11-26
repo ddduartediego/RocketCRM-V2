@@ -56,8 +56,6 @@ const statusLabels: Record<string, string> = {
 };
 
 const tipoLabels: Record<string, string> = {
-  viagem_pedagogica: "Viagem Pedagógica",
-  viagem_formatura: "Viagem de Formatura",
   colonia_ferias: "Colônia de Férias",
   festa_infantil: "Festa Infantil",
   gincana: "Gincana",

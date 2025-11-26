@@ -8,15 +8,12 @@ export const leadSchema = z.object({
   contato_id: z.string().uuid().optional().nullable(),
   organizacao_id: z.string().uuid().optional().nullable(),
   tipo_servico: z.enum([
-    "viagem_pedagogica",
-    "viagem_formatura",
     "colonia_ferias",
     "festa_infantil",
     "gincana",
     "outro",
   ]).optional().nullable(),
   origem: z.string().optional().nullable(),
-  turma_serie: z.string().optional().nullable(),
   data_prevista: z.string().optional().nullable(),
   motivo_perda: z.string().optional().nullable(),
   responsavel_id: z.string().uuid().optional().nullable(),
@@ -25,8 +22,6 @@ export const leadSchema = z.object({
 export type LeadFormData = z.infer<typeof leadSchema>;
 
 export const tipoServicoOptions = [
-  { value: "viagem_pedagogica", label: "Viagem Pedagógica" },
-  { value: "viagem_formatura", label: "Viagem de Formatura" },
   { value: "colonia_ferias", label: "Colônia de Férias" },
   { value: "festa_infantil", label: "Festa Infantil" },
   { value: "gincana", label: "Gincana" },

@@ -3,8 +3,6 @@ import { z } from "zod";
 export const eventoSchema = z.object({
   nome: z.string().min(2, "Nome deve ter pelo menos 2 caracteres"),
   tipo: z.enum([
-    "viagem_pedagogica",
-    "viagem_formatura",
     "colonia_ferias",
     "festa_infantil",
     "gincana",
@@ -14,7 +12,6 @@ export const eventoSchema = z.object({
   cliente_id: z.string().uuid().optional().nullable(),
   organizacao_id: z.string().uuid().optional().nullable(),
   lead_id: z.string().uuid().optional().nullable(),
-  turma_serie: z.string().optional().nullable(),
   data_inicio: z.string().min(1, "Data de início é obrigatória"),
   data_fim: z.string().optional().nullable(),
   hora_inicio: z.string().optional().nullable(),
@@ -40,8 +37,6 @@ export const eventoSchema = z.object({
 export type EventoFormData = z.infer<typeof eventoSchema>;
 
 export const tipoEventoOptions = [
-  { value: "viagem_pedagogica", label: "Viagem Pedagógica", icon: "🚌" },
-  { value: "viagem_formatura", label: "Viagem de Formatura", icon: "🎓" },
   { value: "colonia_ferias", label: "Colônia de Férias", icon: "🏕️" },
   { value: "festa_infantil", label: "Festa Infantil", icon: "🎈" },
   { value: "gincana", label: "Gincana", icon: "🏃" },

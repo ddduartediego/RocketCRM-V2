@@ -31,7 +31,6 @@ interface ContatoDetailProps {
 
 const tipoLabels: Record<string, string> = {
   pessoa_fisica: "Pessoa Física",
-  escola: "Escola",
   empresa: "Empresa",
   fornecedor: "Fornecedor",
 };

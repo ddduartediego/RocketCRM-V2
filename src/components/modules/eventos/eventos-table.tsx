@@ -54,8 +54,6 @@ interface EventosTableProps {
 }
 
 const tipoLabels: Record<string, { label: string; icon: string }> = {
-  viagem_pedagogica: { label: "Viagem Pedagógica", icon: "🚌" },
-  viagem_formatura: { label: "Formatura", icon: "🎓" },
   colonia_ferias: { label: "Colônia", icon: "🏕️" },
   festa_infantil: { label: "Festa", icon: "🎈" },
   gincana: { label: "Gincana", icon: "🏃" },
@@ -218,11 +216,6 @@ export function EventosTable({ eventos, onEdit, onView, resumosFinanceiros = {} 
                     <span className="text-sm">
                       {evento.organizacoes?.nome || evento.contatos?.nome || "-"}
                     </span>
-                    {evento.turma_serie && (
-                      <span className="text-xs text-muted-foreground">
-                        {evento.turma_serie}
-                      </span>
-                    )}
                   </div>
                 </TableCell>
                 <TableCell>

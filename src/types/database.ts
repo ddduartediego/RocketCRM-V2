@@ -425,7 +425,6 @@ export type Database = {
           responsavel_id: string | null
           status: Database["public"]["Enums"]["status_evento"]
           tipo: Database["public"]["Enums"]["tipo_evento"]
-          turma_serie: string | null
           updated_at: string
           valor_sinal: number | null
           valor_total: number | null
@@ -453,7 +452,6 @@ export type Database = {
           responsavel_id?: string | null
           status?: Database["public"]["Enums"]["status_evento"]
           tipo: Database["public"]["Enums"]["tipo_evento"]
-          turma_serie?: string | null
           updated_at?: string
           valor_sinal?: number | null
           valor_total?: number | null
@@ -481,7 +479,6 @@ export type Database = {
           responsavel_id?: string | null
           status?: Database["public"]["Enums"]["status_evento"]
           tipo?: Database["public"]["Enums"]["tipo_evento"]
-          turma_serie?: string | null
           updated_at?: string
           valor_sinal?: number | null
           valor_total?: number | null
@@ -601,7 +598,6 @@ export type Database = {
           responsavel_id: string | null
           tipo_servico: Database["public"]["Enums"]["tipo_evento"] | null
           titulo: string
-          turma_serie: string | null
           updated_at: string
           valor_estimado: number | null
         }
@@ -619,7 +615,6 @@ export type Database = {
           responsavel_id?: string | null
           tipo_servico?: Database["public"]["Enums"]["tipo_evento"] | null
           titulo: string
-          turma_serie?: string | null
           updated_at?: string
           valor_estimado?: number | null
         }
@@ -637,7 +632,6 @@ export type Database = {
           responsavel_id?: string | null
           tipo_servico?: Database["public"]["Enums"]["tipo_evento"] | null
           titulo?: string
-          turma_serie?: string | null
           updated_at?: string
           valor_estimado?: number | null
         }
@@ -986,11 +980,9 @@ export type Database = {
         | "aceito"
         | "perdido"
       status_pagamento: "pendente" | "pago" | "em_atraso" | "cancelado"
-      tipo_contato: "pessoa_fisica" | "escola" | "empresa" | "fornecedor"
+      tipo_contato: "pessoa_fisica" | "empresa" | "fornecedor"
       tipo_contrato_equipe: "fixo" | "freelancer"
       tipo_evento:
-        | "viagem_pedagogica"
-        | "viagem_formatura"
         | "colonia_ferias"
         | "festa_infantil"
         | "gincana"

@@ -85,8 +85,6 @@ interface EventoDetailProps {
 }
 
 const tipoLabels: Record<string, { label: string; icon: string }> = {
-  viagem_pedagogica: { label: "Viagem Pedagógica", icon: "🚌" },
-  viagem_formatura: { label: "Viagem de Formatura", icon: "🎓" },
   colonia_ferias: { label: "Colônia de Férias", icon: "🏕️" },
   festa_infantil: { label: "Festa Infantil", icon: "🎈" },
   gincana: { label: "Gincana", icon: "🏃" },
@@ -352,16 +350,6 @@ export function EventoDetail({
                       <p className="text-sm text-muted-foreground">
                         {evento.num_participantes} pessoas
                       </p>
-                    </div>
-                  </div>
-                )}
-
-                {evento.turma_serie && (
-                  <div className="flex items-start gap-3">
-                    <FileText className="h-5 w-5 text-muted-foreground mt-0.5" />
-                    <div>
-                      <p className="text-sm font-medium">Turma/Série</p>
-                      <p className="text-sm text-muted-foreground">{evento.turma_serie}</p>
                     </div>
                   </div>
                 )}

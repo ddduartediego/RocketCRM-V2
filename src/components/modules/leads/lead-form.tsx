@@ -61,7 +61,6 @@ export function LeadForm({ open, onOpenChange, lead, etapas }: LeadFormProps) {
       organizacao_id: null,
       tipo_servico: null,
       origem: null,
-      turma_serie: "",
       data_prevista: "",
     },
   });
@@ -91,7 +90,6 @@ export function LeadForm({ open, onOpenChange, lead, etapas }: LeadFormProps) {
         organizacao_id: lead.organizacao_id,
         tipo_servico: lead.tipo_servico,
         origem: lead.origem || "",
-        turma_serie: lead.turma_serie || "",
         data_prevista: lead.data_prevista || "",
       });
     } else {
@@ -104,7 +102,6 @@ export function LeadForm({ open, onOpenChange, lead, etapas }: LeadFormProps) {
         organizacao_id: null,
         tipo_servico: null,
         origem: null,
-        turma_serie: "",
         data_prevista: "",
       });
     }
@@ -157,7 +154,7 @@ export function LeadForm({ open, onOpenChange, lead, etapas }: LeadFormProps) {
                   <FormItem className="col-span-2">
                     <FormLabel>Título *</FormLabel>
                     <FormControl>
-                      <Input placeholder="Ex: Viagem Escola ABC - 9º ano" {...field} />
+                      <Input placeholder="Ex: Colônia de Férias - Verão 2025" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -275,7 +272,7 @@ export function LeadForm({ open, onOpenChange, lead, etapas }: LeadFormProps) {
                 name="organizacao_id"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Organização/Escola</FormLabel>
+                    <FormLabel>Organização</FormLabel>
                     <Select
                       onValueChange={field.onChange}
                       value={field.value || ""}
@@ -321,20 +318,6 @@ export function LeadForm({ open, onOpenChange, lead, etapas }: LeadFormProps) {
                         ))}
                       </SelectContent>
                     </Select>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-
-              <FormField
-                control={form.control}
-                name="turma_serie"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Turma/Série</FormLabel>
-                    <FormControl>
-                      <Input placeholder="Ex: 9º ano" {...field} value={field.value || ""} />
-                    </FormControl>
                     <FormMessage />
                   </FormItem>
                 )}

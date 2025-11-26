@@ -30,8 +30,6 @@ interface LeadCardProps {
 }
 
 const tipoServicoLabels: Record<string, string> = {
-  viagem_pedagogica: "Viagem Pedagógica",
-  viagem_formatura: "Formatura",
   colonia_ferias: "Colônia",
   festa_infantil: "Festa",
   gincana: "Gincana",
@@ -123,11 +121,6 @@ export function LeadCard({ lead, isDragging, onClick }: LeadCardProps) {
             <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
               <User className="w-3 h-3" />
               <span className="truncate">{lead.contatos.nome}</span>
-            </div>
-          )}
-          {lead.turma_serie && (
-            <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
-              <span className="truncate">Turma: {lead.turma_serie}</span>
             </div>
           )}
         </div>

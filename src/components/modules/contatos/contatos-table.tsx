@@ -41,14 +41,12 @@ interface ContatosTableProps {
 
 const tipoLabels: Record<string, string> = {
   pessoa_fisica: "Pessoa Física",
-  escola: "Escola",
   empresa: "Empresa",
   fornecedor: "Fornecedor",
 };
 
 const tipoBadgeColors: Record<string, string> = {
   pessoa_fisica: "bg-info/10 text-info border-info/20",
-  escola: "bg-success/10 text-success border-success/20",
   empresa: "bg-warning/10 text-warning border-warning/20",
   fornecedor: "bg-secondary-soft/10 text-secondary-soft border-secondary-soft/20",
 };

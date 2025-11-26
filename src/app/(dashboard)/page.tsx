@@ -65,8 +65,6 @@ export default async function DashboardPage() {
   };
 
   const tipoEventoLabels: Record<string, string> = {
-    viagem_pedagogica: "Viagem Pedagógica",
-    viagem_formatura: "Viagem de Formatura",
     colonia_ferias: "Colônia de Férias",
     festa_infantil: "Festa Infantil",
     gincana: "Gincana",
@@ -127,7 +125,7 @@ export default async function DashboardPage() {
           <CardContent>
             <div className="text-2xl font-bold">{totalContatos || 0}</div>
             <p className="text-xs text-muted-foreground mt-1">
-              Clientes e escolas
+              Clientes e organizações
             </p>
           </CardContent>
         </Card>
