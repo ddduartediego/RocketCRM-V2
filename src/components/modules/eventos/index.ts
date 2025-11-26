@@ -8,4 +8,5 @@ export { EventoEquipeTab } from "./evento-equipe-tab";
 export { EventoRecursosTab } from "./evento-recursos-tab";
 export { AlocacaoEquipeForm } from "./alocacao-equipe-form";
 export { AlocacaoRecursoForm } from "./alocacao-recurso-form";
+export { EventosPagination } from "./eventos-pagination";
 

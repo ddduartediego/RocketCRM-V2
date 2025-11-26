@@ -29,12 +29,10 @@ export async function updateSession(request: NextRequest) {
     }
   );
 
-  // IMPORTANTE: Não adicione lógica entre createServerClient e supabase.auth.getUser()
-  // Um simples erro pode fazer com que seja muito difícil depurar problemas com usuários
-  // sendo aleatoriamente deslogados.
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  // IMPORTANTE: Usar getClaims() é mais leve que getUser() pois não faz chamada de rede
+  // Isso reduz o tamanho dos headers e evita o erro 431
+  const { data } = await supabase.auth.getClaims();
+  const user = data?.claims;
 
   // Rotas públicas (não requerem autenticação)
   const publicRoutes = ["/login", "/auth/callback"];

@@ -2,18 +2,19 @@
 
 import { PaginationGeneric } from "@/components/ui/pagination-generic";
 
-interface ContatosPaginationProps {
+interface EventosPaginationProps {
   total: number;
   perPage: number;
 }
 
-export function ContatosPagination({ total, perPage }: ContatosPaginationProps) {
+export function EventosPagination({ total, perPage }: EventosPaginationProps) {
   return (
     <PaginationGeneric
       total={total}
       perPage={perPage}
-      basePath="/contatos"
-      entityName="contatos"
+      basePath="/eventos"
+      entityName="eventos"
     />
   );
 }
+
