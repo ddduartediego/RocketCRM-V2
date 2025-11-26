@@ -9,6 +9,10 @@ import {
   type AlocacaoEquipeFormData,
 } from "@/lib/validations/equipe";
 import type { FuncaoEquipe, TipoContratoEquipe } from "@/types/database";
+import {
+  addAttendeeToGoogleEvent,
+  removeAttendeeFromGoogleEvent,
+} from "@/lib/google/calendar";
 
 export interface EquipeFilters {
   search?: string;
@@ -299,10 +303,10 @@ export async function createAlocacaoEquipe(formData: AlocacaoEquipeFormData) {
     return { data: null, error: "Este membro já está alocado nesta data" };
   }
 
-  // Buscar dados do membro e evento para a transação
+  // Buscar dados do membro (incluindo email) e evento (incluindo google_calendar_id) para a transação e integração
   const [membroResult, eventoResult] = await Promise.all([
-    supabase.from("equipe").select("nome").eq("id", validatedData.data.membro_id).single(),
-    supabase.from("eventos").select("nome").eq("id", validatedData.data.evento_id).single(),
+    supabase.from("equipe").select("nome, email").eq("id", validatedData.data.membro_id).single(),
+    supabase.from("eventos").select("nome, google_calendar_id").eq("id", validatedData.data.evento_id).single(),
   ]);
 
   // Buscar categoria "Monitores" para despesa de equipe
@@ -359,10 +363,28 @@ export async function createAlocacaoEquipe(formData: AlocacaoEquipeFormData) {
     return { data: null, error: error.message };
   }
 
+  // Adicionar membro como participante no Google Calendar (se tiver email e o evento estiver sincronizado)
+  let googleCalendarInviteSent = false;
+  if (membroResult.data?.email && eventoResult.data?.google_calendar_id) {
+    const { success: addSuccess, error: addError } = await addAttendeeToGoogleEvent(
+      eventoResult.data.google_calendar_id,
+      {
+        email: membroResult.data.email,
+        displayName: membroResult.data.nome,
+      }
+    );
+
+    if (addSuccess) {
+      googleCalendarInviteSent = true;
+    } else {
+      console.warn("Aviso: Não foi possível enviar convite do Google Calendar:", addError);
+    }
+  }
+
   revalidatePath("/equipe");
   revalidatePath("/eventos");
   revalidatePath("/financeiro");
-  return { data, error: null };
+  return { data, error: null, googleCalendarInviteSent };
 }
 
 export async function updateAlocacaoEquipe(
@@ -391,10 +413,16 @@ export async function updateAlocacaoEquipe(
 export async function deleteAlocacaoEquipe(id: string, excluirTransacao: boolean = true) {
   const supabase = await createClient();
 
-  // Buscar alocação para obter transacao_id
+  // Buscar alocação com dados do membro e evento para remoção do Google Calendar
   const { data: alocacao } = await supabase
     .from("alocacao_equipe")
-    .select("transacao_id")
+    .select(`
+      transacao_id,
+      membro_id,
+      evento_id,
+      equipe(email),
+      eventos(google_calendar_id)
+    `)
     .eq("id", id)
     .single();
 
@@ -417,6 +445,21 @@ export async function deleteAlocacaoEquipe(id: string, excluirTransacao: boolean
 
     if (transacaoError) {
       console.warn("Aviso: Não foi possível excluir a transação vinculada:", transacaoError);
+    }
+  }
+
+  // Remover participante do Google Calendar (se tiver email e o evento estiver sincronizado)
+  const membroEmail = (alocacao?.equipe as { email?: string | null } | null)?.email;
+  const googleCalendarId = (alocacao?.eventos as { google_calendar_id?: string | null } | null)?.google_calendar_id;
+  
+  if (membroEmail && googleCalendarId) {
+    const { error: removeError } = await removeAttendeeFromGoogleEvent(
+      googleCalendarId,
+      membroEmail
+    );
+
+    if (removeError) {
+      console.warn("Aviso: Não foi possível remover participante do Google Calendar:", removeError);
     }
   }
 

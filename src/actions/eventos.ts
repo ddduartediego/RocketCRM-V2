@@ -7,6 +7,7 @@ import {
   createGoogleCalendarEvent,
   updateGoogleCalendarEvent,
   deleteGoogleCalendarEvent,
+  addAttendeeToGoogleEvent,
 } from "@/lib/google/calendar";
 import type { TipoEvento, StatusEvento } from "@/types/database";
 
@@ -541,4 +542,83 @@ export async function recriarTransacoesEvento(
   revalidatePath(`/eventos/${eventoId}`);
   revalidatePath("/financeiro");
   return { success: true, error: null, transacoesCriadas };
+}
+
+/**
+ * Sincroniza os membros alocados de um evento com o Google Calendar
+ * Envia convites por email para todos os membros que possuem email cadastrado
+ */
+export async function syncParticipantesEvento(eventoId: string) {
+  const supabase = await createClient();
+
+  // Buscar evento com google_calendar_id
+  const { data: evento } = await supabase
+    .from("eventos")
+    .select("id, nome, google_calendar_id")
+    .eq("id", eventoId)
+    .single();
+
+  if (!evento) {
+    return { success: false, error: "Evento não encontrado", participantesSincronizados: 0 };
+  }
+
+  if (!evento.google_calendar_id) {
+    return { 
+      success: false, 
+      error: "Evento não está sincronizado com Google Calendar. Sincronize o evento primeiro.", 
+      participantesSincronizados: 0 
+    };
+  }
+
+  // Buscar alocações do evento com emails dos membros
+  const { data: alocacoes, error: alocacoesError } = await supabase
+    .from("alocacao_equipe")
+    .select(`
+      id,
+      equipe(id, nome, email)
+    `)
+    .eq("evento_id", eventoId);
+
+  if (alocacoesError) {
+    console.error("Erro ao buscar alocações:", alocacoesError);
+    return { success: false, error: alocacoesError.message, participantesSincronizados: 0 };
+  }
+
+  let participantesSincronizados = 0;
+  const erros: string[] = [];
+
+  // Adicionar cada membro com email como participante
+  for (const alocacao of alocacoes || []) {
+    const membro = alocacao.equipe as { id: string; nome: string; email: string | null } | null;
+    
+    if (membro?.email) {
+      const { success, error } = await addAttendeeToGoogleEvent(
+        evento.google_calendar_id,
+        {
+          email: membro.email,
+          displayName: membro.nome,
+        }
+      );
+
+      if (success) {
+        participantesSincronizados++;
+      } else if (error) {
+        erros.push(`${membro.nome}: ${error}`);
+      }
+    }
+  }
+
+  const totalMembros = alocacoes?.length || 0;
+  const membrosComEmail = alocacoes?.filter(
+    a => (a.equipe as { email?: string | null } | null)?.email
+  ).length || 0;
+
+  return { 
+    success: true, 
+    error: erros.length > 0 ? erros.join("; ") : null,
+    participantesSincronizados,
+    totalMembros,
+    membrosComEmail,
+    membrosSemEmail: totalMembros - membrosComEmail,
+  };
 }
