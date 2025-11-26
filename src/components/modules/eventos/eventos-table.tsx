@@ -42,7 +42,6 @@ import type { ResumoFinanceiroEvento } from "@/actions/financeiro";
 
 interface EventoWithRelations extends Evento {
   contatos?: { id: string; nome: string } | null;
-  organizacoes?: { id: string; nome: string } | null;
   users?: { id: string; nome: string; avatar_url: string | null } | null;
 }
 
@@ -214,7 +213,7 @@ export function EventosTable({ eventos, onEdit, onView, resumosFinanceiros = {} 
                 <TableCell>
                   <div className="flex flex-col">
                     <span className="text-sm">
-                      {evento.organizacoes?.nome || evento.contatos?.nome || "-"}
+                      {evento.contatos?.nome || "-"}
                     </span>
                   </div>
                 </TableCell>

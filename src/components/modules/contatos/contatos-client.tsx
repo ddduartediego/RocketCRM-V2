@@ -7,7 +7,7 @@ import { ContatoDetail } from "./contato-detail";
 import type { Contato } from "@/types/database";
 
 interface ContatosClientProps {
-  contatos: (Contato & { organizacoes?: { nome: string } | null })[];
+  contatos: Contato[];
 }
 
 export function ContatosClient({ contatos }: ContatosClientProps) {
@@ -58,7 +58,7 @@ export function ContatosClient({ contatos }: ContatosClientProps) {
         onOpenChange={handleDetailClose}
         contato={
           selectedContato
-            ? (contatos.find((c) => c.id === selectedContato.id) as typeof selectedContato & { organizacoes?: { nome: string } | null }) || selectedContato
+            ? contatos.find((c) => c.id === selectedContato.id) || selectedContato
             : null
         }
         onEdit={handleEdit}

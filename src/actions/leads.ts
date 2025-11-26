@@ -31,7 +31,6 @@ export async function getLeadsByEtapa() {
     .select(`
       *,
       contatos(id, nome),
-      organizacoes(id, nome),
       etapas_funil(id, nome, cor, ordem, is_final, is_perdido),
       users!leads_responsavel_id_fkey(id, nome, avatar_url)
     `)
@@ -65,7 +64,6 @@ export async function getLeadById(id: string) {
     .select(`
       *,
       contatos(id, nome, telefone, email),
-      organizacoes(id, nome),
       etapas_funil(id, nome, cor),
       users!leads_responsavel_id_fkey(id, nome, avatar_url)
     `)
@@ -174,21 +172,6 @@ export async function getContatos() {
 
   const { data, error } = await supabase
     .from("contatos")
-    .select("id, nome, tipo")
-    .order("nome", { ascending: true });
-
-  if (error) {
-    return { data: [], error: error.message };
-  }
-
-  return { data: data || [], error: null };
-}
-
-export async function getOrganizacoes() {
-  const supabase = await createClient();
-
-  const { data, error } = await supabase
-    .from("organizacoes")
     .select("id, nome, tipo")
     .order("nome", { ascending: true });
 

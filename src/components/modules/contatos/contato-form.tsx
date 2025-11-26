@@ -86,7 +86,6 @@ export function ContatoForm({
         cep: contato.cep || "",
         observacoes: contato.observacoes || "",
         tags: contato.tags || [],
-        organizacao_id: contato.organizacao_id,
       });
     } else {
       form.reset({

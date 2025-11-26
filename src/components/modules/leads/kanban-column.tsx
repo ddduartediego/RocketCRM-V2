@@ -11,7 +11,6 @@ import type { EtapaFunil, Lead } from "@/types/database";
 
 interface LeadWithRelations extends Lead {
   contatos?: { id: string; nome: string } | null;
-  organizacoes?: { id: string; nome: string } | null;
   etapas_funil?: {
     id: string;
     nome: string;

@@ -18,7 +18,7 @@ export async function getContatos(filters: ContatosFilters = {}) {
 
   let query = supabase
     .from("contatos")
-    .select("*, organizacoes!contatos_organizacao_id_fkey(nome)", { count: "exact" })
+    .select("*", { count: "exact" })
     .order("nome", { ascending: true });
 
   if (search) {
@@ -49,7 +49,7 @@ export async function getContatoById(id: string) {
 
   const { data, error } = await supabase
     .from("contatos")
-    .select("*, organizacoes!contatos_organizacao_id_fkey(id, nome)")
+    .select("*")
     .eq("id", id)
     .single();
 
@@ -126,21 +126,5 @@ export async function deleteContato(id: string) {
 
   revalidatePath("/contatos");
   return { success: true, error: null };
-}
-
-export async function getOrganizacoes() {
-  const supabase = await createClient();
-
-  const { data, error } = await supabase
-    .from("organizacoes")
-    .select("id, nome, tipo")
-    .order("nome", { ascending: true });
-
-  if (error) {
-    console.error("Erro ao buscar organizações:", error);
-    return { data: [], error: error.message };
-  }
-
-  return { data: data || [], error: null };
 }
 

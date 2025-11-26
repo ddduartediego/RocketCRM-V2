@@ -12,7 +12,6 @@ export const contatoSchema = z.object({
   cep: z.string().optional().nullable(),
   observacoes: z.string().optional().nullable(),
   tags: z.array(z.string()).optional().nullable(),
-  organizacao_id: z.string().uuid().optional().nullable(),
 });
 
 export type ContatoFormData = z.infer<typeof contatoSchema>;

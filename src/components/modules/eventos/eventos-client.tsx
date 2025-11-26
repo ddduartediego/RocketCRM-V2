@@ -9,7 +9,6 @@ import type { ResumoFinanceiroEvento } from "@/actions/financeiro";
 
 interface EventoWithRelations extends Evento {
   contatos?: { id: string; nome: string } | null;
-  organizacoes?: { id: string; nome: string } | null;
   users?: { id: string; nome: string; avatar_url: string | null } | null;
 }
 

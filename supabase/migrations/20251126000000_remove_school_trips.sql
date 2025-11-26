@@ -1,29 +1,40 @@
 -- =============================================
--- Migration: Remover Viagens Escolares
+-- Migration: Remover Viagens Escolares e Simplificar Sistema
 -- =============================================
--- Remove referências a viagens escolares do sistema:
+-- Remove referências a viagens escolares e campos não utilizados:
 -- - Tipos de evento: viagem_pedagogica, viagem_formatura
 -- - Campo turma_serie das tabelas eventos e leads
+-- - Campo organizacao_id das tabelas eventos, leads, contatos
+-- - Campo num_participantes da tabela eventos
 -- - Tipo de contato: escola
 -- 
 -- Data: 26/11/2025
 -- =============================================
 
 -- =============================================
--- PARTE 1: REMOVER COLUNAS turma_serie
+-- PARTE 1: REMOVER COLUNAS
 -- =============================================
 
+-- Remover turma_serie
 ALTER TABLE eventos DROP COLUMN IF EXISTS turma_serie;
 ALTER TABLE leads DROP COLUMN IF EXISTS turma_serie;
+
+-- Remover organizacao_id (foreign keys serão removidas automaticamente)
+ALTER TABLE eventos DROP COLUMN IF EXISTS organizacao_id;
+ALTER TABLE leads DROP COLUMN IF EXISTS organizacao_id;
+ALTER TABLE contatos DROP COLUMN IF EXISTS organizacao_id;
+
+-- Remover num_participantes
+ALTER TABLE eventos DROP COLUMN IF EXISTS num_participantes;
 
 -- =============================================
 -- PARTE 2: ALTERAR ENUM tipo_evento
 -- =============================================
 -- PostgreSQL não permite DROP VALUE de enum, então precisamos recriar
 
--- 2.1 Migrar dados existentes para tipos válidos
-UPDATE eventos SET tipo = 'outro' WHERE tipo IN ('viagem_pedagogica', 'viagem_formatura');
-UPDATE leads SET tipo_servico = 'outro' WHERE tipo_servico IN ('viagem_pedagogica', 'viagem_formatura');
+-- 2.1 Migrar dados existentes para tipos válidos (cast para text para comparação)
+UPDATE eventos SET tipo = 'outro'::tipo_evento WHERE tipo::text IN ('viagem_pedagogica', 'viagem_formatura');
+UPDATE leads SET tipo_servico = 'outro'::tipo_evento WHERE tipo_servico::text IN ('viagem_pedagogica', 'viagem_formatura');
 
 -- 2.2 Criar novo enum sem os tipos de viagem
 CREATE TYPE tipo_evento_new AS ENUM ('colonia_ferias', 'festa_infantil', 'gincana', 'outro');
@@ -45,9 +56,9 @@ ALTER TYPE tipo_evento_new RENAME TO tipo_evento;
 -- PARTE 3: ALTERAR ENUM tipo_contato
 -- =============================================
 
--- 3.1 Migrar dados existentes ANTES de alterar os tipos
-UPDATE organizacoes SET tipo = 'empresa' WHERE tipo = 'escola';
-UPDATE contatos SET tipo = 'empresa' WHERE tipo = 'escola';
+-- 3.1 Migrar dados existentes ANTES de alterar os tipos (cast para text para comparação)
+UPDATE organizacoes SET tipo = 'empresa'::tipo_contato WHERE tipo::text = 'escola';
+UPDATE contatos SET tipo = 'empresa'::tipo_contato WHERE tipo::text = 'escola';
 
 -- 3.2 Remover defaults das colunas antes de alterar o tipo
 ALTER TABLE organizacoes ALTER COLUMN tipo DROP DEFAULT;

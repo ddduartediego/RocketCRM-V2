@@ -34,7 +34,7 @@ import {
   tipoServicoOptions,
   origemOptions,
 } from "@/lib/validations/lead";
-import { createLead, updateLead, getContatos, getOrganizacoes } from "@/actions/leads";
+import { createLead, updateLead, getContatos } from "@/actions/leads";
 import { toast } from "sonner";
 import type { EtapaFunil, Lead } from "@/types/database";
 
@@ -48,7 +48,6 @@ interface LeadFormProps {
 export function LeadForm({ open, onOpenChange, lead, etapas }: LeadFormProps) {
   const isEditing = !!lead;
   const [contatos, setContatos] = useState<{ id: string; nome: string }[]>([]);
-  const [organizacoes, setOrganizacoes] = useState<{ id: string; nome: string }[]>([]);
 
   const form = useForm<LeadFormData>({
     resolver: zodResolver(leadSchema) as Resolver<LeadFormData>,
@@ -58,7 +57,6 @@ export function LeadForm({ open, onOpenChange, lead, etapas }: LeadFormProps) {
       valor_estimado: 0,
       etapa_id: etapas[0]?.id || "",
       contato_id: null,
-      organizacao_id: null,
       tipo_servico: null,
       origem: null,
       data_prevista: "",
@@ -67,12 +65,8 @@ export function LeadForm({ open, onOpenChange, lead, etapas }: LeadFormProps) {
 
   useEffect(() => {
     const loadData = async () => {
-      const [contatosRes, organizacoesRes] = await Promise.all([
-        getContatos(),
-        getOrganizacoes(),
-      ]);
+      const contatosRes = await getContatos();
       setContatos(contatosRes.data);
-      setOrganizacoes(organizacoesRes.data);
     };
     if (open) {
       loadData();
@@ -87,7 +81,6 @@ export function LeadForm({ open, onOpenChange, lead, etapas }: LeadFormProps) {
         valor_estimado: lead.valor_estimado || 0,
         etapa_id: lead.etapa_id,
         contato_id: lead.contato_id,
-        organizacao_id: lead.organizacao_id,
         tipo_servico: lead.tipo_servico,
         origem: lead.origem || "",
         data_prevista: lead.data_prevista || "",
@@ -99,7 +92,6 @@ export function LeadForm({ open, onOpenChange, lead, etapas }: LeadFormProps) {
         valor_estimado: 0,
         etapa_id: etapas[0]?.id || "",
         contato_id: null,
-        organizacao_id: null,
         tipo_servico: null,
         origem: null,
         data_prevista: "",
@@ -258,34 +250,6 @@ export function LeadForm({ open, onOpenChange, lead, etapas }: LeadFormProps) {
                         {origemOptions.map((option) => (
                           <SelectItem key={option.value} value={option.value}>
                             {option.label}
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-
-              <FormField
-                control={form.control}
-                name="organizacao_id"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Organização</FormLabel>
-                    <Select
-                      onValueChange={field.onChange}
-                      value={field.value || ""}
-                    >
-                      <FormControl>
-                        <SelectTrigger>
-                          <SelectValue placeholder="Selecione" />
-                        </SelectTrigger>
-                      </FormControl>
-                      <SelectContent>
-                        {organizacoes.map((org) => (
-                          <SelectItem key={org.id} value={org.id}>
-                            {org.nome}
                           </SelectItem>
                         ))}
                       </SelectContent>

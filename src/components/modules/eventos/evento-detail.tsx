@@ -8,7 +8,6 @@ import {
   Calendar,
   MapPin,
   Users,
-  Building,
   User,
   Clock,
   Pencil,
@@ -42,7 +41,6 @@ import type { Evento, TransacaoFinanceira, AlocacaoEquipe, AlocacaoRecurso } fro
 
 interface EventoWithRelations extends Evento {
   contatos?: { id: string; nome: string; telefone?: string | null; email?: string | null } | null;
-  organizacoes?: { id: string; nome: string } | null;
   leads?: { id: string; titulo: string } | null;
   users?: { id: string; nome: string; avatar_url: string | null } | null;
 }
@@ -341,18 +339,6 @@ export function EventoDetail({
                     </div>
                   </div>
                 )}
-
-                {evento.num_participantes && (
-                  <div className="flex items-start gap-3">
-                    <Users className="h-5 w-5 text-muted-foreground mt-0.5" />
-                    <div>
-                      <p className="text-sm font-medium">Participantes</p>
-                      <p className="text-sm text-muted-foreground">
-                        {evento.num_participantes} pessoas
-                      </p>
-                    </div>
-                  </div>
-                )}
               </CardContent>
             </Card>
 
@@ -362,18 +348,6 @@ export function EventoDetail({
                 <CardTitle className="text-base">Cliente</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                {evento.organizacoes && (
-                  <div className="flex items-start gap-3">
-                    <Building className="h-5 w-5 text-muted-foreground mt-0.5" />
-                    <div>
-                      <p className="text-sm font-medium">Organização</p>
-                      <p className="text-sm text-muted-foreground">
-                        {evento.organizacoes.nome}
-                      </p>
-                    </div>
-                  </div>
-                )}
-
                 {evento.contatos && (
                   <div className="flex items-start gap-3">
                     <User className="h-5 w-5 text-muted-foreground mt-0.5" />
@@ -408,7 +382,7 @@ export function EventoDetail({
                   </div>
                 )}
 
-                {!evento.organizacoes && !evento.contatos && (
+                {!evento.contatos && (
                   <p className="text-sm text-muted-foreground">
                     Nenhum cliente vinculado
                   </p>

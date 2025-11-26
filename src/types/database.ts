@@ -257,7 +257,6 @@ export type Database = {
           id: string
           nome: string
           observacoes: string | null
-          organizacao_id: string | null
           tags: string[] | null
           telefone: string | null
           tipo: Database["public"]["Enums"]["tipo_contato"]
@@ -275,7 +274,6 @@ export type Database = {
           id?: string
           nome: string
           observacoes?: string | null
-          organizacao_id?: string | null
           tags?: string[] | null
           telefone?: string | null
           tipo?: Database["public"]["Enums"]["tipo_contato"]
@@ -293,7 +291,6 @@ export type Database = {
           id?: string
           nome?: string
           observacoes?: string | null
-          organizacao_id?: string | null
           tags?: string[] | null
           telefone?: string | null
           tipo?: Database["public"]["Enums"]["tipo_contato"]
@@ -306,13 +303,6 @@ export type Database = {
             columns: ["created_by"]
             isOneToOne: false
             referencedRelation: "users"
-            referencedColumns: ["id"]
-          },
-          {
-            foreignKeyName: "contatos_organizacao_id_fkey"
-            columns: ["organizacao_id"]
-            isOneToOne: false
-            referencedRelation: "organizacoes"
             referencedColumns: ["id"]
           },
         ]
@@ -419,9 +409,7 @@ export type Database = {
           lead_id: string | null
           local: string | null
           nome: string
-          num_participantes: number | null
           observacoes: string | null
-          organizacao_id: string | null
           responsavel_id: string | null
           status: Database["public"]["Enums"]["status_evento"]
           tipo: Database["public"]["Enums"]["tipo_evento"]
@@ -446,9 +434,7 @@ export type Database = {
           lead_id?: string | null
           local?: string | null
           nome: string
-          num_participantes?: number | null
           observacoes?: string | null
-          organizacao_id?: string | null
           responsavel_id?: string | null
           status?: Database["public"]["Enums"]["status_evento"]
           tipo: Database["public"]["Enums"]["tipo_evento"]
@@ -473,9 +459,7 @@ export type Database = {
           lead_id?: string | null
           local?: string | null
           nome?: string
-          num_participantes?: number | null
           observacoes?: string | null
-          organizacao_id?: string | null
           responsavel_id?: string | null
           status?: Database["public"]["Enums"]["status_evento"]
           tipo?: Database["public"]["Enums"]["tipo_evento"]
@@ -503,13 +487,6 @@ export type Database = {
             columns: ["lead_id"]
             isOneToOne: false
             referencedRelation: "leads"
-            referencedColumns: ["id"]
-          },
-          {
-            foreignKeyName: "eventos_organizacao_id_fkey"
-            columns: ["organizacao_id"]
-            isOneToOne: false
-            referencedRelation: "organizacoes"
             referencedColumns: ["id"]
           },
           {
@@ -593,7 +570,6 @@ export type Database = {
           etapa_id: string
           id: string
           motivo_perda: string | null
-          organizacao_id: string | null
           origem: string | null
           responsavel_id: string | null
           tipo_servico: Database["public"]["Enums"]["tipo_evento"] | null
@@ -610,7 +586,6 @@ export type Database = {
           etapa_id: string
           id?: string
           motivo_perda?: string | null
-          organizacao_id?: string | null
           origem?: string | null
           responsavel_id?: string | null
           tipo_servico?: Database["public"]["Enums"]["tipo_evento"] | null
@@ -627,7 +602,6 @@ export type Database = {
           etapa_id?: string
           id?: string
           motivo_perda?: string | null
-          organizacao_id?: string | null
           origem?: string | null
           responsavel_id?: string | null
           tipo_servico?: Database["public"]["Enums"]["tipo_evento"] | null
@@ -655,13 +629,6 @@ export type Database = {
             columns: ["etapa_id"]
             isOneToOne: false
             referencedRelation: "etapas_funil"
-            referencedColumns: ["id"]
-          },
-          {
-            foreignKeyName: "leads_organizacao_id_fkey"
-            columns: ["organizacao_id"]
-            isOneToOne: false
-            referencedRelation: "organizacoes"
             referencedColumns: ["id"]
           },
           {

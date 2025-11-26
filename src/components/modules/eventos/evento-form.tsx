@@ -49,7 +49,7 @@ import {
 } from "@/lib/validations/evento";
 import { formasPagamento } from "@/lib/validations/financeiro";
 import { createEvento, updateEvento, recriarTransacoesEvento } from "@/actions/eventos";
-import { getContatos, getOrganizacoes } from "@/actions/leads";
+import { getContatos } from "@/actions/leads";
 import { toast } from "sonner";
 import { Calendar, DollarSign, Info, AlertTriangle } from "lucide-react";
 import type { Evento } from "@/types/database";
@@ -63,7 +63,6 @@ interface EventoFormProps {
 export function EventoForm({ open, onOpenChange, evento }: EventoFormProps) {
   const isEditing = !!evento;
   const [contatos, setContatos] = useState<{ id: string; nome: string }[]>([]);
-  const [organizacoes, setOrganizacoes] = useState<{ id: string; nome: string }[]>([]);
   const [criarTransacao, setCriarTransacao] = useState(true);
   const [showRecreateDialog, setShowRecreateDialog] = useState(false);
   const [pendingFormData, setPendingFormData] = useState<EventoFormData | null>(null);
@@ -76,7 +75,6 @@ export function EventoForm({ open, onOpenChange, evento }: EventoFormProps) {
       tipo: "colonia_ferias",
       descricao: "",
       cliente_id: null,
-      organizacao_id: null,
       data_inicio: "",
       data_fim: "",
       hora_inicio: "",
@@ -84,7 +82,6 @@ export function EventoForm({ open, onOpenChange, evento }: EventoFormProps) {
       local: "",
       endereco_local: "",
       status: "planejamento",
-      num_participantes: 0,
       valor_total: 0,
       valor_sinal: 0,
       forma_pagamento: "",
@@ -95,12 +92,8 @@ export function EventoForm({ open, onOpenChange, evento }: EventoFormProps) {
 
   useEffect(() => {
     const loadData = async () => {
-      const [contatosRes, organizacoesRes] = await Promise.all([
-        getContatos(),
-        getOrganizacoes(),
-      ]);
+      const contatosRes = await getContatos();
       setContatos(contatosRes.data);
-      setOrganizacoes(organizacoesRes.data);
     };
     if (open) {
       loadData();
@@ -114,7 +107,6 @@ export function EventoForm({ open, onOpenChange, evento }: EventoFormProps) {
         tipo: evento.tipo,
         descricao: evento.descricao || "",
         cliente_id: evento.cliente_id,
-        organizacao_id: evento.organizacao_id,
         data_inicio: evento.data_inicio,
         data_fim: evento.data_fim || "",
         hora_inicio: evento.hora_inicio || "",
@@ -122,7 +114,6 @@ export function EventoForm({ open, onOpenChange, evento }: EventoFormProps) {
         local: evento.local || "",
         endereco_local: evento.endereco_local || "",
         status: evento.status,
-        num_participantes: evento.num_participantes || 0,
         valor_total: evento.valor_total || 0,
         valor_sinal: evento.valor_sinal || 0,
         forma_pagamento: evento.forma_pagamento || "",
@@ -135,7 +126,6 @@ export function EventoForm({ open, onOpenChange, evento }: EventoFormProps) {
         tipo: "colonia_ferias",
         descricao: "",
         cliente_id: null,
-        organizacao_id: null,
         data_inicio: "",
         data_fim: "",
         hora_inicio: "",
@@ -143,7 +133,6 @@ export function EventoForm({ open, onOpenChange, evento }: EventoFormProps) {
         local: "",
         endereco_local: "",
         status: "planejamento",
-        num_participantes: 0,
         valor_total: 0,
         valor_sinal: 0,
         forma_pagamento: "",
@@ -376,31 +365,6 @@ export function EventoForm({ open, onOpenChange, evento }: EventoFormProps) {
 
                   <FormField
                     control={form.control}
-                    name="organizacao_id"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Organização</FormLabel>
-                        <Select onValueChange={field.onChange} value={field.value || ""}>
-                          <FormControl>
-                            <SelectTrigger>
-                              <SelectValue placeholder="Selecione" />
-                            </SelectTrigger>
-                          </FormControl>
-                          <SelectContent>
-                            {organizacoes.map((org) => (
-                              <SelectItem key={org.id} value={org.id}>
-                                {org.nome}
-                              </SelectItem>
-                            ))}
-                          </SelectContent>
-                        </Select>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-
-                  <FormField
-                    control={form.control}
                     name="cliente_id"
                     render={({ field }) => (
                       <FormItem>
@@ -419,25 +383,6 @@ export function EventoForm({ open, onOpenChange, evento }: EventoFormProps) {
                             ))}
                           </SelectContent>
                         </Select>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-
-                  <FormField
-                    control={form.control}
-                    name="num_participantes"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Nº de Participantes</FormLabel>
-                        <FormControl>
-                          <Input 
-                            type="number" 
-                            {...field} 
-                            value={field.value ?? ""} 
-                            onChange={(e) => field.onChange(e.target.value ? Number(e.target.value) : null)}
-                          />
-                        </FormControl>
                         <FormMessage />
                       </FormItem>
                     )}

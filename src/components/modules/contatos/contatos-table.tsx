@@ -34,7 +34,7 @@ import { toast } from "sonner";
 import type { Contato } from "@/types/database";
 
 interface ContatosTableProps {
-  contatos: (Contato & { organizacoes?: { nome: string } | null })[];
+  contatos: Contato[];
   onEdit: (contato: Contato) => void;
   onView: (contato: Contato) => void;
 }
@@ -98,7 +98,6 @@ export function ContatosTable({ contatos, onEdit, onView }: ContatosTableProps) 
               <TableHead className="font-semibold">Nome</TableHead>
               <TableHead className="font-semibold">Tipo</TableHead>
               <TableHead className="font-semibold">Contato</TableHead>
-              <TableHead className="font-semibold">Organização</TableHead>
               <TableHead className="font-semibold">Cidade</TableHead>
               <TableHead className="w-[50px]"></TableHead>
             </TableRow>
@@ -159,11 +158,6 @@ export function ContatosTable({ contatos, onEdit, onView }: ContatosTableProps) 
                       <span className="text-muted-foreground/50">-</span>
                     )}
                   </div>
-                </TableCell>
-                <TableCell>
-                  <span className="text-sm text-muted-foreground">
-                    {contato.organizacoes?.nome || "-"}
-                  </span>
                 </TableCell>
                 <TableCell>
                   <span className="text-sm text-muted-foreground">

@@ -15,7 +15,6 @@ import {
   Mail,
   Phone,
   MapPin,
-  Building2,
   Calendar,
   Pencil,
   MessageSquare,
@@ -25,7 +24,7 @@ import type { Contato } from "@/types/database";
 interface ContatoDetailProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
-  contato: (Contato & { organizacoes?: { nome: string } | null }) | null;
+  contato: Contato | null;
   onEdit: (contato: Contato) => void;
 }
 
@@ -166,21 +165,6 @@ export function ContatoDetail({
               )}
             </div>
           </div>
-
-          {/* Organização */}
-          {contato.organizacoes?.nome && (
-            <div>
-              <h4 className="text-sm font-medium text-muted-foreground mb-3">
-                Organização
-              </h4>
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-lg bg-muted flex items-center justify-center">
-                  <Building2 className="w-4 h-4 text-muted-foreground" />
-                </div>
-                <span className="text-sm">{contato.organizacoes.nome}</span>
-              </div>
-            </div>
-          )}
 
           {/* Endereço */}
           {(contato.endereco || contato.cidade) && (

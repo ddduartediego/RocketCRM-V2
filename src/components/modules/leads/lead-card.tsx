@@ -5,13 +5,12 @@ import { CSS } from "@dnd-kit/utilities";
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
-import { GripVertical, Building2, User, Calendar } from "lucide-react";
+import { GripVertical, User, Calendar } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { Lead } from "@/types/database";
 
 interface LeadWithRelations extends Lead {
   contatos?: { id: string; nome: string } | null;
-  organizacoes?: { id: string; nome: string } | null;
   etapas_funil?: {
     id: string;
     nome: string;
@@ -109,21 +108,15 @@ export function LeadCard({ lead, isDragging, onClick }: LeadCardProps) {
           </div>
         </div>
 
-        {/* Contato/Organização */}
-        <div className="space-y-1.5 mb-3">
-          {lead.organizacoes?.nome && (
-            <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
-              <Building2 className="w-3 h-3" />
-              <span className="truncate">{lead.organizacoes.nome}</span>
-            </div>
-          )}
-          {lead.contatos?.nome && (
+        {/* Contato */}
+        {lead.contatos?.nome && (
+          <div className="mb-3">
             <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
               <User className="w-3 h-3" />
               <span className="truncate">{lead.contatos.nome}</span>
             </div>
-          )}
-        </div>
+          </div>
+        )}
 
         {/* Footer */}
         <div className="flex items-center justify-between pt-2 border-t border-border/50">

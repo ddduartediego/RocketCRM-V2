@@ -6,7 +6,6 @@ export const leadSchema = z.object({
   valor_estimado: z.coerce.number().min(0, "Valor deve ser maior ou igual a 0").default(0),
   etapa_id: z.string().uuid("Selecione uma etapa"),
   contato_id: z.string().uuid().optional().nullable(),
-  organizacao_id: z.string().uuid().optional().nullable(),
   tipo_servico: z.enum([
     "colonia_ferias",
     "festa_infantil",
