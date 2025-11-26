@@ -316,8 +316,54 @@ export async function updateEvento(id: string, formData: Partial<EventoFormData>
   return { data, error: null };
 }
 
-export async function deleteEvento(id: string) {
+/**
+ * Busca transações financeiras vinculadas a um evento
+ */
+export async function getTransacoesDoEvento(eventoId: string) {
   const supabase = await createClient();
+
+  const { data, error, count } = await supabase
+    .from("transacoes_financeiras")
+    .select("id, descricao, valor, tipo, status", { count: "exact" })
+    .eq("evento_id", eventoId);
+
+  if (error) {
+    console.error("Erro ao buscar transações do evento:", error);
+    return { data: [], count: 0, error: error.message };
+  }
+
+  return { data: data || [], count: count || 0, error: null };
+}
+
+export async function deleteEvento(id: string, excluirTransacoes = false) {
+  const supabase = await createClient();
+
+  // Verificar se existem transações vinculadas
+  const { count: transacoesCount } = await supabase
+    .from("transacoes_financeiras")
+    .select("id", { count: "exact", head: true })
+    .eq("evento_id", id);
+
+  if (transacoesCount && transacoesCount > 0 && !excluirTransacoes) {
+    return { 
+      success: false, 
+      error: "TRANSACOES_VINCULADAS",
+      transacoesCount,
+    };
+  }
+
+  // Excluir transações vinculadas se solicitado
+  if (excluirTransacoes && transacoesCount && transacoesCount > 0) {
+    const { error: deleteTransacoesError } = await supabase
+      .from("transacoes_financeiras")
+      .delete()
+      .eq("evento_id", id);
+
+    if (deleteTransacoesError) {
+      console.error("Erro ao deletar transações:", deleteTransacoesError);
+      return { success: false, error: deleteTransacoesError.message };
+    }
+  }
 
   // Buscar evento para pegar o google_calendar_id
   const { data: evento } = await supabase
@@ -339,6 +385,7 @@ export async function deleteEvento(id: string) {
   }
 
   revalidatePath("/eventos");
+  revalidatePath("/financeiro");
   revalidatePath("/");
   return { success: true, error: null };
 }

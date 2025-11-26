@@ -654,15 +654,17 @@ export function EventoForm({ open, onOpenChange, evento }: EventoFormProps) {
               <AlertTriangle className="h-5 w-5 text-amber-500" />
               Valores financeiros alterados
             </AlertDialogTitle>
-            <AlertDialogDescription className="space-y-2">
-              <p>
-                Você alterou os valores financeiros do evento. Deseja recriar as transações
-                financeiras com os novos valores?
-              </p>
-              <p className="text-amber-600 font-medium">
-                As transações de receita existentes vinculadas a este evento serão excluídas
-                e novas transações serão criadas.
-              </p>
+            <AlertDialogDescription asChild>
+              <div className="space-y-2 text-muted-foreground text-sm">
+                <p>
+                  Você alterou os valores financeiros do evento. Deseja recriar as transações
+                  financeiras com os novos valores?
+                </p>
+                <p className="text-amber-600 font-medium">
+                  As transações de receita existentes vinculadas a este evento serão excluídas
+                  e novas transações serão criadas.
+                </p>
+              </div>
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>

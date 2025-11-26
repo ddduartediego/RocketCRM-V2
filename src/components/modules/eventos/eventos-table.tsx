@@ -35,7 +35,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { MoreHorizontal, Pencil, Trash2, Eye, Calendar, MapPin, CheckCircle2, Clock, AlertTriangle } from "lucide-react";
-import { deleteEvento } from "@/actions/eventos";
+import { deleteEvento, getTransacoesDoEvento } from "@/actions/eventos";
 import { toast } from "sonner";
 import type { Evento } from "@/types/database";
 import type { ResumoFinanceiroEvento } from "@/actions/financeiro";
@@ -69,7 +69,10 @@ const statusConfig: Record<string, { label: string; color: string }> = {
 
 export function EventosTable({ eventos, onEdit, onView, resumosFinanceiros = {} }: EventosTableProps) {
   const [deleteId, setDeleteId] = useState<string | null>(null);
+  const [deleteWithTransacoesId, setDeleteWithTransacoesId] = useState<string | null>(null);
+  const [transacoesVinculadas, setTransacoesVinculadas] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
+  const [checkingTransacoes, setCheckingTransacoes] = useState<string | null>(null);
 
   const getStatusFinanceiro = (evento: Evento) => {
     const resumo = resumosFinanceiros[evento.id];
@@ -112,20 +115,39 @@ export function EventosTable({ eventos, onEdit, onView, resumosFinanceiros = {} 
     }
   };
 
-  const handleDelete = async () => {
-    if (!deleteId) return;
+  const handleOpenDeleteDialog = async (eventoId: string) => {
+    setCheckingTransacoes(eventoId);
+    const { count } = await getTransacoesDoEvento(eventoId);
+    setCheckingTransacoes(null);
+
+    if (count && count > 0) {
+      setTransacoesVinculadas(count);
+      setDeleteWithTransacoesId(eventoId);
+    } else {
+      setDeleteId(eventoId);
+    }
+  };
+
+  const handleDelete = async (excluirTransacoes = false) => {
+    const id = excluirTransacoes ? deleteWithTransacoesId : deleteId;
+    if (!id) return;
 
     setIsDeleting(true);
-    const result = await deleteEvento(deleteId);
+    const result = await deleteEvento(id, excluirTransacoes);
     setIsDeleting(false);
 
-    if (result.error) {
+    if (result.error && result.error !== "TRANSACOES_VINCULADAS") {
       toast.error("Erro ao excluir evento", { description: result.error });
-    } else {
-      toast.success("Evento excluído com sucesso");
+    } else if (result.success) {
+      toast.success("Evento excluído com sucesso", {
+        description: excluirTransacoes
+          ? `${transacoesVinculadas} transação(ões) também foram excluídas.`
+          : undefined,
+      });
     }
 
     setDeleteId(null);
+    setDeleteWithTransacoesId(null);
   };
 
   const formatDate = (date: string) => {
@@ -276,11 +298,12 @@ export function EventosTable({ eventos, onEdit, onView, resumosFinanceiros = {} 
                       </DropdownMenuItem>
                       <DropdownMenuSeparator />
                       <DropdownMenuItem
-                        onClick={() => setDeleteId(evento.id)}
+                        onClick={() => handleOpenDeleteDialog(evento.id)}
+                        disabled={checkingTransacoes === evento.id}
                         className="text-destructive focus:text-destructive"
                       >
                         <Trash2 className="w-4 h-4 mr-2" />
-                        Excluir
+                        {checkingTransacoes === evento.id ? "Verificando..." : "Excluir"}
                       </DropdownMenuItem>
                     </DropdownMenuContent>
                   </DropdownMenu>
@@ -291,6 +314,7 @@ export function EventosTable({ eventos, onEdit, onView, resumosFinanceiros = {} 
         </Table>
       </div>
 
+      {/* Delete Dialog - Sem transações */}
       <AlertDialog open={!!deleteId} onOpenChange={() => setDeleteId(null)}>
         <AlertDialogContent>
           <AlertDialogHeader>
@@ -303,11 +327,45 @@ export function EventosTable({ eventos, onEdit, onView, resumosFinanceiros = {} 
           <AlertDialogFooter>
             <AlertDialogCancel disabled={isDeleting}>Cancelar</AlertDialogCancel>
             <AlertDialogAction
-              onClick={handleDelete}
+              onClick={() => handleDelete(false)}
               disabled={isDeleting}
               className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
             >
               {isDeleting ? "Excluindo..." : "Excluir"}
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
+
+      {/* Delete Dialog - Com transações vinculadas */}
+      <AlertDialog open={!!deleteWithTransacoesId} onOpenChange={() => setDeleteWithTransacoesId(null)}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle className="flex items-center gap-2">
+              <AlertTriangle className="h-5 w-5 text-amber-500" />
+              Evento possui transações vinculadas
+            </AlertDialogTitle>
+            <AlertDialogDescription asChild>
+              <div className="space-y-3 text-muted-foreground text-sm">
+                <p>
+                  Este evento possui <strong className="text-foreground">{transacoesVinculadas}</strong> transação(ões)
+                  financeira(s) vinculada(s).
+                </p>
+                <p className="text-amber-600 font-medium">
+                  Para excluir o evento, as transações também precisam ser excluídas.
+                  Esta ação não pode ser desfeita.
+                </p>
+              </div>
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel disabled={isDeleting}>Cancelar</AlertDialogCancel>
+            <AlertDialogAction
+              onClick={() => handleDelete(true)}
+              disabled={isDeleting}
+              className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
+            >
+              {isDeleting ? "Excluindo..." : "Excluir evento e transações"}
             </AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>

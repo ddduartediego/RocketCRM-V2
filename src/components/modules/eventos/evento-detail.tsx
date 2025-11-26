@@ -16,6 +16,7 @@ import {
   FileText,
   CheckCircle,
   Package,
+  AlertTriangle,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -35,7 +36,7 @@ import { EventoForm } from "./evento-form";
 import { EventoFinanceiroTab } from "./evento-financeiro-tab";
 import { EventoEquipeTab } from "./evento-equipe-tab";
 import { EventoRecursosTab } from "./evento-recursos-tab";
-import { deleteEvento } from "@/actions/eventos";
+import { deleteEvento, getTransacoesDoEvento } from "@/actions/eventos";
 import { toast } from "sonner";
 import type { Evento, TransacaoFinanceira, AlocacaoEquipe, AlocacaoRecurso } from "@/types/database";
 
@@ -107,7 +108,10 @@ export function EventoDetail({
   const router = useRouter();
   const [editFormOpen, setEditFormOpen] = useState(false);
   const [deleteDialogOpen, setDeleteDialogOpen] = useState(false);
+  const [deleteWithTransacoesDialog, setDeleteWithTransacoesDialog] = useState(false);
+  const [transacoesVinculadas, setTransacoesVinculadas] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
+  const [isCheckingTransacoes, setIsCheckingTransacoes] = useState(false);
 
   const formatDate = (date: string) => {
     return new Date(date).toLocaleDateString("pt-BR", {
@@ -125,18 +129,36 @@ export function EventoDetail({
     }).format(value);
   };
 
-  const handleDelete = async () => {
+  const handleOpenDeleteDialog = async () => {
+    setIsCheckingTransacoes(true);
+    const { count } = await getTransacoesDoEvento(evento.id);
+    setIsCheckingTransacoes(false);
+    
+    if (count && count > 0) {
+      setTransacoesVinculadas(count);
+      setDeleteWithTransacoesDialog(true);
+    } else {
+      setDeleteDialogOpen(true);
+    }
+  };
+
+  const handleDelete = async (excluirTransacoes = false) => {
     setIsDeleting(true);
-    const result = await deleteEvento(evento.id);
+    const result = await deleteEvento(evento.id, excluirTransacoes);
     setIsDeleting(false);
 
-    if (result.error) {
+    if (result.error && result.error !== "TRANSACOES_VINCULADAS") {
       toast.error("Erro ao excluir evento", { description: result.error });
-    } else {
-      toast.success("Evento excluído com sucesso");
+    } else if (result.success) {
+      toast.success("Evento excluído com sucesso", {
+        description: excluirTransacoes 
+          ? `${transacoesVinculadas} transação(ões) também foram excluídas.`
+          : undefined,
+      });
       router.push("/eventos");
     }
     setDeleteDialogOpen(false);
+    setDeleteWithTransacoesDialog(false);
   };
 
   const totalReceitasRegistradas = resumoFinanceiro.totalReceitas;
@@ -186,10 +208,11 @@ export function EventoDetail({
           <Button
             variant="outline"
             className="text-destructive hover:text-destructive"
-            onClick={() => setDeleteDialogOpen(true)}
+            onClick={handleOpenDeleteDialog}
+            disabled={isCheckingTransacoes}
           >
             <Trash2 className="h-4 w-4 mr-2" />
-            Excluir
+            {isCheckingTransacoes ? "Verificando..." : "Excluir"}
           </Button>
         </div>
       </div>
@@ -455,7 +478,7 @@ export function EventoDetail({
         evento={evento}
       />
 
-      {/* Delete Dialog */}
+      {/* Delete Dialog - Sem transações */}
       <AlertDialog open={deleteDialogOpen} onOpenChange={setDeleteDialogOpen}>
         <AlertDialogContent>
           <AlertDialogHeader>
@@ -468,11 +491,45 @@ export function EventoDetail({
           <AlertDialogFooter>
             <AlertDialogCancel disabled={isDeleting}>Cancelar</AlertDialogCancel>
             <AlertDialogAction
-              onClick={handleDelete}
+              onClick={() => handleDelete(false)}
               disabled={isDeleting}
               className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
             >
               {isDeleting ? "Excluindo..." : "Excluir"}
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
+
+      {/* Delete Dialog - Com transações vinculadas */}
+      <AlertDialog open={deleteWithTransacoesDialog} onOpenChange={setDeleteWithTransacoesDialog}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle className="flex items-center gap-2">
+              <AlertTriangle className="h-5 w-5 text-amber-500" />
+              Evento possui transações vinculadas
+            </AlertDialogTitle>
+            <AlertDialogDescription asChild>
+              <div className="space-y-3 text-muted-foreground text-sm">
+                <p>
+                  O evento &quot;{evento.nome}&quot; possui <strong className="text-foreground">{transacoesVinculadas}</strong> transação(ões) 
+                  financeira(s) vinculada(s).
+                </p>
+                <p className="text-amber-600 font-medium">
+                  Para excluir o evento, as transações também precisam ser excluídas.
+                  Esta ação não pode ser desfeita.
+                </p>
+              </div>
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel disabled={isDeleting}>Cancelar</AlertDialogCancel>
+            <AlertDialogAction
+              onClick={() => handleDelete(true)}
+              disabled={isDeleting}
+              className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
+            >
+              {isDeleting ? "Excluindo..." : "Excluir evento e transações"}
             </AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>
