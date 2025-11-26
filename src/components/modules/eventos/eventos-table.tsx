@@ -28,10 +28,17 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
-import { MoreHorizontal, Pencil, Trash2, Eye, Calendar, MapPin } from "lucide-react";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import { MoreHorizontal, Pencil, Trash2, Eye, Calendar, MapPin, CheckCircle2, Clock, AlertTriangle } from "lucide-react";
 import { deleteEvento } from "@/actions/eventos";
 import { toast } from "sonner";
 import type { Evento } from "@/types/database";
+import type { ResumoFinanceiroEvento } from "@/actions/financeiro";
 
 interface EventoWithRelations extends Evento {
   contatos?: { id: string; nome: string } | null;
@@ -43,6 +50,7 @@ interface EventosTableProps {
   eventos: EventoWithRelations[];
   onEdit: (evento: Evento) => void;
   onView: (evento: Evento) => void;
+  resumosFinanceiros?: Record<string, ResumoFinanceiroEvento>;
 }
 
 const tipoLabels: Record<string, { label: string; icon: string }> = {
@@ -62,9 +70,50 @@ const statusConfig: Record<string, { label: string; color: string }> = {
   cancelado: { label: "Cancelado", color: "#dc2626" },
 };
 
-export function EventosTable({ eventos, onEdit, onView }: EventosTableProps) {
+export function EventosTable({ eventos, onEdit, onView, resumosFinanceiros = {} }: EventosTableProps) {
   const [deleteId, setDeleteId] = useState<string | null>(null);
   const [isDeleting, setIsDeleting] = useState(false);
+
+  const getStatusFinanceiro = (evento: Evento) => {
+    const resumo = resumosFinanceiros[evento.id];
+    const valorTotal = evento.valor_total || 0;
+    
+    if (!resumo || valorTotal === 0) {
+      return { status: "sem_dados", icon: null, color: "#6b7280", label: "" };
+    }
+
+    const percentualPago = (resumo.receitasPagas / valorTotal) * 100;
+    
+    if (percentualPago >= 100) {
+      return { 
+        status: "pago", 
+        icon: CheckCircle2, 
+        color: "#22c55e", 
+        label: "Pago integralmente" 
+      };
+    } else if (percentualPago > 0) {
+      return { 
+        status: "parcial", 
+        icon: Clock, 
+        color: "#eab308", 
+        label: `${percentualPago.toFixed(0)}% recebido` 
+      };
+    } else if (resumo.receitasPendentes > 0) {
+      return { 
+        status: "pendente", 
+        icon: Clock, 
+        color: "#f97316", 
+        label: "Pagamento pendente" 
+      };
+    } else {
+      return { 
+        status: "sem_transacao", 
+        icon: AlertTriangle, 
+        color: "#dc2626", 
+        label: "Sem transações" 
+      };
+    }
+  };
 
   const handleDelete = async () => {
     if (!deleteId) return;
@@ -189,9 +238,33 @@ export function EventosTable({ eventos, onEdit, onView }: EventosTableProps) {
                   </Badge>
                 </TableCell>
                 <TableCell className="text-right">
-                  <span className="font-medium text-primary">
-                    {formatCurrency(evento.valor_total || 0)}
-                  </span>
+                  <div className="flex items-center justify-end gap-2">
+                    <span className="font-medium text-primary">
+                      {formatCurrency(evento.valor_total || 0)}
+                    </span>
+                    {(() => {
+                      const statusFin = getStatusFinanceiro(evento);
+                      if (statusFin.icon && evento.valor_total && evento.valor_total > 0) {
+                        const Icon = statusFin.icon;
+                        return (
+                          <TooltipProvider>
+                            <Tooltip>
+                              <TooltipTrigger asChild>
+                                <Icon 
+                                  className="h-4 w-4" 
+                                  style={{ color: statusFin.color }}
+                                />
+                              </TooltipTrigger>
+                              <TooltipContent>
+                                <p>{statusFin.label}</p>
+                              </TooltipContent>
+                            </Tooltip>
+                          </TooltipProvider>
+                        );
+                      }
+                      return null;
+                    })()}
+                  </div>
                 </TableCell>
                 <TableCell onClick={(e) => e.stopPropagation()}>
                   <DropdownMenu>

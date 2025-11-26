@@ -1,5 +1,6 @@
 import { Suspense } from "react";
 import { getEventos } from "@/actions/eventos";
+import { getResumosFinanceirosEventos } from "@/actions/financeiro";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Calendar } from "lucide-react";
@@ -33,9 +34,13 @@ async function EventosList({
     perPage: PER_PAGE,
   });
 
+  // Buscar resumos financeiros para todos os eventos da página
+  const eventoIds = eventos.map((e) => e.id);
+  const { data: resumosFinanceiros } = await getResumosFinanceirosEventos(eventoIds);
+
   return (
     <>
-      <EventosClient eventos={eventos} />
+      <EventosClient eventos={eventos} resumosFinanceiros={resumosFinanceiros} />
       <ContatosPagination total={count} perPage={PER_PAGE} />
     </>
   );

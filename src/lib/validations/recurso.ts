@@ -25,6 +25,7 @@ export const alocacaoRecursoSchema = z.object({
   recurso_id: z.string().uuid("Selecione um recurso"),
   evento_id: z.string().uuid("Selecione um evento"),
   quantidade: z.coerce.number().min(1, "Quantidade mínima é 1"),
+  valor: z.coerce.number().min(0, "Valor deve ser positivo").optional().nullable(),
   data_inicio: z.string().min(1, "Data de início é obrigatória"),
   data_fim: z.string().min(1, "Data de fim é obrigatória"),
   observacoes: z.string().optional().nullable(),

@@ -231,7 +231,7 @@ export async function getAlocacoesEvento(eventoId: string) {
     .select(
       `
       *,
-      recursos(id, nome, tipo, quantidade)
+      recursos(id, nome, tipo, quantidade, custo_unitario)
     `
     )
     .eq("evento_id", eventoId)
@@ -256,7 +256,7 @@ export async function createAlocacaoRecurso(formData: AlocacaoRecursoFormData) {
   // Verificar disponibilidade
   const { data: recurso } = await supabase
     .from("recursos")
-    .select("quantidade")
+    .select("quantidade, nome")
     .eq("id", validatedData.data.recurso_id)
     .single();
 
@@ -283,19 +283,70 @@ export async function createAlocacaoRecurso(formData: AlocacaoRecursoFormData) {
     };
   }
 
+  // Buscar dados do evento para a transação
+  const { data: evento } = await supabase
+    .from("eventos")
+    .select("nome")
+    .eq("id", validatedData.data.evento_id)
+    .single();
+
+  // Buscar categoria "Materiais" para despesa de recursos
+  const { data: categoriaMateriais } = await supabase
+    .from("categorias_financeiras")
+    .select("id")
+    .eq("nome", "Materiais")
+    .eq("tipo", "despesa")
+    .single();
+
+  let transacaoId: string | null = null;
+
+  // Criar transação de despesa se houver valor
+  if (validatedData.data.valor && validatedData.data.valor > 0) {
+    const descricaoTransacao = `${recurso.nome} (${validatedData.data.quantidade}x) - ${evento?.nome || "Evento"}`;
+
+    const { data: transacao, error: transacaoError } = await supabase
+      .from("transacoes_financeiras")
+      .insert({
+        descricao: descricaoTransacao,
+        tipo: "despesa",
+        valor: validatedData.data.valor,
+        data_vencimento: validatedData.data.data_inicio,
+        status: "pendente",
+        categoria_id: categoriaMateriais?.id || null,
+        evento_id: validatedData.data.evento_id,
+      })
+      .select("id")
+      .single();
+
+    if (transacaoError) {
+      console.error("Erro ao criar transação:", transacaoError);
+    } else {
+      transacaoId = transacao.id;
+    }
+  }
+
+  // Criar alocação com referência à transação
   const { data, error } = await supabase
     .from("alocacao_recursos")
-    .insert(validatedData.data)
+    .insert({
+      ...validatedData.data,
+      transacao_id: transacaoId,
+    })
     .select()
     .single();
 
   if (error) {
     console.error("Erro ao criar alocação:", error);
+    // Se criou transação mas falhou a alocação, excluir transação
+    if (transacaoId) {
+      await supabase.from("transacoes_financeiras").delete().eq("id", transacaoId);
+    }
     return { data: null, error: error.message };
   }
 
   revalidatePath("/recursos");
   revalidatePath("/eventos");
+  revalidatePath("/financeiro");
   return { data, error: null };
 }
 
@@ -322,8 +373,15 @@ export async function updateAlocacaoRecurso(
   return { data, error: null };
 }
 
-export async function deleteAlocacaoRecurso(id: string) {
+export async function deleteAlocacaoRecurso(id: string, excluirTransacao: boolean = true) {
   const supabase = await createClient();
+
+  // Buscar alocação para obter transacao_id
+  const { data: alocacao } = await supabase
+    .from("alocacao_recursos")
+    .select("transacao_id")
+    .eq("id", id)
+    .single();
 
   const { error } = await supabase
     .from("alocacao_recursos")
@@ -335,8 +393,21 @@ export async function deleteAlocacaoRecurso(id: string) {
     return { success: false, error: error.message };
   }
 
+  // Excluir transação vinculada se solicitado
+  if (excluirTransacao && alocacao?.transacao_id) {
+    const { error: transacaoError } = await supabase
+      .from("transacoes_financeiras")
+      .delete()
+      .eq("id", alocacao.transacao_id);
+
+    if (transacaoError) {
+      console.warn("Aviso: Não foi possível excluir a transação vinculada:", transacaoError);
+    }
+  }
+
   revalidatePath("/recursos");
   revalidatePath("/eventos");
+  revalidatePath("/financeiro");
   return { success: true, error: null };
 }
 

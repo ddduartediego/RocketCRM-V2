@@ -25,6 +25,7 @@ export type Database = {
           id: string
           membro_id: string
           observacoes: string | null
+          transacao_id: string | null
           updated_at: string
           valor_pago: number | null
         }
@@ -38,6 +39,7 @@ export type Database = {
           id?: string
           membro_id: string
           observacoes?: string | null
+          transacao_id?: string | null
           updated_at?: string
           valor_pago?: number | null
         }
@@ -51,6 +53,7 @@ export type Database = {
           id?: string
           membro_id?: string
           observacoes?: string | null
+          transacao_id?: string | null
           updated_at?: string
           valor_pago?: number | null
         }
@@ -81,7 +84,9 @@ export type Database = {
           observacoes: string | null
           quantidade: number
           recurso_id: string
+          transacao_id: string | null
           updated_at: string
+          valor: number | null
         }
         Insert: {
           created_at?: string
@@ -92,7 +97,9 @@ export type Database = {
           observacoes?: string | null
           quantidade?: number
           recurso_id: string
+          transacao_id?: string | null
           updated_at?: string
+          valor?: number | null
         }
         Update: {
           created_at?: string
@@ -103,7 +110,9 @@ export type Database = {
           observacoes?: string | null
           quantidade?: number
           recurso_id?: string
+          transacao_id?: string | null
           updated_at?: string
+          valor?: number | null
         }
         Relationships: [
           {

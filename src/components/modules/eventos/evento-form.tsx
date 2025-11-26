@@ -13,6 +13,7 @@ import {
 import {
   Form,
   FormControl,
+  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -21,6 +22,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
+import { Checkbox } from "@/components/ui/checkbox";
 import {
   Select,
   SelectContent,
@@ -30,15 +32,26 @@ import {
 } from "@/components/ui/select";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog";
+import {
   eventoSchema,
   type EventoFormData,
   tipoEventoOptions,
   statusEventoOptions,
 } from "@/lib/validations/evento";
-import { createEvento, updateEvento } from "@/actions/eventos";
+import { formasPagamento } from "@/lib/validations/financeiro";
+import { createEvento, updateEvento, recriarTransacoesEvento } from "@/actions/eventos";
 import { getContatos, getOrganizacoes } from "@/actions/leads";
 import { toast } from "sonner";
-import { Calendar, DollarSign, Info } from "lucide-react";
+import { Calendar, DollarSign, Info, AlertTriangle } from "lucide-react";
 import type { Evento } from "@/types/database";
 
 interface EventoFormProps {
@@ -51,6 +64,10 @@ export function EventoForm({ open, onOpenChange, evento }: EventoFormProps) {
   const isEditing = !!evento;
   const [contatos, setContatos] = useState<{ id: string; nome: string }[]>([]);
   const [organizacoes, setOrganizacoes] = useState<{ id: string; nome: string }[]>([]);
+  const [criarTransacao, setCriarTransacao] = useState(true);
+  const [showRecreateDialog, setShowRecreateDialog] = useState(false);
+  const [pendingFormData, setPendingFormData] = useState<EventoFormData | null>(null);
+  const [recreateTransacoes, setRecreateTransacoes] = useState(false);
 
   const form = useForm<EventoFormData>({
     resolver: zodResolver(eventoSchema) as Resolver<EventoFormData>,
@@ -139,11 +156,61 @@ export function EventoForm({ open, onOpenChange, evento }: EventoFormProps) {
     }
   }, [evento, form]);
 
+  // Verifica se valores financeiros mudaram
+  const financeirosAlterados = (data: EventoFormData) => {
+    if (!evento) return false;
+    return (
+      (data.valor_total || 0) !== (evento.valor_total || 0) ||
+      (data.valor_sinal || 0) !== (evento.valor_sinal || 0) ||
+      (data.forma_pagamento || "") !== (evento.forma_pagamento || "")
+    );
+  };
+
   const onSubmit = async (data: EventoFormData) => {
+    // Se editando e valores financeiros mudaram, perguntar se quer recriar transações
+    if (isEditing && financeirosAlterados(data) && !recreateTransacoes) {
+      setPendingFormData(data);
+      setShowRecreateDialog(true);
+      return;
+    }
+
     try {
-      const result = isEditing
-        ? await updateEvento(evento!.id, data)
-        : await createEvento(data);
+      let result;
+      
+      if (isEditing) {
+        result = await updateEvento(evento!.id, data);
+        
+        // Se usuário confirmou recriar transações
+        if (recreateTransacoes && (data.valor_total || 0) > 0) {
+          const recreateResult = await recriarTransacoesEvento(evento!.id, {
+            valor_total: data.valor_total || 0,
+            valor_sinal: data.valor_sinal || 0,
+            forma_pagamento: data.forma_pagamento || null,
+            cliente_id: data.cliente_id || null,
+            nome_evento: data.nome,
+          });
+          
+          if (recreateResult.error) {
+            toast.error("Evento atualizado, mas erro ao recriar transações", {
+              description: recreateResult.error,
+            });
+          } else {
+            toast.success("Evento atualizado!", {
+              description: `Transações financeiras recriadas (${recreateResult.transacoesCriadas} transação(ões)).`,
+            });
+          }
+          
+          setRecreateTransacoes(false);
+          setPendingFormData(null);
+          onOpenChange(false);
+          return;
+        }
+      } else {
+        result = await createEvento({
+          ...data,
+          criar_transacao_receita: criarTransacao && (data.valor_total || 0) > 0,
+        });
+      }
 
       if (result.error) {
         toast.error(isEditing ? "Erro ao atualizar" : "Erro ao criar", {
@@ -152,16 +219,58 @@ export function EventoForm({ open, onOpenChange, evento }: EventoFormProps) {
         return;
       }
 
+      let successMessage = `${data.nome} foi ${isEditing ? "atualizado" : "criado"} com sucesso.`;
+      
+      if (!isEditing && "transacoesCriadas" in result && result.transacoesCriadas) {
+        const qtd = result.transacoesCriadas;
+        successMessage += qtd === 1 
+          ? " Transação de receita criada automaticamente."
+          : ` ${qtd} transações de receita criadas automaticamente.`;
+      }
+
       toast.success(isEditing ? "Evento atualizado!" : "Evento criado!", {
-        description: `${data.nome} foi ${isEditing ? "atualizado" : "criado"} com sucesso.`,
+        description: successMessage,
       });
 
       onOpenChange(false);
+      setCriarTransacao(true);
+      setRecreateTransacoes(false);
+      setPendingFormData(null);
     } catch {
       toast.error("Erro inesperado", {
         description: "Tente novamente mais tarde.",
       });
     }
+  };
+
+  const handleConfirmRecreate = async () => {
+    setShowRecreateDialog(false);
+    setRecreateTransacoes(true);
+    if (pendingFormData) {
+      await onSubmit(pendingFormData);
+    }
+  };
+
+  const handleCancelRecreate = async () => {
+    setShowRecreateDialog(false);
+    setRecreateTransacoes(false);
+    // Salvar sem recriar transações
+    if (pendingFormData) {
+      try {
+        const result = await updateEvento(evento!.id, pendingFormData);
+        if (result.error) {
+          toast.error("Erro ao atualizar", { description: result.error });
+        } else {
+          toast.success("Evento atualizado!", {
+            description: "Transações financeiras mantidas.",
+          });
+          onOpenChange(false);
+        }
+      } catch {
+        toast.error("Erro inesperado");
+      }
+    }
+    setPendingFormData(null);
   };
 
   return (
@@ -511,13 +620,23 @@ export function EventoForm({ open, onOpenChange, evento }: EventoFormProps) {
                     render={({ field }) => (
                       <FormItem>
                         <FormLabel>Forma de Pagamento</FormLabel>
-                        <FormControl>
-                          <Input
-                            placeholder="Ex: PIX, Cartão, Boleto"
-                            {...field}
-                            value={field.value || ""}
-                          />
-                        </FormControl>
+                        <Select 
+                          onValueChange={field.onChange} 
+                          value={field.value || undefined}
+                        >
+                          <FormControl>
+                            <SelectTrigger>
+                              <SelectValue placeholder="Selecione" />
+                            </SelectTrigger>
+                          </FormControl>
+                          <SelectContent>
+                            {formasPagamento.map((forma) => (
+                              <SelectItem key={forma.value} value={forma.value}>
+                                {forma.label}
+                              </SelectItem>
+                            ))}
+                          </SelectContent>
+                        </Select>
                         <FormMessage />
                       </FormItem>
                     )}
@@ -540,6 +659,27 @@ export function EventoForm({ open, onOpenChange, evento }: EventoFormProps) {
                       </FormItem>
                     )}
                   />
+
+                  {!isEditing && (
+                    <div className="col-span-2 flex items-start space-x-3 rounded-lg border p-4 bg-muted/30">
+                      <Checkbox
+                        id="criar-transacao"
+                        checked={criarTransacao}
+                        onCheckedChange={(checked) => setCriarTransacao(checked === true)}
+                      />
+                      <div className="space-y-1 leading-none">
+                        <label
+                          htmlFor="criar-transacao"
+                          className="text-sm font-medium cursor-pointer"
+                        >
+                          Criar transação financeira automaticamente
+                        </label>
+                        <p className="text-xs text-muted-foreground">
+                          Uma receita pendente será criada com o valor total do evento
+                        </p>
+                      </div>
+                    </div>
+                  )}
 
                   <FormField
                     control={form.control}
@@ -577,6 +717,36 @@ export function EventoForm({ open, onOpenChange, evento }: EventoFormProps) {
           </form>
         </Form>
       </DialogContent>
+
+      {/* Dialog de confirmação para recriar transações */}
+      <AlertDialog open={showRecreateDialog} onOpenChange={setShowRecreateDialog}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle className="flex items-center gap-2">
+              <AlertTriangle className="h-5 w-5 text-amber-500" />
+              Valores financeiros alterados
+            </AlertDialogTitle>
+            <AlertDialogDescription className="space-y-2">
+              <p>
+                Você alterou os valores financeiros do evento. Deseja recriar as transações
+                financeiras com os novos valores?
+              </p>
+              <p className="text-amber-600 font-medium">
+                As transações de receita existentes vinculadas a este evento serão excluídas
+                e novas transações serão criadas.
+              </p>
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel onClick={handleCancelRecreate}>
+              Manter transações atuais
+            </AlertDialogCancel>
+            <AlertDialogAction onClick={handleConfirmRecreate}>
+              Recriar transações
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
     </Dialog>
   );
 }

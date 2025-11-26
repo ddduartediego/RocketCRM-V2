@@ -493,3 +493,71 @@ export async function getTransacoesEvento(eventoId: string) {
   };
 }
 
+export interface ResumoFinanceiroEvento {
+  evento_id: string;
+  totalReceitas: number;
+  totalDespesas: number;
+  receitasPagas: number;
+  receitasPendentes: number;
+}
+
+/**
+ * Retorna resumo financeiro para múltiplos eventos de uma vez
+ * Usado para mostrar indicadores na lista de eventos
+ */
+export async function getResumosFinanceirosEventos(eventoIds: string[]): Promise<{
+  data: Record<string, ResumoFinanceiroEvento>;
+  error: string | null;
+}> {
+  if (eventoIds.length === 0) {
+    return { data: {}, error: null };
+  }
+
+  const supabase = await createClient();
+
+  const { data, error } = await supabase
+    .from("transacoes_financeiras")
+    .select("evento_id, tipo, valor, status")
+    .in("evento_id", eventoIds);
+
+  if (error) {
+    console.error("Erro ao buscar resumos financeiros:", error);
+    return { data: {}, error: error.message };
+  }
+
+  // Agrupar por evento
+  const resumos: Record<string, ResumoFinanceiroEvento> = {};
+
+  // Inicializar todos os eventos com valores zero
+  eventoIds.forEach((id) => {
+    resumos[id] = {
+      evento_id: id,
+      totalReceitas: 0,
+      totalDespesas: 0,
+      receitasPagas: 0,
+      receitasPendentes: 0,
+    };
+  });
+
+  // Processar transações
+  data?.forEach((t) => {
+    if (!t.evento_id) return;
+    
+    const resumo = resumos[t.evento_id];
+    if (!resumo) return;
+
+    if (t.tipo === "receita") {
+      resumo.totalReceitas += t.valor;
+      if (t.status === "pago") {
+        resumo.receitasPagas += t.valor;
+      } else if (t.status === "pendente") {
+        resumo.receitasPendentes += t.valor;
+      }
+    } else {
+      resumo.totalDespesas += t.valor;
+    }
+  });
+
+  return { data: resumos, error: null };
+}
+

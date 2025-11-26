@@ -111,9 +111,18 @@ export async function getEventoById(id: string) {
   return { data, error: null };
 }
 
-export async function createEvento(formData: EventoFormData & { sincronizar_google?: boolean }) {
+export interface CreateEventoOptions {
+  sincronizar_google?: boolean;
+  criar_transacao_receita?: boolean;
+}
+
+export async function createEvento(formData: EventoFormData & CreateEventoOptions) {
   const supabase = await createClient();
-  const { sincronizar_google = true, ...eventoData } = formData;
+  const { 
+    sincronizar_google = true, 
+    criar_transacao_receita = false,
+    ...eventoData 
+  } = formData;
 
   const validatedData = eventoSchema.safeParse(eventoData);
   if (!validatedData.success) {
@@ -164,12 +173,103 @@ export async function createEvento(formData: EventoFormData & { sincronizar_goog
     return { data: null, error: error.message };
   }
 
+  let transacoesCriadas = 0;
+
+  // Criar transação(ões) de receita automaticamente se solicitado e houver valor total
+  if (criar_transacao_receita && validatedData.data.valor_total && validatedData.data.valor_total > 0) {
+    // Buscar categorias de receita
+    const { data: categorias } = await supabase
+      .from("categorias_financeiras")
+      .select("id, nome")
+      .eq("tipo", "receita");
+
+    const categoriaSinal = categorias?.find(c => c.nome === "Sinal")?.id || null;
+    const categoriaPagamento = categorias?.find(c => c.nome === "Pagamento de Evento")?.id || null;
+
+    const valorTotal = validatedData.data.valor_total;
+    const valorSinal = validatedData.data.valor_sinal || 0;
+    const formaPagamento = validatedData.data.forma_pagamento || null;
+
+    // Se tem sinal, criar duas transações
+    if (valorSinal > 0 && valorSinal < valorTotal) {
+      const valorRestante = valorTotal - valorSinal;
+
+      // Transação do Sinal
+      const { error: erroSinal } = await supabase
+        .from("transacoes_financeiras")
+        .insert({
+          descricao: `Sinal - ${validatedData.data.nome}`,
+          tipo: "receita",
+          valor: valorSinal,
+          data_vencimento: validatedData.data.data_inicio,
+          status: "pendente",
+          forma_pagamento: formaPagamento,
+          categoria_id: categoriaSinal,
+          evento_id: data.id,
+          contato_id: validatedData.data.cliente_id || null,
+          created_by: user?.id,
+        });
+
+      if (!erroSinal) {
+        transacoesCriadas++;
+      } else {
+        console.warn("Aviso: Erro ao criar transação de sinal:", erroSinal);
+      }
+
+      // Transação do Restante
+      const { error: erroRestante } = await supabase
+        .from("transacoes_financeiras")
+        .insert({
+          descricao: `Restante - ${validatedData.data.nome}`,
+          tipo: "receita",
+          valor: valorRestante,
+          data_vencimento: validatedData.data.data_inicio,
+          status: "pendente",
+          forma_pagamento: formaPagamento,
+          categoria_id: categoriaPagamento,
+          evento_id: data.id,
+          contato_id: validatedData.data.cliente_id || null,
+          created_by: user?.id,
+        });
+
+      if (!erroRestante) {
+        transacoesCriadas++;
+      } else {
+        console.warn("Aviso: Erro ao criar transação do restante:", erroRestante);
+      }
+    } else {
+      // Criar transação única com valor total
+      const { error: transacaoError } = await supabase
+        .from("transacoes_financeiras")
+        .insert({
+          descricao: `Pagamento - ${validatedData.data.nome}`,
+          tipo: "receita",
+          valor: valorTotal,
+          data_vencimento: validatedData.data.data_inicio,
+          status: "pendente",
+          forma_pagamento: formaPagamento,
+          categoria_id: categoriaPagamento,
+          evento_id: data.id,
+          contato_id: validatedData.data.cliente_id || null,
+          created_by: user?.id,
+        });
+
+      if (!transacaoError) {
+        transacoesCriadas++;
+      } else {
+        console.warn("Aviso: Evento criado mas transação não foi criada:", transacaoError);
+      }
+    }
+  }
+
   revalidatePath("/eventos");
+  revalidatePath("/financeiro");
   revalidatePath("/");
   return { 
     data, 
     error: null, 
-    googleSynced: !!insertData.google_calendar_id 
+    googleSynced: !!insertData.google_calendar_id,
+    transacoesCriadas,
   };
 }
 
@@ -246,6 +346,26 @@ export async function deleteEvento(id: string) {
 }
 
 /**
+ * Retorna lista simplificada de eventos para uso em selects/dropdowns
+ */
+export async function getEventosSimples() {
+  const supabase = await createClient();
+
+  const { data, error } = await supabase
+    .from("eventos")
+    .select("id, nome, data_inicio, status")
+    .order("data_inicio", { ascending: false })
+    .limit(100);
+
+  if (error) {
+    console.error("Erro ao buscar eventos:", error);
+    return { data: [], error: error.message };
+  }
+
+  return { data: data || [], error: null };
+}
+
+/**
  * Sincroniza um evento existente com o Google Calendar
  * Útil para eventos criados antes da integração
  */
@@ -294,4 +414,131 @@ export async function syncEventoComGoogle(id: string) {
   revalidatePath("/eventos");
   revalidatePath(`/eventos/${id}`);
   return { success: true, error: null };
+}
+
+export interface RecriarTransacoesParams {
+  valor_total: number;
+  valor_sinal: number;
+  forma_pagamento: string | null;
+  cliente_id: string | null;
+  nome_evento: string;
+}
+
+/**
+ * Recria as transações de receita de um evento
+ * Remove as transações existentes e cria novas com os valores atualizados
+ */
+export async function recriarTransacoesEvento(
+  eventoId: string, 
+  params: RecriarTransacoesParams
+) {
+  const supabase = await createClient();
+
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  // Buscar evento para pegar a data de início
+  const { data: evento } = await supabase
+    .from("eventos")
+    .select("data_inicio")
+    .eq("id", eventoId)
+    .single();
+
+  if (!evento) {
+    return { success: false, error: "Evento não encontrado", transacoesCriadas: 0 };
+  }
+
+  // Deletar transações de receita existentes vinculadas ao evento
+  const { error: deleteError } = await supabase
+    .from("transacoes_financeiras")
+    .delete()
+    .eq("evento_id", eventoId)
+    .eq("tipo", "receita");
+
+  if (deleteError) {
+    console.error("Erro ao deletar transações existentes:", deleteError);
+    return { success: false, error: deleteError.message, transacoesCriadas: 0 };
+  }
+
+  // Buscar categorias de receita
+  const { data: categorias } = await supabase
+    .from("categorias_financeiras")
+    .select("id, nome")
+    .eq("tipo", "receita");
+
+  const categoriaSinal = categorias?.find(c => c.nome === "Sinal")?.id || null;
+  const categoriaPagamento = categorias?.find(c => c.nome === "Pagamento de Evento")?.id || null;
+
+  let transacoesCriadas = 0;
+
+  // Se tem sinal, criar duas transações
+  if (params.valor_sinal > 0 && params.valor_sinal < params.valor_total) {
+    const valorRestante = params.valor_total - params.valor_sinal;
+
+    // Transação do Sinal
+    const { error: erroSinal } = await supabase
+      .from("transacoes_financeiras")
+      .insert({
+        descricao: `Sinal - ${params.nome_evento}`,
+        tipo: "receita",
+        valor: params.valor_sinal,
+        data_vencimento: evento.data_inicio,
+        status: "pendente",
+        forma_pagamento: params.forma_pagamento,
+        categoria_id: categoriaSinal,
+        evento_id: eventoId,
+        contato_id: params.cliente_id,
+        created_by: user?.id,
+      });
+
+    if (!erroSinal) {
+      transacoesCriadas++;
+    }
+
+    // Transação do Restante
+    const { error: erroRestante } = await supabase
+      .from("transacoes_financeiras")
+      .insert({
+        descricao: `Restante - ${params.nome_evento}`,
+        tipo: "receita",
+        valor: valorRestante,
+        data_vencimento: evento.data_inicio,
+        status: "pendente",
+        forma_pagamento: params.forma_pagamento,
+        categoria_id: categoriaPagamento,
+        evento_id: eventoId,
+        contato_id: params.cliente_id,
+        created_by: user?.id,
+      });
+
+    if (!erroRestante) {
+      transacoesCriadas++;
+    }
+  } else if (params.valor_total > 0) {
+    // Criar transação única com valor total
+    const { error: transacaoError } = await supabase
+      .from("transacoes_financeiras")
+      .insert({
+        descricao: `Pagamento - ${params.nome_evento}`,
+        tipo: "receita",
+        valor: params.valor_total,
+        data_vencimento: evento.data_inicio,
+        status: "pendente",
+        forma_pagamento: params.forma_pagamento,
+        categoria_id: categoriaPagamento,
+        evento_id: eventoId,
+        contato_id: params.cliente_id,
+        created_by: user?.id,
+      });
+
+    if (!transacaoError) {
+      transacoesCriadas++;
+    }
+  }
+
+  revalidatePath("/eventos");
+  revalidatePath(`/eventos/${eventoId}`);
+  revalidatePath("/financeiro");
+  return { success: true, error: null, transacoesCriadas };
 }

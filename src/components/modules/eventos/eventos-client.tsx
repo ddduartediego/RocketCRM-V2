@@ -1,9 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { EventosTable } from "./eventos-table";
 import { EventoForm } from "./evento-form";
 import type { Evento } from "@/types/database";
+import type { ResumoFinanceiroEvento } from "@/actions/financeiro";
 
 interface EventoWithRelations extends Evento {
   contatos?: { id: string; nome: string } | null;
@@ -13,9 +15,11 @@ interface EventoWithRelations extends Evento {
 
 interface EventosClientProps {
   eventos: EventoWithRelations[];
+  resumosFinanceiros?: Record<string, ResumoFinanceiroEvento>;
 }
 
-export function EventosClient({ eventos }: EventosClientProps) {
+export function EventosClient({ eventos, resumosFinanceiros = {} }: EventosClientProps) {
+  const router = useRouter();
   const [formOpen, setFormOpen] = useState(false);
   const [selectedEvento, setSelectedEvento] = useState<Evento | null>(null);
 
@@ -25,9 +29,7 @@ export function EventosClient({ eventos }: EventosClientProps) {
   };
 
   const handleView = (evento: Evento) => {
-    // Por enquanto, abre o form para visualização/edição
-    setSelectedEvento(evento);
-    setFormOpen(true);
+    router.push(`/eventos/${evento.id}`);
   };
 
   const handleFormClose = (open: boolean) => {
@@ -43,6 +45,7 @@ export function EventosClient({ eventos }: EventosClientProps) {
         eventos={eventos}
         onEdit={handleEdit}
         onView={handleView}
+        resumosFinanceiros={resumosFinanceiros}
       />
 
       <EventoForm

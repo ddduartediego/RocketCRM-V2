@@ -42,8 +42,9 @@ import {
   getCategorias,
 } from "@/actions/financeiro";
 import { getContatos } from "@/actions/leads";
+import { getEventosSimples } from "@/actions/eventos";
 import type { TransacaoFinanceira, CategoriaFinanceira } from "@/types/database";
-import { DollarSign, FileText, Calendar } from "lucide-react";
+import { DollarSign, FileText, Calendar, CalendarDays } from "lucide-react";
 
 interface TransacaoFormProps {
   open: boolean;
@@ -61,6 +62,7 @@ export function TransacaoForm({
   const isEditing = !!transacao;
   const [categorias, setCategorias] = useState<CategoriaFinanceira[]>([]);
   const [contatos, setContatos] = useState<{ id: string; nome: string }[]>([]);
+  const [eventos, setEventos] = useState<{ id: string; nome: string; data_inicio: string; status: string }[]>([]);
 
   const form = useForm<TransacaoFormData>({
     resolver: zodResolver(transacaoSchema) as Resolver<TransacaoFormData>,
@@ -92,8 +94,15 @@ export function TransacaoForm({
       getContatos().then((result) => {
         setContatos(result.data);
       });
+
+      // Carregar eventos (apenas se não tiver eventoId já definido)
+      if (!eventoId) {
+        getEventosSimples().then((result) => {
+          setEventos(result.data);
+        });
+      }
     }
-  }, [open, tipoSelecionado]);
+  }, [open, tipoSelecionado, eventoId]);
 
   useEffect(() => {
     if (transacao) {
@@ -256,7 +265,7 @@ export function TransacaoForm({
                     control={form.control}
                     name="contato_id"
                     render={({ field }) => (
-                      <FormItem className="col-span-2">
+                      <FormItem>
                         <FormLabel>Cliente/Fornecedor</FormLabel>
                         <Select
                           onValueChange={field.onChange}
@@ -271,6 +280,45 @@ export function TransacaoForm({
                             {contatos.map((contato) => (
                               <SelectItem key={contato.id} value={contato.id}>
                                 {contato.nome}
+                              </SelectItem>
+                            ))}
+                          </SelectContent>
+                        </Select>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+
+                  <FormField
+                    control={form.control}
+                    name="evento_id"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>
+                          <span className="flex items-center gap-1.5">
+                            <CalendarDays className="h-3.5 w-3.5" />
+                            Evento Vinculado
+                          </span>
+                        </FormLabel>
+                        <Select
+                          onValueChange={field.onChange}
+                          value={field.value || undefined}
+                          disabled={!!eventoId}
+                        >
+                          <FormControl>
+                            <SelectTrigger>
+                              <SelectValue placeholder={eventoId ? "Evento já vinculado" : "Selecione (opcional)"} />
+                            </SelectTrigger>
+                          </FormControl>
+                          <SelectContent>
+                            {eventos.map((evento) => (
+                              <SelectItem key={evento.id} value={evento.id}>
+                                <span className="flex items-center gap-2">
+                                  <span>{evento.nome}</span>
+                                  <span className="text-xs text-muted-foreground">
+                                    ({new Date(evento.data_inicio).toLocaleDateString("pt-BR")})
+                                  </span>
+                                </span>
                               </SelectItem>
                             ))}
                           </SelectContent>
