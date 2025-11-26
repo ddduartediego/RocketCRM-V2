@@ -48,7 +48,7 @@ interface EventoWithRelations extends Evento {
 }
 
 interface TransacaoWithRelations extends TransacaoFinanceira {
-  categorias_financeiras?: { id: string; nome: string; cor: string } | null;
+  categorias_financeiras?: { id: string; nome: string; cor: string | null } | null;
 }
 
 interface AlocacaoEquipeWithMembro extends AlocacaoEquipe {

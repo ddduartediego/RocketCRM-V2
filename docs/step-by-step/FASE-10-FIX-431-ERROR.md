@@ -1,91 +1,100 @@
-# Fase 10 - Correção do Erro 431 (Request Header Fields Too Large)
+# Fase 10 - Correção do Erro 431 e Erros de TypeScript
 
-## Problema Identificado
+## Problema 1: Erro 431 (Request Header Fields Too Large)
 
-O erro **HTTP 431 (Request Header Fields Too Large)** estava ocorrendo ao tentar adicionar um membro a um evento. Este erro acontece quando os headers HTTP, principalmente cookies, excedem o limite máximo permitido pelo servidor.
+O erro **HTTP 431 (Request Header Fields Too Large)** estava ocorrendo ao tentar adicionar um membro a um evento. 
 
-### Causa Raiz
+### Solução
 
-Os cookies de sessão do Supabase Auth estavam acumulando dados excessivos, causando:
-- Tokens JWT muito grandes
-- Múltiplas sessões/tokens antigos não limpos
-- Cookies corrompidos ou fragmentados
+Atualizamos o middleware para usar `getClaims()` ao invés de `getUser()`, conforme recomendado pela documentação mais recente do Supabase. Isso é mais leve pois não faz chamada de rede adicional.
 
-### Stack Trace
-
-```
-POST http://localhost:3000/eventos/[id] net::ERR_ABORTED 431 (Request Header Fields Too Large)
-
-- getMembrosEquipe @ equipe.ts:28
-- AlocacaoEquipeForm.useEffect @ alocacao-equipe-form.tsx:93
-- EventoEquipeTab @ evento-equipe-tab.tsx:259
-- EventoDetail @ evento-detail.tsx:469
-```
-
-## Solução Implementada
-
-### 1. Middleware com Proteção de Tamanho de Cookies
-
-Arquivo: `src/lib/supabase/middleware.ts`
-
-Adicionada lógica para:
-- Verificar o tamanho total dos cookies do Supabase
-- Limpar automaticamente sessões corrompidas/muito grandes
-- Forçar re-login quando necessário
+**Arquivo:** `src/lib/supabase/middleware.ts`
 
 ```typescript
-// Limite máximo de tamanho total de cookies (em bytes) para evitar erro 431
-const MAX_COOKIE_SIZE = 4000;
+// ANTES
+const { data: { user } } = await supabase.auth.getUser();
 
-function getSupabaseCookies(request: NextRequest) {
-  const allCookies = request.cookies.getAll();
-  
-  // Filtrar apenas cookies do Supabase
-  const supabaseCookies = allCookies.filter(
-    (cookie) => cookie.name.startsWith("sb-") || cookie.name.includes("supabase")
-  );
-  
-  // Calcular tamanho total dos cookies
-  const totalSize = supabaseCookies.reduce(
-    (sum, cookie) => sum + cookie.name.length + (cookie.value?.length || 0),
-    0
-  );
-  
-  // Se os cookies estão muito grandes, retornar vazio para forçar re-login
-  if (totalSize > MAX_COOKIE_SIZE) {
-    console.warn(`[Middleware] Cookies do Supabase muito grandes (${totalSize} bytes). Limpando sessão.`);
-    return [];
-  }
-  
-  return allCookies;
-}
+// DEPOIS
+const { data } = await supabase.auth.getClaims();
+const user = data?.claims;
 ```
 
-## Como Resolver Manualmente (Solução Imediata)
+## Problema 2: Erros de TypeScript no Build
 
-Se o erro persistir antes da correção ser aplicada:
+### 2.1 Tipo `cor` em categorias_financeiras
 
-1. Abra o Chrome DevTools (F12)
-2. Vá em **Application** → **Cookies** → **http://localhost:3000**
-3. Clique com botão direito → **Clear**
-4. Recarregue a página e faça login novamente
+O campo `cor` pode ser `null` no banco de dados.
+
+**Arquivos:** 
+- `src/components/modules/eventos/evento-detail.tsx`
+- `src/components/modules/eventos/evento-financeiro-tab.tsx`
+
+```typescript
+// ANTES
+categorias_financeiras?: { id: string; nome: string; cor: string } | null;
+
+// DEPOIS
+categorias_financeiras?: { id: string; nome: string; cor: string | null } | null;
+```
+
+### 2.2 Valores financeiros opcionais
+
+Os valores `totalReceitas`, `totalDespesas` e `lucro` podem ser `undefined`.
+
+**Arquivo:** `src/app/(dashboard)/eventos/[id]/page.tsx`
+
+```typescript
+resumoFinanceiro={{
+  totalReceitas: transacoesResult.totalReceitas ?? 0,
+  totalDespesas: transacoesResult.totalDespesas ?? 0,
+  lucro: transacoesResult.lucro ?? 0,
+}}
+```
+
+### 2.3 Schemas Zod com z.coerce.number()
+
+O `z.coerce.number()` combinado com `optional().nullable()` infere tipo `unknown` no TypeScript.
+
+**Arquivos:**
+- `src/lib/validations/equipe.ts`
+- `src/lib/validations/recurso.ts`
+- `src/lib/validations/evento.ts`
+
+```typescript
+// ANTES
+valor_pago: z.coerce.number().min(0).optional().nullable(),
+
+// DEPOIS
+valor_pago: z.union([z.number().min(0), z.null()]).optional(),
+```
+
+### 2.4 Uso de cor null no JSX
+
+**Arquivo:** `src/components/modules/eventos/evento-financeiro-tab.tsx`
+
+```typescript
+// ANTES
+color: transacao.categorias_financeiras.cor,
+
+// DEPOIS
+color: transacao.categorias_financeiras.cor ?? "#888888",
+```
 
 ## Arquivos Modificados
 
 | Arquivo | Alteração |
 |---------|-----------|
-| `src/lib/supabase/middleware.ts` | Adicionada proteção de tamanho de cookies |
+| `src/lib/supabase/middleware.ts` | Usar `getClaims()` ao invés de `getUser()` |
+| `src/components/modules/eventos/evento-detail.tsx` | Tipo `cor` aceita `null` |
+| `src/components/modules/eventos/evento-financeiro-tab.tsx` | Tipo `cor` aceita `null` + fallback |
+| `src/app/(dashboard)/eventos/[id]/page.tsx` | Valores financeiros com fallback `?? 0` |
+| `src/lib/validations/equipe.ts` | Schema corrigido para tipos corretos |
+| `src/lib/validations/recurso.ts` | Schema corrigido para tipos corretos |
+| `src/lib/validations/evento.ts` | Schema corrigido para tipos corretos |
 
-## Benefícios da Correção
+## Resultado
 
-1. **Prevenção automática**: O middleware agora detecta e limpa cookies corrompidos
-2. **Experiência do usuário**: Em vez de erro 431, o usuário é redirecionado para login
-3. **Logging**: Mensagens de warning no console para debug
-4. **Resiliência**: Sistema mais robusto contra problemas de sessão
-
-## Observações
-
-- O limite de 4000 bytes foi escolhido por ser conservador (o limite típico é 8KB por cookie)
-- Cookies do Supabase geralmente ficam entre 2000-3000 bytes em condições normais
-- Se o erro persistir em produção, considere aumentar o limite de headers no servidor
+- ✅ Build local passa sem erros
+- ✅ Build do Vercel passa sem erros
+- ✅ Login e navegação funcionando corretamente
 

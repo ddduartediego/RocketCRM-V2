@@ -21,7 +21,7 @@ export const membroEquipeSchema = z.object({
   whatsapp: z.string().optional().nullable(),
   email: z.string().email("E-mail inválido").optional().nullable().or(z.literal("")),
   documento: z.string().optional().nullable(),
-  valor_diaria: z.coerce.number().min(0).optional().nullable(),
+  valor_diaria: z.union([z.number().min(0), z.null()]).optional(),
   observacoes: z.string().optional().nullable(),
   ativo: z.boolean().optional(),
 });
@@ -35,7 +35,7 @@ export const alocacaoEquipeSchema = z.object({
   hora_inicio: z.string().optional().nullable(),
   hora_fim: z.string().optional().nullable(),
   funcao_evento: z.string().optional().nullable(),
-  valor_pago: z.coerce.number().min(0).optional().nullable(),
+  valor_pago: z.union([z.number().min(0), z.null()]).optional(),
   observacoes: z.string().optional().nullable(),
 });
 

@@ -19,7 +19,7 @@ import { toast } from "sonner";
 import type { TransacaoFinanceira } from "@/types/database";
 
 interface TransacaoWithRelations extends TransacaoFinanceira {
-  categorias_financeiras?: { id: string; nome: string; cor: string } | null;
+  categorias_financeiras?: { id: string; nome: string; cor: string | null } | null;
 }
 
 interface EventoFinanceiroTabProps {
@@ -173,9 +173,9 @@ export function EventoFinanceiroTab({
                         <Badge
                           variant="outline"
                           style={{
-                            backgroundColor: `${transacao.categorias_financeiras.cor}15`,
-                            color: transacao.categorias_financeiras.cor,
-                            borderColor: `${transacao.categorias_financeiras.cor}30`,
+                            backgroundColor: `${transacao.categorias_financeiras.cor ?? "#888888"}15`,
+                            color: transacao.categorias_financeiras.cor ?? "#888888",
+                            borderColor: `${transacao.categorias_financeiras.cor ?? "#888888"}30`,
                           }}
                         >
                           {transacao.categorias_financeiras.nome}
@@ -267,9 +267,9 @@ export function EventoFinanceiroTab({
                         <Badge
                           variant="outline"
                           style={{
-                            backgroundColor: `${transacao.categorias_financeiras.cor}15`,
-                            color: transacao.categorias_financeiras.cor,
-                            borderColor: `${transacao.categorias_financeiras.cor}30`,
+                            backgroundColor: `${transacao.categorias_financeiras.cor ?? "#888888"}15`,
+                            color: transacao.categorias_financeiras.cor ?? "#888888",
+                            borderColor: `${transacao.categorias_financeiras.cor ?? "#888888"}30`,
                           }}
                         >
                           {transacao.categorias_financeiras.nome}

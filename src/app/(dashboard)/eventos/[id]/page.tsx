@@ -30,9 +30,9 @@ async function EventoContent({ id }: { id: string }) {
       evento={eventoResult.data}
       transacoes={transacoesResult.data}
       resumoFinanceiro={{
-        totalReceitas: transacoesResult.totalReceitas,
-        totalDespesas: transacoesResult.totalDespesas,
-        lucro: transacoesResult.lucro,
+        totalReceitas: transacoesResult.totalReceitas ?? 0,
+        totalDespesas: transacoesResult.totalDespesas ?? 0,
+        lucro: transacoesResult.lucro ?? 0,
       }}
       alocacoesEquipe={equipeResult.data}
       alocacoesRecursos={recursosResult.data}
