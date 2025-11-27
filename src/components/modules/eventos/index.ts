@@ -9,4 +9,6 @@ export { EventoRecursosTab } from "./evento-recursos-tab";
 export { AlocacaoEquipeForm } from "./alocacao-equipe-form";
 export { AlocacaoRecursoForm } from "./alocacao-recurso-form";
 export { EventosPagination } from "./eventos-pagination";
+export { EventosWeekView } from "./eventos-week-view";
+export { EventosViewToggle, type EventosViewMode } from "./eventos-view-toggle";
 

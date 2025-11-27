@@ -85,6 +85,36 @@ export async function getProximosEventos(limit = 5) {
   return { data: data || [], error: null };
 }
 
+/**
+ * Busca eventos de uma semana específica
+ * Retorna eventos que ocorrem entre startDate e endDate (inclusive)
+ * Inclui eventos que começam antes mas terminam dentro do período
+ */
+export async function getEventosSemana(startDate: string, endDate: string) {
+  const supabase = await createClient();
+
+  const { data, error } = await supabase
+    .from("eventos")
+    .select(
+      `
+      *,
+      contatos!eventos_cliente_id_fkey(id, nome),
+      users!eventos_responsavel_id_fkey(id, nome, avatar_url)
+    `
+    )
+    .or(
+      `and(data_inicio.gte.${startDate},data_inicio.lte.${endDate}),and(data_fim.gte.${startDate},data_fim.lte.${endDate}),and(data_inicio.lte.${startDate},data_fim.gte.${endDate})`
+    )
+    .order("data_inicio", { ascending: true });
+
+  if (error) {
+    console.error("Erro ao buscar eventos da semana:", error);
+    return { data: [], error: error.message };
+  }
+
+  return { data: data || [], error: null };
+}
+
 export async function getEventoById(id: string) {
   const supabase = await createClient();
 
