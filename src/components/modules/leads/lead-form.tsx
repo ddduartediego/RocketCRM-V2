@@ -146,7 +146,7 @@ export function LeadForm({ open, onOpenChange, lead, etapas }: LeadFormProps) {
                   <FormItem className="col-span-2">
                     <FormLabel>Título *</FormLabel>
                     <FormControl>
-                      <Input placeholder="Ex: Colônia de Férias - Verão 2025" {...field} />
+                      <Input placeholder="Ex: Recreação Encerramento 2025" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>

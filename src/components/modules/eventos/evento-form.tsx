@@ -13,7 +13,6 @@ import {
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -44,15 +43,15 @@ import {
 import {
   eventoSchema,
   type EventoFormData,
-  tipoEventoOptions,
   statusEventoOptions,
 } from "@/lib/validations/evento";
 import { formasPagamento } from "@/lib/validations/financeiro";
 import { createEvento, updateEvento, recriarTransacoesEvento } from "@/actions/eventos";
 import { getContatos } from "@/actions/leads";
+import { getTiposEvento } from "@/actions/configuracoes";
 import { toast } from "sonner";
 import { Calendar, DollarSign, Info, AlertTriangle } from "lucide-react";
-import type { Evento } from "@/types/database";
+import type { Evento, TipoEventoRow } from "@/types/database";
 
 interface EventoFormProps {
   open: boolean;
@@ -63,6 +62,7 @@ interface EventoFormProps {
 export function EventoForm({ open, onOpenChange, evento }: EventoFormProps) {
   const isEditing = !!evento;
   const [contatos, setContatos] = useState<{ id: string; nome: string }[]>([]);
+  const [tiposEvento, setTiposEvento] = useState<TipoEventoRow[]>([]);
   const [criarTransacao, setCriarTransacao] = useState(true);
   const [showRecreateDialog, setShowRecreateDialog] = useState(false);
   const [pendingFormData, setPendingFormData] = useState<EventoFormData | null>(null);
@@ -72,7 +72,7 @@ export function EventoForm({ open, onOpenChange, evento }: EventoFormProps) {
     resolver: zodResolver(eventoSchema) as Resolver<EventoFormData>,
     defaultValues: {
       nome: "",
-      tipo: "colonia_ferias",
+      tipo_id: "",
       descricao: "",
       cliente_id: null,
       data_inicio: "",
@@ -92,8 +92,12 @@ export function EventoForm({ open, onOpenChange, evento }: EventoFormProps) {
 
   useEffect(() => {
     const loadData = async () => {
-      const contatosRes = await getContatos();
+      const [contatosRes, tiposRes] = await Promise.all([
+        getContatos(),
+        getTiposEvento(),
+      ]);
       setContatos(contatosRes.data);
+      setTiposEvento(tiposRes.data.filter((t: TipoEventoRow) => t.ativo));
     };
     if (open) {
       loadData();
@@ -104,7 +108,7 @@ export function EventoForm({ open, onOpenChange, evento }: EventoFormProps) {
     if (evento) {
       form.reset({
         nome: evento.nome,
-        tipo: evento.tipo,
+        tipo_id: evento.tipo_id || "",
         descricao: evento.descricao || "",
         cliente_id: evento.cliente_id,
         data_inicio: evento.data_inicio,
@@ -123,7 +127,7 @@ export function EventoForm({ open, onOpenChange, evento }: EventoFormProps) {
     } else {
       form.reset({
         nome: "",
-        tipo: "colonia_ferias",
+        tipo_id: "",
         descricao: "",
         cliente_id: null,
         data_inicio: "",
@@ -298,7 +302,7 @@ export function EventoForm({ open, onOpenChange, evento }: EventoFormProps) {
                       <FormItem className="col-span-2">
                         <FormLabel>Nome do Evento *</FormLabel>
                         <FormControl>
-                          <Input placeholder="Ex: Colônia de Férias - Verão 2025" {...field} />
+                          <Input placeholder="Ex: Recreação Encerramento 2025" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -307,7 +311,7 @@ export function EventoForm({ open, onOpenChange, evento }: EventoFormProps) {
 
                   <FormField
                     control={form.control}
-                    name="tipo"
+                    name="tipo_id"
                     render={({ field }) => (
                       <FormItem>
                         <FormLabel>Tipo *</FormLabel>
@@ -318,10 +322,10 @@ export function EventoForm({ open, onOpenChange, evento }: EventoFormProps) {
                             </SelectTrigger>
                           </FormControl>
                           <SelectContent>
-                            {tipoEventoOptions.map((option) => (
-                              <SelectItem key={option.value} value={option.value}>
+                            {tiposEvento.map((tipo) => (
+                              <SelectItem key={tipo.id} value={tipo.id}>
                                 <span className="flex items-center gap-2">
-                                  {option.icon} {option.label}
+                                  <span>{tipo.icone}</span> {tipo.nome}
                                 </span>
                               </SelectItem>
                             ))}
@@ -680,4 +684,3 @@ export function EventoForm({ open, onOpenChange, evento }: EventoFormProps) {
     </Dialog>
   );
 }
-

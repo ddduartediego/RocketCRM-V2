@@ -255,3 +255,152 @@ export async function deleteCategoriaFinanceira(id: string) {
   return { success: true, error: null };
 }
 
+// ==================== TIPOS DE EVENTO ====================
+
+export async function getTiposEvento() {
+  const supabase = await createClient();
+
+  const { data, error } = await supabase
+    .from("tipos_evento")
+    .select("*")
+    .order("ordem", { ascending: true });
+
+  if (error) {
+    console.error("Erro ao buscar tipos de evento:", error);
+    return { data: [], error: error.message };
+  }
+
+  return { data: data || [], error: null };
+}
+
+export async function createTipoEvento(data: {
+  nome: string;
+  icone?: string;
+  cor?: string;
+}) {
+  const supabase = await createClient();
+
+  // Buscar a maior ordem atual
+  const { data: maxOrdem } = await supabase
+    .from("tipos_evento")
+    .select("ordem")
+    .order("ordem", { ascending: false })
+    .limit(1)
+    .single();
+
+  const novaOrdem = (maxOrdem?.ordem || 0) + 1;
+
+  const { data: tipo, error } = await supabase
+    .from("tipos_evento")
+    .insert({
+      ...data,
+      ordem: novaOrdem,
+    })
+    .select()
+    .single();
+
+  if (error) {
+    console.error("Erro ao criar tipo de evento:", error);
+    return { data: null, error: error.message };
+  }
+
+  revalidatePath("/configuracoes");
+  revalidatePath("/eventos");
+  revalidatePath("/leads");
+  return { data: tipo, error: null };
+}
+
+export async function updateTipoEvento(
+  id: string,
+  data: Partial<{
+    nome: string;
+    icone: string;
+    cor: string;
+    ativo: boolean;
+  }>
+) {
+  const supabase = await createClient();
+
+  const { error } = await supabase
+    .from("tipos_evento")
+    .update(data)
+    .eq("id", id);
+
+  if (error) {
+    console.error("Erro ao atualizar tipo de evento:", error);
+    return { success: false, error: error.message };
+  }
+
+  revalidatePath("/configuracoes");
+  revalidatePath("/eventos");
+  revalidatePath("/leads");
+  return { success: true, error: null };
+}
+
+export async function deleteTipoEvento(id: string) {
+  const supabase = await createClient();
+
+  // Verificar se há eventos usando este tipo
+  const { count: eventosCount } = await supabase
+    .from("eventos")
+    .select("*", { count: "exact", head: true })
+    .eq("tipo_id", id);
+
+  if (eventosCount && eventosCount > 0) {
+    return {
+      success: false,
+      error: "Este tipo possui eventos associados. Desative-o em vez de excluir.",
+    };
+  }
+
+  // Verificar se há leads usando este tipo
+  const { count: leadsCount } = await supabase
+    .from("leads")
+    .select("*", { count: "exact", head: true })
+    .eq("tipo_servico_id", id);
+
+  if (leadsCount && leadsCount > 0) {
+    return {
+      success: false,
+      error: "Este tipo possui leads associados. Desative-o em vez de excluir.",
+    };
+  }
+
+  const { error } = await supabase
+    .from("tipos_evento")
+    .delete()
+    .eq("id", id);
+
+  if (error) {
+    console.error("Erro ao deletar tipo de evento:", error);
+    return { success: false, error: error.message };
+  }
+
+  revalidatePath("/configuracoes");
+  revalidatePath("/eventos");
+  revalidatePath("/leads");
+  return { success: true, error: null };
+}
+
+export async function reorderTiposEvento(tipos: { id: string; ordem: number }[]) {
+  const supabase = await createClient();
+
+  const updates = tipos.map((tipo) =>
+    supabase
+      .from("tipos_evento")
+      .update({ ordem: tipo.ordem })
+      .eq("id", tipo.id)
+  );
+
+  const results = await Promise.all(updates);
+  const hasError = results.some((r) => r.error);
+
+  if (hasError) {
+    return { success: false, error: "Erro ao reordenar tipos de evento" };
+  }
+
+  revalidatePath("/configuracoes");
+  revalidatePath("/eventos");
+  return { success: true, error: null };
+}
+

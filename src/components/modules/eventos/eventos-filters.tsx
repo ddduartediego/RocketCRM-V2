@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Input } from "@/components/ui/input";
 import {
@@ -11,15 +11,26 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Search } from "lucide-react";
-import { tipoEventoOptions, statusEventoOptions } from "@/lib/validations/evento";
+import { statusEventoOptions } from "@/lib/validations/evento";
+import { getTiposEvento } from "@/actions/configuracoes";
+import type { TipoEventoRow } from "@/types/database";
 
 export function EventosFilters() {
   const router = useRouter();
   const searchParams = useSearchParams();
+  const [tiposEvento, setTiposEvento] = useState<TipoEventoRow[]>([]);
 
   const search = searchParams.get("search") || "";
   const tipo = searchParams.get("tipo") || "todos";
   const status = searchParams.get("status") || "todos";
+
+  useEffect(() => {
+    const loadTipos = async () => {
+      const { data } = await getTiposEvento();
+      setTiposEvento(data.filter((t: TipoEventoRow) => t.ativo));
+    };
+    loadTipos();
+  }, []);
 
   const updateParams = useCallback(
     (key: string, value: string) => {
@@ -53,9 +64,9 @@ export function EventosFilters() {
         </SelectTrigger>
         <SelectContent>
           <SelectItem value="todos">Todos os tipos</SelectItem>
-          {tipoEventoOptions.map((option) => (
-            <SelectItem key={option.value} value={option.value}>
-              {option.icon} {option.label}
+          {tiposEvento.map((tipoEvento) => (
+            <SelectItem key={tipoEvento.id} value={tipoEvento.id}>
+              {tipoEvento.icone} {tipoEvento.nome}
             </SelectItem>
           ))}
         </SelectContent>
@@ -83,4 +94,3 @@ export function EventosFilters() {
     </div>
   );
 }
-

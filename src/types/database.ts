@@ -391,6 +391,39 @@ export type Database = {
         }
         Relationships: []
       }
+      tipos_evento: {
+        Row: {
+          id: string
+          nome: string
+          icone: string
+          cor: string
+          ordem: number
+          ativo: boolean
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          id?: string
+          nome: string
+          icone?: string
+          cor?: string
+          ordem?: number
+          ativo?: boolean
+          created_at?: string
+          updated_at?: string
+        }
+        Update: {
+          id?: string
+          nome?: string
+          icone?: string
+          cor?: string
+          ordem?: number
+          ativo?: boolean
+          created_at?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       eventos: {
         Row: {
           cliente_id: string | null
@@ -412,7 +445,8 @@ export type Database = {
           observacoes: string | null
           responsavel_id: string | null
           status: Database["public"]["Enums"]["status_evento"]
-          tipo: Database["public"]["Enums"]["tipo_evento"]
+          tipo: Database["public"]["Enums"]["tipo_evento"] | null
+          tipo_id: string | null
           updated_at: string
           valor_sinal: number | null
           valor_total: number | null
@@ -437,7 +471,8 @@ export type Database = {
           observacoes?: string | null
           responsavel_id?: string | null
           status?: Database["public"]["Enums"]["status_evento"]
-          tipo: Database["public"]["Enums"]["tipo_evento"]
+          tipo?: Database["public"]["Enums"]["tipo_evento"] | null
+          tipo_id?: string | null
           updated_at?: string
           valor_sinal?: number | null
           valor_total?: number | null
@@ -462,7 +497,8 @@ export type Database = {
           observacoes?: string | null
           responsavel_id?: string | null
           status?: Database["public"]["Enums"]["status_evento"]
-          tipo?: Database["public"]["Enums"]["tipo_evento"]
+          tipo?: Database["public"]["Enums"]["tipo_evento"] | null
+          tipo_id?: string | null
           updated_at?: string
           valor_sinal?: number | null
           valor_total?: number | null
@@ -573,6 +609,7 @@ export type Database = {
           origem: string | null
           responsavel_id: string | null
           tipo_servico: Database["public"]["Enums"]["tipo_evento"] | null
+          tipo_servico_id: string | null
           titulo: string
           updated_at: string
           valor_estimado: number | null
@@ -589,6 +626,7 @@ export type Database = {
           origem?: string | null
           responsavel_id?: string | null
           tipo_servico?: Database["public"]["Enums"]["tipo_evento"] | null
+          tipo_servico_id?: string | null
           titulo: string
           updated_at?: string
           valor_estimado?: number | null
@@ -605,6 +643,7 @@ export type Database = {
           origem?: string | null
           responsavel_id?: string | null
           tipo_servico?: Database["public"]["Enums"]["tipo_evento"] | null
+          tipo_servico_id?: string | null
           titulo?: string
           updated_at?: string
           valor_estimado?: number | null
@@ -987,11 +1026,12 @@ export type TransacaoFinanceira = Tables<"transacoes_financeiras">
 export type Atividade = Tables<"atividades">
 export type Interacao = Tables<"interacoes">
 export type LogAuditoria = Tables<"logs_auditoria">
+export type TipoEventoRow = Tables<"tipos_evento">
 
 // Enums para uso no código
 export type TipoContato = Enums<"tipo_contato">
 export type StatusLead = Enums<"status_lead">
-export type TipoEvento = Enums<"tipo_evento">
+export type TipoEventoEnum = Enums<"tipo_evento">
 export type StatusEvento = Enums<"status_evento">
 export type TipoRecurso = Enums<"tipo_recurso">
 export type FuncaoEquipe = Enums<"funcao_equipe">

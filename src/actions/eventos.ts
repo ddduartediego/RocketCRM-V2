@@ -9,7 +9,7 @@ import {
   deleteGoogleCalendarEvent,
   addAttendeeToGoogleEvent,
 } from "@/lib/google/calendar";
-import type { TipoEvento, StatusEvento } from "@/types/database";
+import type { StatusEvento } from "@/types/database";
 
 export interface EventosFilters {
   search?: string;
@@ -29,7 +29,8 @@ export async function getEventos(filters: EventosFilters = {}) {
       `
       *,
       contatos!eventos_cliente_id_fkey(id, nome),
-      users!eventos_responsavel_id_fkey(id, nome, avatar_url)
+      users!eventos_responsavel_id_fkey(id, nome, avatar_url),
+      tipos_evento!eventos_tipo_id_fkey(id, nome, icone, cor)
     `,
       { count: "exact" }
     )
@@ -40,7 +41,7 @@ export async function getEventos(filters: EventosFilters = {}) {
   }
 
   if (tipo && tipo !== "todos") {
-    query = query.eq("tipo", tipo as TipoEvento);
+    query = query.eq("tipo_id", tipo);
   }
 
   if (status && status !== "todos") {
@@ -68,8 +69,9 @@ export async function getProximosEventos(limit = 5) {
     .from("eventos")
     .select(
       `
-      id, nome, tipo, data_inicio, data_fim, local, status,
-      contatos!eventos_cliente_id_fkey(id, nome)
+      id, nome, tipo_id, data_inicio, data_fim, local, status,
+      contatos!eventos_cliente_id_fkey(id, nome),
+      tipos_evento!eventos_tipo_id_fkey(id, nome, icone, cor)
     `
     )
     .gte("data_inicio", today)
@@ -99,7 +101,8 @@ export async function getEventosSemana(startDate: string, endDate: string) {
       `
       *,
       contatos!eventos_cliente_id_fkey(id, nome),
-      users!eventos_responsavel_id_fkey(id, nome, avatar_url)
+      users!eventos_responsavel_id_fkey(id, nome, avatar_url),
+      tipos_evento!eventos_tipo_id_fkey(id, nome, icone, cor)
     `
     )
     .or(
@@ -125,7 +128,8 @@ export async function getEventoById(id: string) {
       *,
       contatos!eventos_cliente_id_fkey(id, nome, telefone, email),
       leads(id, titulo),
-      users!eventos_responsavel_id_fkey(id, nome, avatar_url)
+      users!eventos_responsavel_id_fkey(id, nome, avatar_url),
+      tipos_evento!eventos_tipo_id_fkey(id, nome, icone, cor)
     `
     )
     .eq("id", id)
@@ -161,11 +165,19 @@ export async function createEvento(formData: EventoFormData & CreateEventoOption
     data: { user },
   } = await supabase.auth.getUser();
 
+  // Converter strings vazias em null para campos opcionais de data/hora
+  const sanitizedData = {
+    ...validatedData.data,
+    data_fim: validatedData.data.data_fim || null,
+    hora_inicio: validatedData.data.hora_inicio || null,
+    hora_fim: validatedData.data.hora_fim || null,
+  };
+
   // Preparar dados para inserção
   const insertData = {
-    ...validatedData.data,
+    ...sanitizedData,
     created_by: user?.id,
-    responsavel_id: validatedData.data.responsavel_id || user?.id,
+    responsavel_id: sanitizedData.responsavel_id || user?.id,
     google_calendar_id: null as string | null,
   };
 
@@ -305,6 +317,14 @@ export async function updateEvento(id: string, formData: Partial<EventoFormData>
   const supabase = await createClient();
   const { sincronizar_google = true, ...eventoData } = formData;
 
+  // Converter strings vazias em null para campos opcionais de data/hora
+  const sanitizedData = {
+    ...eventoData,
+    data_fim: eventoData.data_fim || null,
+    hora_inicio: eventoData.hora_inicio || null,
+    hora_fim: eventoData.hora_fim || null,
+  };
+
   // Buscar evento atual para pegar o google_calendar_id
   const { data: currentEvento } = await supabase
     .from("eventos")
@@ -314,7 +334,7 @@ export async function updateEvento(id: string, formData: Partial<EventoFormData>
 
   // Atualizar no Google Calendar se houver ID e sincronização estiver habilitada
   if (sincronizar_google && currentEvento?.google_calendar_id) {
-    const updatedEvento = { ...currentEvento, ...eventoData };
+    const updatedEvento = { ...currentEvento, ...sanitizedData };
     await updateGoogleCalendarEvent(currentEvento.google_calendar_id, {
       nome: updatedEvento.nome,
       descricao: updatedEvento.descricao,
@@ -330,7 +350,7 @@ export async function updateEvento(id: string, formData: Partial<EventoFormData>
 
   const { data, error } = await supabase
     .from("eventos")
-    .update(eventoData)
+    .update(sanitizedData)
     .eq("id", id)
     .select()
     .single();
