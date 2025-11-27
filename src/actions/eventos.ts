@@ -34,7 +34,7 @@ export async function getEventos(filters: EventosFilters = {}) {
     `,
       { count: "exact" }
     )
-    .order("data_inicio", { ascending: true });
+    .order("data_inicio", { ascending: false }); // Eventos mais recentes primeiro
 
   if (search) {
     query = query.or(`nome.ilike.%${search}%,local.ilike.%${search}%`);

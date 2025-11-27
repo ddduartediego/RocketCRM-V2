@@ -6,6 +6,7 @@ import { EventosTable } from "./eventos-table";
 import { EventoForm } from "./evento-form";
 import { EventosWeekView } from "./eventos-week-view";
 import { EventosViewToggle, type EventosViewMode } from "./eventos-view-toggle";
+import { EventosPagination } from "./eventos-pagination";
 import { getEventosSemana } from "@/actions/eventos";
 import type { Evento } from "@/types/database";
 import type { ResumoFinanceiroEvento } from "@/actions/financeiro";
@@ -18,6 +19,8 @@ interface EventoWithRelations extends Evento {
 interface EventosClientProps {
   eventos: EventoWithRelations[];
   resumosFinanceiros?: Record<string, ResumoFinanceiroEvento>;
+  total?: number;
+  perPage?: number;
 }
 
 function getInitialWeekStart(): Date {
@@ -37,11 +40,16 @@ function formatDateForQuery(date: Date): string {
   return `${year}-${month}-${day}`;
 }
 
-export function EventosClient({ eventos, resumosFinanceiros = {} }: EventosClientProps) {
+export function EventosClient({ 
+  eventos, 
+  resumosFinanceiros = {},
+  total = 0,
+  perPage = 10,
+}: EventosClientProps) {
   const router = useRouter();
   const [formOpen, setFormOpen] = useState(false);
   const [selectedEvento, setSelectedEvento] = useState<Evento | null>(null);
-  const [viewMode, setViewMode] = useState<EventosViewMode>("table");
+  const [viewMode, setViewMode] = useState<EventosViewMode>("week"); // Semana como padrão
   const [currentWeekStart, setCurrentWeekStart] = useState<Date>(getInitialWeekStart);
   const [weekEventos, setWeekEventos] = useState<EventoWithRelations[]>([]);
   const [isLoadingWeek, setIsLoadingWeek] = useState(false);
@@ -58,6 +66,7 @@ export function EventosClient({ eventos, resumosFinanceiros = {} }: EventosClien
     setIsLoadingWeek(false);
   }, []);
 
+  // Carrega eventos da semana no início (já que semana é o modo padrão)
   useEffect(() => {
     if (viewMode === "week") {
       fetchWeekEventos(currentWeekStart);
@@ -97,12 +106,15 @@ export function EventosClient({ eventos, resumosFinanceiros = {} }: EventosClien
 
       {/* Visualização baseada no modo */}
       {viewMode === "table" ? (
-        <EventosTable
-          eventos={eventos}
-          onEdit={handleEdit}
-          onView={handleView}
-          resumosFinanceiros={resumosFinanceiros}
-        />
+        <>
+          <EventosTable
+            eventos={eventos}
+            onEdit={handleEdit}
+            onView={handleView}
+            resumosFinanceiros={resumosFinanceiros}
+          />
+          <EventosPagination total={total} perPage={perPage} />
+        </>
       ) : (
         <div className="relative">
           {isLoadingWeek && (
@@ -115,6 +127,12 @@ export function EventosClient({ eventos, resumosFinanceiros = {} }: EventosClien
             currentWeekStart={currentWeekStart}
             onWeekChange={handleWeekChange}
           />
+          {/* Footer com contagem de eventos da semana */}
+          <div className="flex items-center justify-between pt-4 text-sm text-muted-foreground">
+            <span>
+              Mostrando {weekEventos.length} evento{weekEventos.length !== 1 ? "s" : ""} nesta semana
+            </span>
+          </div>
         </div>
       )}
 

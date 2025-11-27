@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback, useTransition } from "react";
+import { useState, useCallback, useTransition, useEffect } from "react";
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
 import { EquipeTable } from "./equipe-table";
 import { MembroForm } from "./membro-form";
@@ -27,6 +27,12 @@ export function EquipeClient({
   const [membros, setMembros] = useState(initialMembros);
   const [count, setCount] = useState(initialCount);
   const [isPending, startTransition] = useTransition();
+
+  // Sincroniza o estado quando os props mudam (navegação de página)
+  useEffect(() => {
+    setMembros(initialMembros);
+    setCount(initialCount);
+  }, [initialMembros, initialCount]);
 
   const [formOpen, setFormOpen] = useState(false);
   const [editingMembro, setEditingMembro] = useState<MembroEquipe | null>(null);

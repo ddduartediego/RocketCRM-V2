@@ -4,7 +4,7 @@ import { getResumosFinanceirosEventos } from "@/actions/financeiro";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Calendar } from "lucide-react";
-import { EventosFilters, EventosClient, EventosPagination } from "@/components/modules/eventos";
+import { EventosFilters, EventosClient } from "@/components/modules/eventos";
 import { EventoFormTrigger } from "./evento-form-trigger";
 
 export const dynamic = "force-dynamic";
@@ -38,10 +38,12 @@ async function EventosList({
   const { data: resumosFinanceiros } = await getResumosFinanceirosEventos(eventoIds);
 
   return (
-    <>
-      <EventosClient eventos={eventos} resumosFinanceiros={resumosFinanceiros} />
-      <EventosPagination total={count} perPage={PER_PAGE} />
-    </>
+    <EventosClient 
+      eventos={eventos} 
+      resumosFinanceiros={resumosFinanceiros}
+      total={count}
+      perPage={PER_PAGE}
+    />
   );
 }
 
@@ -106,4 +108,3 @@ export default async function EventosPage({ searchParams }: PageProps) {
     </div>
   );
 }
-

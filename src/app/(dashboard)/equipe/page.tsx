@@ -6,11 +6,35 @@ import { UserCog } from "lucide-react";
 
 export const dynamic = "force-dynamic";
 
-export default async function EquipePage() {
+interface PageProps {
+  searchParams: Promise<{
+    search?: string;
+    funcao?: string;
+    tipo_contrato?: string;
+    page?: string;
+  }>;
+}
+
+const PER_PAGE = 10;
+
+async function EquipeList({
+  searchParams,
+}: {
+  searchParams: { search?: string; funcao?: string; tipo_contrato?: string; page?: string };
+}) {
   const { data: membros, count } = await getMembrosEquipe({
-    page: 1,
-    perPage: 10,
+    search: searchParams.search,
+    funcao: searchParams.funcao,
+    tipo_contrato: searchParams.tipo_contrato,
+    page: Number(searchParams.page) || 1,
+    perPage: PER_PAGE,
   });
+
+  return <EquipeClient initialMembros={membros} initialCount={count} />;
+}
+
+export default async function EquipePage({ searchParams }: PageProps) {
+  const params = await searchParams;
 
   return (
     <div className="space-y-6">
@@ -34,9 +58,8 @@ export default async function EquipePage() {
           </div>
         }
       >
-        <EquipeClient initialMembros={membros} initialCount={count} />
+        <EquipeList searchParams={params} />
       </Suspense>
     </div>
   );
 }
-
