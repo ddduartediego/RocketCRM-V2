@@ -43,6 +43,7 @@ import type { ResumoFinanceiroEvento } from "@/actions/financeiro";
 interface EventoWithRelations extends Evento {
   contatos?: { id: string; nome: string } | null;
   users?: { id: string; nome: string; avatar_url: string | null } | null;
+  tipos_evento?: { id: string; nome: string; icone: string | null; cor: string | null } | null;
 }
 
 interface EventosTableProps {
@@ -216,9 +217,9 @@ export function EventosTable({ eventos, onEdit, onView, resumosFinanceiros = {} 
                 </TableCell>
                 <TableCell>
                   <div className="flex items-center gap-2">
-                    <span>{tipoLabels[evento.tipo]?.icon || "📅"}</span>
+                    <span>{evento.tipos_evento?.icone || tipoLabels[evento.tipo as string]?.icon || "📅"}</span>
                     <span className="text-sm">
-                      {tipoLabels[evento.tipo]?.label || evento.tipo}
+                      {evento.tipos_evento?.nome || tipoLabels[evento.tipo as string]?.label || evento.tipo || "-"}
                     </span>
                   </div>
                 </TableCell>

@@ -73,7 +73,7 @@ export async function createGoogleCalendarEvent(event: {
   data_fim?: string | null;
   hora_inicio?: string | null;
   hora_fim?: string | null;
-  tipo: string;
+  tipo?: string | null;
 }): Promise<{ id: string | null; error: string | null }> {
   try {
     const tokens = await getGoogleTokens();
@@ -116,7 +116,7 @@ export async function createGoogleCalendarEvent(event: {
       end: endDateTime
         ? { dateTime: endDateTime, timeZone }
         : { date: endDate!, timeZone },
-      colorId: eventColorMap[event.tipo] || "8",
+      colorId: event.tipo ? (eventColorMap[event.tipo] || "8") : "8",
     };
 
     const response = await fetch(
@@ -162,7 +162,7 @@ export async function updateGoogleCalendarEvent(
     data_fim?: string | null;
     hora_inicio?: string | null;
     hora_fim?: string | null;
-    tipo: string;
+    tipo?: string | null;
   }
 ): Promise<{ success: boolean; error: string | null }> {
   try {
@@ -202,7 +202,7 @@ export async function updateGoogleCalendarEvent(
       end: endDateTime
         ? { dateTime: endDateTime, timeZone }
         : { date: endDate!, timeZone },
-      colorId: eventColorMap[event.tipo] || "8",
+      colorId: event.tipo ? (eventColorMap[event.tipo] || "8") : "8",
     };
 
     const response = await fetch(

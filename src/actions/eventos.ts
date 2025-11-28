@@ -192,7 +192,6 @@ export async function createEvento(formData: EventoFormData & CreateEventoOption
       data_fim: validatedData.data.data_fim,
       hora_inicio: validatedData.data.hora_inicio,
       hora_fim: validatedData.data.hora_fim,
-      tipo: validatedData.data.tipo,
     });
 
     if (googleResult.id) {
@@ -328,7 +327,7 @@ export async function updateEvento(id: string, formData: Partial<EventoFormData>
   // Buscar evento atual para pegar o google_calendar_id
   const { data: currentEvento } = await supabase
     .from("eventos")
-    .select("google_calendar_id, nome, descricao, local, endereco_local, data_inicio, data_fim, hora_inicio, hora_fim, tipo")
+    .select("google_calendar_id, nome, descricao, local, endereco_local, data_inicio, data_fim, hora_inicio, hora_fim")
     .eq("id", id)
     .single();
 
@@ -344,7 +343,6 @@ export async function updateEvento(id: string, formData: Partial<EventoFormData>
       data_fim: updatedEvento.data_fim,
       hora_inicio: updatedEvento.hora_inicio,
       hora_fim: updatedEvento.hora_fim,
-      tipo: updatedEvento.tipo,
     });
   }
 
@@ -490,7 +488,6 @@ export async function syncEventoComGoogle(id: string) {
     data_fim: evento.data_fim,
     hora_inicio: evento.hora_inicio,
     hora_fim: evento.hora_fim,
-    tipo: evento.tipo,
   });
 
   if (!googleResult.id) {

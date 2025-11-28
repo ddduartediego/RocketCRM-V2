@@ -44,6 +44,7 @@ interface EventoWithRelations extends Evento {
   contatos?: { id: string; nome: string; telefone?: string | null; email?: string | null } | null;
   leads?: { id: string; titulo: string } | null;
   users?: { id: string; nome: string; avatar_url: string | null } | null;
+  tipos_evento?: { id: string; nome: string; icone: string | null; cor: string | null } | null;
 }
 
 interface TransacaoWithRelations extends TransacaoFinanceira {
@@ -177,7 +178,7 @@ export function EventoDetail({
           </Link>
           <div>
             <div className="flex items-center gap-3">
-              <span className="text-3xl">{tipoLabels[evento.tipo]?.icon || "📅"}</span>
+              <span className="text-3xl">{evento.tipos_evento?.icone || tipoLabels[evento.tipo as string]?.icon || "📅"}</span>
               <div>
                 <h1 className="text-2xl font-bold text-foreground">{evento.nome}</h1>
                 <div className="flex items-center gap-2 mt-1">
@@ -192,7 +193,7 @@ export function EventoDetail({
                     {statusConfig[evento.status]?.label || evento.status}
                   </Badge>
                   <span className="text-sm text-muted-foreground">
-                    {tipoLabels[evento.tipo]?.label || evento.tipo}
+                    {evento.tipos_evento?.nome || tipoLabels[evento.tipo as string]?.label || evento.tipo || "-"}
                   </span>
                 </div>
               </div>

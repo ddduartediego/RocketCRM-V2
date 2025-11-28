@@ -11,6 +11,7 @@ import type { Evento } from "@/types/database";
 interface EventoWithRelations extends Evento {
   contatos?: { id: string; nome: string } | null;
   users?: { id: string; nome: string; avatar_url: string | null } | null;
+  tipos_evento?: { id: string; nome: string; icone: string | null; cor: string | null } | null;
 }
 
 interface EventosWeekViewProps {
@@ -227,7 +228,7 @@ interface EventoCardProps {
 
 function EventoCard({ evento, onClick }: EventoCardProps) {
   const statusColor = statusColors[evento.status] || "#6b7280";
-  const tipoIcon = tipoIcons[evento.tipo] || "📅";
+  const tipoIcon = evento.tipos_evento?.icone || tipoIcons[evento.tipo as string] || "📅";
 
   return (
     <Card
