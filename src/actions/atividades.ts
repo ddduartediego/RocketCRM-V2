@@ -336,3 +336,78 @@ export async function getAtividadesHoje() {
   return { data: data || [], error: null };
 }
 
+// ==================== ESTATÍSTICAS DO DASHBOARD ====================
+
+export interface EstatisticasTarefasMes {
+  total: number;
+  porStatus: {
+    pendente: number;
+    em_andamento: number;
+    concluida: number;
+  };
+  vencidas: number;
+}
+
+/**
+ * Retorna estatísticas de tarefas para um mês específico
+ * Filtra por data_vencimento da tarefa
+ */
+export async function getEstatisticasTarefasMes(mes?: string): Promise<EstatisticasTarefasMes> {
+  const supabase = await createClient();
+
+  // Calcula início e fim do mês de forma timezone-safe
+  let ano: number;
+  let mesNum: number;
+
+  if (mes) {
+    const [anoStr, mesStr] = mes.split("-");
+    ano = parseInt(anoStr, 10);
+    mesNum = parseInt(mesStr, 10);
+  } else {
+    const agora = new Date();
+    ano = agora.getFullYear();
+    mesNum = agora.getMonth() + 1;
+  }
+
+  const inicioMes = `${ano}-${String(mesNum).padStart(2, "0")}-01`;
+  const ultimoDia = new Date(ano, mesNum, 0).getDate();
+  const fimMes = `${ano}-${String(mesNum).padStart(2, "0")}-${String(ultimoDia).padStart(2, "0")}`;
+  const hoje = new Date().toISOString().split("T")[0];
+
+  // Buscar todas as tarefas do mês
+  const { data: tarefas } = await supabase
+    .from("atividades")
+    .select("status, data_vencimento")
+    .gte("data_vencimento", inicioMes)
+    .lte("data_vencimento", fimMes);
+
+  // Calcular estatísticas
+  const stats: EstatisticasTarefasMes = {
+    total: tarefas?.length || 0,
+    porStatus: {
+      pendente: 0,
+      em_andamento: 0,
+      concluida: 0,
+    },
+    vencidas: 0,
+  };
+
+  tarefas?.forEach((tarefa) => {
+    const status = tarefa.status as keyof typeof stats.porStatus;
+    if (stats.porStatus[status] !== undefined) {
+      stats.porStatus[status]++;
+    }
+    
+    // Contar vencidas (pendentes ou em andamento com data passada)
+    if (
+      tarefa.data_vencimento && 
+      tarefa.data_vencimento < hoje && 
+      (tarefa.status === "pendente" || tarefa.status === "em_andamento")
+    ) {
+      stats.vencidas++;
+    }
+  });
+
+  return stats;
+}
+

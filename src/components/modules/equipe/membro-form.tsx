@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import { useForm, type Resolver } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
@@ -49,18 +50,49 @@ export function MembroForm({ open, onOpenChange, membro }: MembroFormProps) {
   const form = useForm<MembroEquipeFormData>({
     resolver: zodResolver(membroEquipeSchema) as Resolver<MembroEquipeFormData>,
     defaultValues: {
-      nome: membro?.nome || "",
-      funcao: membro?.funcao || "monitor",
-      tipo_contrato: membro?.tipo_contrato || "freelancer",
-      telefone: membro?.telefone || "",
-      whatsapp: membro?.whatsapp || "",
-      email: membro?.email || "",
-      documento: membro?.documento || "",
-      valor_diaria: membro?.valor_diaria || null,
-      observacoes: membro?.observacoes || "",
-      ativo: membro?.ativo ?? true,
+      nome: "",
+      funcao: "monitor",
+      tipo_contrato: "freelancer",
+      telefone: "",
+      whatsapp: "",
+      email: "",
+      documento: "",
+      valor_diaria: null,
+      observacoes: "",
+      ativo: true,
     },
   });
+
+  // Resetar formulário quando membro mudar ou modal abrir
+  useEffect(() => {
+    if (membro) {
+      form.reset({
+        nome: membro.nome || "",
+        funcao: membro.funcao || "monitor",
+        tipo_contrato: membro.tipo_contrato || "freelancer",
+        telefone: membro.telefone || "",
+        whatsapp: membro.whatsapp || "",
+        email: membro.email || "",
+        documento: membro.documento || "",
+        valor_diaria: membro.valor_diaria || null,
+        observacoes: membro.observacoes || "",
+        ativo: membro.ativo ?? true,
+      });
+    } else {
+      form.reset({
+        nome: "",
+        funcao: "monitor",
+        tipo_contrato: "freelancer",
+        telefone: "",
+        whatsapp: "",
+        email: "",
+        documento: "",
+        valor_diaria: null,
+        observacoes: "",
+        ativo: true,
+      });
+    }
+  }, [membro, form]);
 
   async function onSubmit(data: MembroEquipeFormData) {
     try {
@@ -119,7 +151,7 @@ export function MembroForm({ open, onOpenChange, membro }: MembroFormProps) {
                     <FormLabel>Função *</FormLabel>
                     <Select
                       onValueChange={field.onChange}
-                      defaultValue={field.value}
+                      value={field.value}
                     >
                       <FormControl>
                         <SelectTrigger>
@@ -147,7 +179,7 @@ export function MembroForm({ open, onOpenChange, membro }: MembroFormProps) {
                     <FormLabel>Tipo de Contrato *</FormLabel>
                     <Select
                       onValueChange={field.onChange}
-                      defaultValue={field.value}
+                      value={field.value}
                     >
                       <FormControl>
                         <SelectTrigger>

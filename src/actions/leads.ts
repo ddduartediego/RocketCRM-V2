@@ -198,3 +198,88 @@ export async function getUsers() {
   return { data: data || [], error: null };
 }
 
+// ==================== ESTATÍSTICAS DO DASHBOARD ====================
+
+export interface EtapaEstatistica {
+  id: string;
+  nome: string;
+  cor: string;
+  quantidade: number;
+}
+
+export interface EstatisticasLeadsMes {
+  total: number;
+  valorTotal: number;
+  porEtapa: EtapaEstatistica[];
+}
+
+/**
+ * Retorna estatísticas de leads criados em um mês específico
+ * Filtra por created_at do lead
+ */
+export async function getEstatisticasLeadsMes(mes?: string): Promise<EstatisticasLeadsMes> {
+  const supabase = await createClient();
+
+  // Calcula início e fim do mês de forma timezone-safe
+  let ano: number;
+  let mesNum: number;
+
+  if (mes) {
+    const [anoStr, mesStr] = mes.split("-");
+    ano = parseInt(anoStr, 10);
+    mesNum = parseInt(mesStr, 10);
+  } else {
+    const agora = new Date();
+    ano = agora.getFullYear();
+    mesNum = agora.getMonth() + 1;
+  }
+
+  const inicioMes = `${ano}-${String(mesNum).padStart(2, "0")}-01T00:00:00`;
+  const ultimoDia = new Date(ano, mesNum, 0).getDate();
+  const fimMes = `${ano}-${String(mesNum).padStart(2, "0")}-${String(ultimoDia).padStart(2, "0")}T23:59:59`;
+
+  // Buscar leads do mês com etapa
+  const { data: leads } = await supabase
+    .from("leads")
+    .select(`
+      id,
+      valor_estimado,
+      etapa_id,
+      etapas_funil(id, nome, cor)
+    `)
+    .gte("created_at", inicioMes)
+    .lte("created_at", fimMes);
+
+  // Buscar todas as etapas ativas para ter a lista completa
+  const { data: etapas } = await supabase
+    .from("etapas_funil")
+    .select("id, nome, cor, ordem")
+    .eq("ativo", true)
+    .order("ordem", { ascending: true });
+
+  // Calcular estatísticas
+  let valorTotal = 0;
+  const contagemPorEtapa: Record<string, number> = {};
+
+  leads?.forEach((lead) => {
+    valorTotal += lead.valor_estimado || 0;
+    if (lead.etapa_id) {
+      contagemPorEtapa[lead.etapa_id] = (contagemPorEtapa[lead.etapa_id] || 0) + 1;
+    }
+  });
+
+  // Montar array de etapas com contagem
+  const porEtapa: EtapaEstatistica[] = (etapas || []).map((etapa) => ({
+    id: etapa.id,
+    nome: etapa.nome,
+    cor: etapa.cor,
+    quantidade: contagemPorEtapa[etapa.id] || 0,
+  }));
+
+  return {
+    total: leads?.length || 0,
+    valorTotal,
+    porEtapa,
+  };
+}
+

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback, useTransition } from "react";
+import { useState, useCallback, useTransition, useEffect } from "react";
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
 import { TransacoesTable } from "./transacoes-table";
 import { TransacaoForm } from "./transacao-form";
@@ -54,6 +54,12 @@ export function FinanceiroClient({
 
   const [formOpen, setFormOpen] = useState(false);
   const [editingTransacao, setEditingTransacao] = useState<TransacaoFinanceira | null>(null);
+
+  // Atualizar dados quando as props iniciais mudarem (após navegação/filtros)
+  useEffect(() => {
+    setTransacoes(initialTransacoes);
+    setCount(initialCount);
+  }, [initialTransacoes, initialCount]);
 
   const search = searchParams.get("search") || "";
   const tipo = searchParams.get("tipo") || "todos";

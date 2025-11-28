@@ -30,137 +30,137 @@ WHERE NOT EXISTS (
 -- =============================================
 
 INSERT INTO equipe (nome, funcao, tipo_contrato, ativo)
-SELECT 'ALICE', 'recreador', 'freelancer', true
-WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = 'ALICE');
+SELECT 'Alice', 'recreador', 'freelancer', true
+WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = UPPER('Alice'));
 INSERT INTO equipe (nome, funcao, tipo_contrato, ativo)
-SELECT 'ANA', 'recreador', 'freelancer', true
-WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = 'ANA');
+SELECT 'Ana', 'recreador', 'freelancer', true
+WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = UPPER('Ana'));
 INSERT INTO equipe (nome, funcao, tipo_contrato, ativo)
-SELECT 'ANA SAMURAI', 'recreador', 'freelancer', true
-WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = 'ANA SAMURAI');
+SELECT 'Ana Samurai', 'recreador', 'freelancer', true
+WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = UPPER('Ana Samurai'));
 INSERT INTO equipe (nome, funcao, tipo_contrato, ativo)
-SELECT 'BABALU', 'recreador', 'freelancer', true
-WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = 'BABALU');
+SELECT 'Babalu', 'recreador', 'freelancer', true
+WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = UPPER('Babalu'));
 INSERT INTO equipe (nome, funcao, tipo_contrato, ativo)
-SELECT 'BACON', 'recreador', 'freelancer', true
-WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = 'BACON');
+SELECT 'Bacon', 'recreador', 'freelancer', true
+WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = UPPER('Bacon'));
 INSERT INTO equipe (nome, funcao, tipo_contrato, ativo)
-SELECT 'BATATA', 'recreador', 'freelancer', true
-WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = 'BATATA');
+SELECT 'Batata', 'recreador', 'freelancer', true
+WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = UPPER('Batata'));
 INSERT INTO equipe (nome, funcao, tipo_contrato, ativo)
-SELECT 'CACA', 'recreador', 'freelancer', true
-WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = 'CACA');
+SELECT 'Caca', 'recreador', 'freelancer', true
+WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = UPPER('Caca'));
 INSERT INTO equipe (nome, funcao, tipo_contrato, ativo)
-SELECT 'CINTHIA', 'recreador', 'freelancer', true
-WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = 'CINTHIA');
+SELECT 'Cinthia', 'recreador', 'freelancer', true
+WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = UPPER('Cinthia'));
 INSERT INTO equipe (nome, funcao, tipo_contrato, ativo)
-SELECT 'CINTIA', 'recreador', 'freelancer', true
-WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = 'CINTIA');
+SELECT 'Cintia', 'recreador', 'freelancer', true
+WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = UPPER('Cintia'));
 INSERT INTO equipe (nome, funcao, tipo_contrato, ativo)
-SELECT 'CRYSTAL', 'recreador', 'freelancer', true
-WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = 'CRYSTAL');
+SELECT 'Crystal', 'recreador', 'freelancer', true
+WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = UPPER('Crystal'));
 INSERT INTO equipe (nome, funcao, tipo_contrato, ativo)
-SELECT 'DETONA RALPH', 'recreador', 'freelancer', true
-WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = 'DETONA RALPH');
+SELECT 'Detona Ralph', 'recreador', 'freelancer', true
+WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = UPPER('Detona Ralph'));
 INSERT INTO equipe (nome, funcao, tipo_contrato, ativo)
-SELECT 'DINHO', 'recreador', 'freelancer', true
-WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = 'DINHO');
+SELECT 'Dinho', 'recreador', 'freelancer', true
+WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = UPPER('Dinho'));
 INSERT INTO equipe (nome, funcao, tipo_contrato, ativo)
-SELECT 'DOCINHO', 'recreador', 'freelancer', true
-WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = 'DOCINHO');
+SELECT 'Docinho', 'recreador', 'freelancer', true
+WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = UPPER('Docinho'));
 INSERT INTO equipe (nome, funcao, tipo_contrato, ativo)
-SELECT 'DORA', 'recreador', 'freelancer', true
-WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = 'DORA');
+SELECT 'Dora', 'recreador', 'freelancer', true
+WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = UPPER('Dora'));
 INSERT INTO equipe (nome, funcao, tipo_contrato, ativo)
-SELECT 'ESTRELA', 'recreador', 'freelancer', true
-WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = 'ESTRELA');
+SELECT 'Estrela', 'recreador', 'freelancer', true
+WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = UPPER('Estrela'));
 INSERT INTO equipe (nome, funcao, tipo_contrato, ativo)
-SELECT 'FELICIA', 'recreador', 'freelancer', true
-WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = 'FELICIA');
+SELECT 'Felicia', 'recreador', 'freelancer', true
+WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = UPPER('Felicia'));
 INSERT INTO equipe (nome, funcao, tipo_contrato, ativo)
-SELECT 'GABE', 'recreador', 'freelancer', true
-WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = 'GABE');
+SELECT 'Gabe', 'recreador', 'freelancer', true
+WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = UPPER('Gabe'));
 INSERT INTO equipe (nome, funcao, tipo_contrato, ativo)
-SELECT 'GISA', 'recreador', 'freelancer', true
-WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = 'GISA');
+SELECT 'Gisa', 'recreador', 'freelancer', true
+WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = UPPER('Gisa'));
 INSERT INTO equipe (nome, funcao, tipo_contrato, ativo)
-SELECT 'JOANINHA', 'recreador', 'freelancer', true
-WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = 'JOANINHA');
+SELECT 'Joaninha', 'recreador', 'freelancer', true
+WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = UPPER('Joaninha'));
 INSERT INTO equipe (nome, funcao, tipo_contrato, ativo)
-SELECT 'JOJO', 'recreador', 'freelancer', true
-WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = 'JOJO');
+SELECT 'Jojo', 'recreador', 'freelancer', true
+WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = UPPER('Jojo'));
 INSERT INTO equipe (nome, funcao, tipo_contrato, ativo)
-SELECT 'JUCI', 'recreador', 'freelancer', true
-WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = 'JUCI');
+SELECT 'Juci', 'recreador', 'freelancer', true
+WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = UPPER('Juci'));
 INSERT INTO equipe (nome, funcao, tipo_contrato, ativo)
-SELECT 'JUJUBA', 'recreador', 'freelancer', true
-WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = 'JUJUBA');
+SELECT 'Jujuba', 'recreador', 'freelancer', true
+WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = UPPER('Jujuba'));
 INSERT INTO equipe (nome, funcao, tipo_contrato, ativo)
-SELECT 'KINHO', 'recreador', 'freelancer', true
-WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = 'KINHO');
+SELECT 'Kinho', 'recreador', 'freelancer', true
+WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = UPPER('Kinho'));
 INSERT INTO equipe (nome, funcao, tipo_contrato, ativo)
-SELECT 'LADY', 'recreador', 'freelancer', true
-WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = 'LADY');
+SELECT 'Lady', 'recreador', 'freelancer', true
+WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = UPPER('Lady'));
 INSERT INTO equipe (nome, funcao, tipo_contrato, ativo)
-SELECT 'LEKA', 'recreador', 'freelancer', true
-WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = 'LEKA');
+SELECT 'Leka', 'recreador', 'freelancer', true
+WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = UPPER('Leka'));
 INSERT INTO equipe (nome, funcao, tipo_contrato, ativo)
-SELECT 'MARI', 'recreador', 'freelancer', true
-WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = 'MARI');
+SELECT 'Mari', 'recreador', 'freelancer', true
+WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = UPPER('Mari'));
 INSERT INTO equipe (nome, funcao, tipo_contrato, ativo)
-SELECT 'MORANGUINHO', 'recreador', 'freelancer', true
-WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = 'MORANGUINHO');
+SELECT 'Moranguinho', 'recreador', 'freelancer', true
+WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = UPPER('Moranguinho'));
 INSERT INTO equipe (nome, funcao, tipo_contrato, ativo)
-SELECT 'MU', 'recreador', 'freelancer', true
-WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = 'MU');
+SELECT 'Mu', 'recreador', 'freelancer', true
+WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = UPPER('Mu'));
 INSERT INTO equipe (nome, funcao, tipo_contrato, ativo)
-SELECT 'NANDA', 'recreador', 'freelancer', true
-WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = 'NANDA');
+SELECT 'Nanda', 'recreador', 'freelancer', true
+WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = UPPER('Nanda'));
 INSERT INTO equipe (nome, funcao, tipo_contrato, ativo)
-SELECT 'NEIA', 'recreador', 'freelancer', true
-WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = 'NEIA');
+SELECT 'Neia', 'recreador', 'freelancer', true
+WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = UPPER('Neia'));
 INSERT INTO equipe (nome, funcao, tipo_contrato, ativo)
-SELECT 'PANTERA', 'recreador', 'freelancer', true
-WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = 'PANTERA');
+SELECT 'Pantera', 'recreador', 'freelancer', true
+WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = UPPER('Pantera'));
 INSERT INTO equipe (nome, funcao, tipo_contrato, ativo)
-SELECT 'PAOLA', 'recreador', 'freelancer', true
-WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = 'PAOLA');
+SELECT 'Paola', 'recreador', 'freelancer', true
+WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = UPPER('Paola'));
 INSERT INTO equipe (nome, funcao, tipo_contrato, ativo)
-SELECT 'PAÇOCA', 'recreador', 'freelancer', true
-WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = 'PAÇOCA');
+SELECT 'Paçoca', 'recreador', 'freelancer', true
+WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = UPPER('Paçoca'));
 INSERT INTO equipe (nome, funcao, tipo_contrato, ativo)
-SELECT 'PEDRITA', 'recreador', 'freelancer', true
-WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = 'PEDRITA');
+SELECT 'Pedrita', 'recreador', 'freelancer', true
+WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = UPPER('Pedrita'));
 INSERT INTO equipe (nome, funcao, tipo_contrato, ativo)
-SELECT 'PEPE', 'recreador', 'freelancer', true
-WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = 'PEPE');
+SELECT 'Pepe', 'recreador', 'freelancer', true
+WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = UPPER('Pepe'));
 INSERT INTO equipe (nome, funcao, tipo_contrato, ativo)
-SELECT 'PLUTOS', 'recreador', 'freelancer', true
-WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = 'PLUTOS');
+SELECT 'Plutos', 'recreador', 'freelancer', true
+WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = UPPER('Plutos'));
 INSERT INTO equipe (nome, funcao, tipo_contrato, ativo)
-SELECT 'POC', 'recreador', 'freelancer', true
-WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = 'POC');
+SELECT 'Poc', 'recreador', 'freelancer', true
+WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = UPPER('Poc'));
 INSERT INTO equipe (nome, funcao, tipo_contrato, ativo)
-SELECT 'POLLY', 'recreador', 'freelancer', true
-WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = 'POLLY');
+SELECT 'Polly', 'recreador', 'freelancer', true
+WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = UPPER('Polly'));
 INSERT INTO equipe (nome, funcao, tipo_contrato, ativo)
-SELECT 'PUCCA', 'recreador', 'freelancer', true
-WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = 'PUCCA');
+SELECT 'Pucca', 'recreador', 'freelancer', true
+WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = UPPER('Pucca'));
 INSERT INTO equipe (nome, funcao, tipo_contrato, ativo)
-SELECT 'RAVENA', 'recreador', 'freelancer', true
-WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = 'RAVENA');
+SELECT 'Ravena', 'recreador', 'freelancer', true
+WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = UPPER('Ravena'));
 INSERT INTO equipe (nome, funcao, tipo_contrato, ativo)
-SELECT 'SAMURAI', 'recreador', 'freelancer', true
-WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = 'SAMURAI');
+SELECT 'Samurai', 'recreador', 'freelancer', true
+WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = UPPER('Samurai'));
 INSERT INTO equipe (nome, funcao, tipo_contrato, ativo)
-SELECT 'SORRISO', 'recreador', 'freelancer', true
-WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = 'SORRISO');
+SELECT 'Sorriso', 'recreador', 'freelancer', true
+WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = UPPER('Sorriso'));
 INSERT INTO equipe (nome, funcao, tipo_contrato, ativo)
-SELECT 'VERTINHO', 'recreador', 'freelancer', true
-WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = 'VERTINHO');
+SELECT 'Vertinho', 'recreador', 'freelancer', true
+WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = UPPER('Vertinho'));
 INSERT INTO equipe (nome, funcao, tipo_contrato, ativo)
-SELECT 'VICK', 'recreador', 'freelancer', true
-WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = 'VICK');
+SELECT 'Vick', 'recreador', 'freelancer', true
+WHERE NOT EXISTS (SELECT 1 FROM equipe WHERE UPPER(nome) = UPPER('Vick'));
 
 -- =============================================
 -- PARTE 3, 4, 5: Eventos, Transações e Alocações
@@ -221,13 +221,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: ESTRELA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'ESTRELA' LIMIT 1;
+    -- Alocação: Estrela (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Estrela') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - ESTRELA - ' || 'Ana',
+        'Diária - Estrela - ' || 'Ana',
         'despesa',
         180.0,
         '2025-01-19'::DATE,
@@ -251,13 +251,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: JOANINHA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'JOANINHA' LIMIT 1;
+    -- Alocação: Joaninha (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Joaninha') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - JOANINHA - ' || 'Ana',
+        'Diária - Joaninha - ' || 'Ana',
         'despesa',
         180.0,
         '2025-01-19'::DATE,
@@ -321,13 +321,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'NATHI',
+        'Diária - Poc - ' || 'NATHI',
         'despesa',
         200.0,
         '2025-01-23'::DATE,
@@ -351,13 +351,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: SORRISO (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'SORRISO' LIMIT 1;
+    -- Alocação: Sorriso (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Sorriso') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - SORRISO - ' || 'NATHI',
+        'Diária - Sorriso - ' || 'NATHI',
         'despesa',
         180.0,
         '2025-01-23'::DATE,
@@ -421,13 +421,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: ESTRELA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'ESTRELA' LIMIT 1;
+    -- Alocação: Estrela (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Estrela') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - ESTRELA - ' || 'PISCINA BVCC',
+        'Diária - Estrela - ' || 'PISCINA BVCC',
         'despesa',
         180.0,
         '2025-01-26'::DATE,
@@ -451,13 +451,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: BACON (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'BACON' LIMIT 1;
+    -- Alocação: Bacon (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Bacon') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - BACON - ' || 'PISCINA BVCC',
+        'Diária - Bacon - ' || 'PISCINA BVCC',
         'despesa',
         180.0,
         '2025-01-26'::DATE,
@@ -521,13 +521,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: BABALU (R$ 170.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'BABALU' LIMIT 1;
+    -- Alocação: Babalu (R$ 170.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Babalu') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - BABALU - ' || 'TATI',
+        'Diária - Babalu - ' || 'TATI',
         'despesa',
         170.0,
         '2025-01-27'::DATE,
@@ -591,13 +591,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'VIVIANE',
+        'Diária - Poc - ' || 'VIVIANE',
         'despesa',
         200.0,
         '2025-01-27'::DATE,
@@ -621,13 +621,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: VICK (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'VICK' LIMIT 1;
+    -- Alocação: Vick (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Vick') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - VICK - ' || 'VIVIANE',
+        'Diária - Vick - ' || 'VIVIANE',
         'despesa',
         180.0,
         '2025-01-27'::DATE,
@@ -691,13 +691,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'SUZANA',
+        'Diária - Poc - ' || 'SUZANA',
         'despesa',
         200.0,
         '2025-01-30'::DATE,
@@ -761,13 +761,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: FELICIA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'FELICIA' LIMIT 1;
+    -- Alocação: Felicia (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Felicia') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - FELICIA - ' || 'ANA PAULA',
+        'Diária - Felicia - ' || 'ANA PAULA',
         'despesa',
         180.0,
         '2025-02-02'::DATE,
@@ -831,13 +831,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: PEPE (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'PEPE' LIMIT 1;
+    -- Alocação: Pepe (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Pepe') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - PEPE - ' || 'LARISSA',
+        'Diária - Pepe - ' || 'LARISSA',
         'despesa',
         200.0,
         '2025-02-02'::DATE,
@@ -861,13 +861,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: RAVENA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'RAVENA' LIMIT 1;
+    -- Alocação: Ravena (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Ravena') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - RAVENA - ' || 'LARISSA',
+        'Diária - Ravena - ' || 'LARISSA',
         'despesa',
         180.0,
         '2025-02-02'::DATE,
@@ -931,13 +931,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: ESTRELA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'ESTRELA' LIMIT 1;
+    -- Alocação: Estrela (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Estrela') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - ESTRELA - ' || 'MAYARA',
+        'Diária - Estrela - ' || 'MAYARA',
         'despesa',
         180.0,
         '2025-02-02'::DATE,
@@ -961,13 +961,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: SORRISO (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'SORRISO' LIMIT 1;
+    -- Alocação: Sorriso (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Sorriso') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - SORRISO - ' || 'MAYARA',
+        'Diária - Sorriso - ' || 'MAYARA',
         'despesa',
         180.0,
         '2025-02-02'::DATE,
@@ -1031,13 +1031,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: ESTRELA (R$ 150.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'ESTRELA' LIMIT 1;
+    -- Alocação: Estrela (R$ 150.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Estrela') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - ESTRELA - ' || 'CINTIA',
+        'Diária - Estrela - ' || 'CINTIA',
         'despesa',
         150.0,
         '2025-03-02'::DATE,
@@ -1101,13 +1101,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'JOICE',
+        'Diária - Poc - ' || 'JOICE',
         'despesa',
         200.0,
         '2025-06-02'::DATE,
@@ -1131,13 +1131,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: SORRISO (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'SORRISO' LIMIT 1;
+    -- Alocação: Sorriso (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Sorriso') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - SORRISO - ' || 'JOICE',
+        'Diária - Sorriso - ' || 'JOICE',
         'despesa',
         180.0,
         '2025-06-02'::DATE,
@@ -1201,13 +1201,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'MDB',
+        'Diária - Poc - ' || 'MDB',
         'despesa',
         200.0,
         '2025-07-02'::DATE,
@@ -1231,13 +1231,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: SORRISO (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'SORRISO' LIMIT 1;
+    -- Alocação: Sorriso (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Sorriso') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - SORRISO - ' || 'MDB',
+        'Diária - Sorriso - ' || 'MDB',
         'despesa',
         180.0,
         '2025-07-02'::DATE,
@@ -1301,13 +1301,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: KINHO (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'KINHO' LIMIT 1;
+    -- Alocação: Kinho (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Kinho') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - KINHO - ' || 'GINCANDEIAS',
+        'Diária - Kinho - ' || 'GINCANDEIAS',
         'despesa',
         200.0,
         '2025-08-02'::DATE,
@@ -1331,13 +1331,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: LEKA (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'LEKA' LIMIT 1;
+    -- Alocação: Leka (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Leka') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - LEKA - ' || 'GINCANDEIAS',
+        'Diária - Leka - ' || 'GINCANDEIAS',
         'despesa',
         200.0,
         '2025-08-02'::DATE,
@@ -1361,13 +1361,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: PANTERA (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'PANTERA' LIMIT 1;
+    -- Alocação: Pantera (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Pantera') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - PANTERA - ' || 'GINCANDEIAS',
+        'Diária - Pantera - ' || 'GINCANDEIAS',
         'despesa',
         200.0,
         '2025-08-02'::DATE,
@@ -1417,13 +1417,13 @@ BEGIN
     )
     RETURNING id INTO v_evento_id;
 
-    -- Alocação: ESTRELA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'ESTRELA' LIMIT 1;
+    -- Alocação: Estrela (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Estrela') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - ESTRELA - ' || 'PISCINA BVCC',
+        'Diária - Estrela - ' || 'PISCINA BVCC',
         'despesa',
         180.0,
         '2025-09-02'::DATE,
@@ -1447,13 +1447,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: BACON (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'BACON' LIMIT 1;
+    -- Alocação: Bacon (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Bacon') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - BACON - ' || 'PISCINA BVCC',
+        'Diária - Bacon - ' || 'PISCINA BVCC',
         'despesa',
         180.0,
         '2025-09-02'::DATE,
@@ -1517,13 +1517,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: FELICIA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'FELICIA' LIMIT 1;
+    -- Alocação: Felicia (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Felicia') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - FELICIA - ' || 'JULIO',
+        'Diária - Felicia - ' || 'JULIO',
         'despesa',
         180.0,
         '2025-09-02'::DATE,
@@ -1587,13 +1587,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'LUISE',
+        'Diária - Poc - ' || 'LUISE',
         'despesa',
         200.0,
         '2025-09-02'::DATE,
@@ -1617,13 +1617,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: JUJUBA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'JUJUBA' LIMIT 1;
+    -- Alocação: Jujuba (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Jujuba') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - JUJUBA - ' || 'LUISE',
+        'Diária - Jujuba - ' || 'LUISE',
         'despesa',
         180.0,
         '2025-09-02'::DATE,
@@ -1687,13 +1687,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: BABALU (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'BABALU' LIMIT 1;
+    -- Alocação: Babalu (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Babalu') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - BABALU - ' || 'BRUNA',
+        'Diária - Babalu - ' || 'BRUNA',
         'despesa',
         200.0,
         '2025-09-02'::DATE,
@@ -1743,13 +1743,13 @@ BEGIN
     )
     RETURNING id INTO v_evento_id;
 
-    -- Alocação: JOJO (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'JOJO' LIMIT 1;
+    -- Alocação: Jojo (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Jojo') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - JOJO - ' || 'ESPAÇO KIDS',
+        'Diária - Jojo - ' || 'ESPAÇO KIDS',
         'despesa',
         180.0,
         '2025-01-23'::DATE,
@@ -1773,13 +1773,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: DORA (R$ 600.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'DORA' LIMIT 1;
+    -- Alocação: Dora (R$ 600.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Dora') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - DORA - ' || 'ESPAÇO KIDS',
+        'Diária - Dora - ' || 'ESPAÇO KIDS',
         'despesa',
         600.0,
         '2025-01-23'::DATE,
@@ -1843,13 +1843,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'ALEXANDRA',
+        'Diária - Poc - ' || 'ALEXANDRA',
         'despesa',
         200.0,
         '2025-02-16'::DATE,
@@ -1913,13 +1913,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: ESTRELA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'ESTRELA' LIMIT 1;
+    -- Alocação: Estrela (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Estrela') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - ESTRELA - ' || 'DANIELA',
+        'Diária - Estrela - ' || 'DANIELA',
         'despesa',
         180.0,
         '2025-02-16'::DATE,
@@ -1943,13 +1943,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: JUJUBA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'JUJUBA' LIMIT 1;
+    -- Alocação: Jujuba (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Jujuba') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - JUJUBA - ' || 'DANIELA',
+        'Diária - Jujuba - ' || 'DANIELA',
         'despesa',
         180.0,
         '2025-02-16'::DATE,
@@ -2013,13 +2013,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: BACON (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'BACON' LIMIT 1;
+    -- Alocação: Bacon (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Bacon') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - BACON - ' || 'PISCINA BVCC',
+        'Diária - Bacon - ' || 'PISCINA BVCC',
         'despesa',
         180.0,
         '2025-02-16'::DATE,
@@ -2043,13 +2043,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: PEDRITA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'PEDRITA' LIMIT 1;
+    -- Alocação: Pedrita (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Pedrita') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - PEDRITA - ' || 'PISCINA BVCC',
+        'Diária - Pedrita - ' || 'PISCINA BVCC',
         'despesa',
         180.0,
         '2025-02-16'::DATE,
@@ -2113,13 +2113,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'MAIARA',
+        'Diária - Poc - ' || 'MAIARA',
         'despesa',
         200.0,
         '2025-02-17'::DATE,
@@ -2183,13 +2183,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: BACON (R$ 150.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'BACON' LIMIT 1;
+    -- Alocação: Bacon (R$ 150.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Bacon') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - BACON - ' || 'JACKIE',
+        'Diária - Bacon - ' || 'JACKIE',
         'despesa',
         150.0,
         '2025-02-17'::DATE,
@@ -2253,13 +2253,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: BABALU (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'BABALU' LIMIT 1;
+    -- Alocação: Babalu (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Babalu') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - BABALU - ' || 'FERNANDA',
+        'Diária - Babalu - ' || 'FERNANDA',
         'despesa',
         200.0,
         '2025-02-23'::DATE,
@@ -2309,13 +2309,13 @@ BEGIN
     )
     RETURNING id INTO v_evento_id;
 
-    -- Alocação: BACON (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'BACON' LIMIT 1;
+    -- Alocação: Bacon (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Bacon') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - BACON - ' || 'PISCINA BVCC',
+        'Diária - Bacon - ' || 'PISCINA BVCC',
         'despesa',
         180.0,
         '2025-02-23'::DATE,
@@ -2339,13 +2339,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: DORA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'DORA' LIMIT 1;
+    -- Alocação: Dora (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Dora') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - DORA - ' || 'PISCINA BVCC',
+        'Diária - Dora - ' || 'PISCINA BVCC',
         'despesa',
         180.0,
         '2025-02-23'::DATE,
@@ -2409,13 +2409,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'ALINE',
+        'Diária - Poc - ' || 'ALINE',
         'despesa',
         200.0,
         '2025-02-23'::DATE,
@@ -2439,13 +2439,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: MARI (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'MARI' LIMIT 1;
+    -- Alocação: Mari (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Mari') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - MARI - ' || 'ALINE',
+        'Diária - Mari - ' || 'ALINE',
         'despesa',
         180.0,
         '2025-02-23'::DATE,
@@ -2509,13 +2509,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: FELICIA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'FELICIA' LIMIT 1;
+    -- Alocação: Felicia (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Felicia') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - FELICIA - ' || 'LUANA',
+        'Diária - Felicia - ' || 'LUANA',
         'despesa',
         180.0,
         '2025-02-23'::DATE,
@@ -2539,13 +2539,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: SORRISO (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'SORRISO' LIMIT 1;
+    -- Alocação: Sorriso (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Sorriso') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - SORRISO - ' || 'LUANA',
+        'Diária - Sorriso - ' || 'LUANA',
         'despesa',
         180.0,
         '2025-02-23'::DATE,
@@ -2609,13 +2609,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: PLUTOS (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'PLUTOS' LIMIT 1;
+    -- Alocação: Plutos (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Plutos') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - PLUTOS - ' || 'DEBORA',
+        'Diária - Plutos - ' || 'DEBORA',
         'despesa',
         180.0,
         '2025-02-23'::DATE,
@@ -2639,13 +2639,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: PLUTOS (R$ 30.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'PLUTOS' LIMIT 1;
+    -- Alocação: Plutos (R$ 30.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Plutos') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - PLUTOS - ' || 'DEBORA',
+        'Diária - Plutos - ' || 'DEBORA',
         'despesa',
         30.0,
         '2025-02-23'::DATE,
@@ -2709,13 +2709,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: ESTRELA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'ESTRELA' LIMIT 1;
+    -- Alocação: Estrela (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Estrela') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - ESTRELA - ' || 'ALINE HAKA',
+        'Diária - Estrela - ' || 'ALINE HAKA',
         'despesa',
         180.0,
         '2025-02-23'::DATE,
@@ -2739,13 +2739,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: JUCI (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'JUCI' LIMIT 1;
+    -- Alocação: Juci (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Juci') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - JUCI - ' || 'ALINE HAKA',
+        'Diária - Juci - ' || 'ALINE HAKA',
         'despesa',
         180.0,
         '2025-02-23'::DATE,
@@ -2809,13 +2809,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: FELICIA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'FELICIA' LIMIT 1;
+    -- Alocação: Felicia (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Felicia') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - FELICIA - ' || 'ELIANY',
+        'Diária - Felicia - ' || 'ELIANY',
         'despesa',
         180.0,
         '2025-02-24'::DATE,
@@ -2879,13 +2879,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'JUSSARA',
+        'Diária - Poc - ' || 'JUSSARA',
         'despesa',
         200.0,
         '2025-02-24'::DATE,
@@ -2909,13 +2909,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: VICK (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'VICK' LIMIT 1;
+    -- Alocação: Vick (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Vick') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - VICK - ' || 'JUSSARA',
+        'Diária - Vick - ' || 'JUSSARA',
         'despesa',
         180.0,
         '2025-02-24'::DATE,
@@ -2979,13 +2979,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'AMANDA',
+        'Diária - Poc - ' || 'AMANDA',
         'despesa',
         200.0,
         '2025-01-03'::DATE,
@@ -3009,13 +3009,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: BACON (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'BACON' LIMIT 1;
+    -- Alocação: Bacon (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Bacon') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - BACON - ' || 'AMANDA',
+        'Diária - Bacon - ' || 'AMANDA',
         'despesa',
         180.0,
         '2025-01-03'::DATE,
@@ -3079,13 +3079,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: ESTRELA (R$ 150.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'ESTRELA' LIMIT 1;
+    -- Alocação: Estrela (R$ 150.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Estrela') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - ESTRELA - ' || 'GRAZIELA',
+        'Diária - Estrela - ' || 'GRAZIELA',
         'despesa',
         150.0,
         '2025-01-03'::DATE,
@@ -3149,13 +3149,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: FELICIA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'FELICIA' LIMIT 1;
+    -- Alocação: Felicia (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Felicia') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - FELICIA - ' || 'FERNANDO',
+        'Diária - Felicia - ' || 'FERNANDO',
         'despesa',
         180.0,
         '2025-02-03'::DATE,
@@ -3219,13 +3219,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: ESTRELA (R$ 210.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'ESTRELA' LIMIT 1;
+    -- Alocação: Estrela (R$ 210.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Estrela') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - ESTRELA - ' || 'BELA FOLIA',
+        'Diária - Estrela - ' || 'BELA FOLIA',
         'despesa',
         210.0,
         '2025-02-03'::DATE,
@@ -3249,13 +3249,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: JOJO (R$ 210.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'JOJO' LIMIT 1;
+    -- Alocação: Jojo (R$ 210.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Jojo') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - JOJO - ' || 'BELA FOLIA',
+        'Diária - Jojo - ' || 'BELA FOLIA',
         'despesa',
         210.0,
         '2025-02-03'::DATE,
@@ -3279,13 +3279,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: MARI (R$ 210.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'MARI' LIMIT 1;
+    -- Alocação: Mari (R$ 210.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Mari') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - MARI - ' || 'BELA FOLIA',
+        'Diária - Mari - ' || 'BELA FOLIA',
         'despesa',
         210.0,
         '2025-02-03'::DATE,
@@ -3309,13 +3309,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: JUCI (R$ 210.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'JUCI' LIMIT 1;
+    -- Alocação: Juci (R$ 210.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Juci') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - JUCI - ' || 'BELA FOLIA',
+        'Diária - Juci - ' || 'BELA FOLIA',
         'despesa',
         210.0,
         '2025-02-03'::DATE,
@@ -3379,13 +3379,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: BACON (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'BACON' LIMIT 1;
+    -- Alocação: Bacon (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Bacon') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - BACON - ' || 'ROBERTA RDK',
+        'Diária - Bacon - ' || 'ROBERTA RDK',
         'despesa',
         180.0,
         '2025-02-03'::DATE,
@@ -3409,13 +3409,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: DORA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'DORA' LIMIT 1;
+    -- Alocação: Dora (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Dora') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - DORA - ' || 'ROBERTA RDK',
+        'Diária - Dora - ' || 'ROBERTA RDK',
         'despesa',
         180.0,
         '2025-02-03'::DATE,
@@ -3479,13 +3479,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: BABALU (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'BABALU' LIMIT 1;
+    -- Alocação: Babalu (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Babalu') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - BABALU - ' || 'BRUNA',
+        'Diária - Babalu - ' || 'BRUNA',
         'despesa',
         200.0,
         '2025-02-03'::DATE,
@@ -3549,13 +3549,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'ANA LUISA',
+        'Diária - Poc - ' || 'ANA LUISA',
         'despesa',
         200.0,
         '2025-02-03'::DATE,
@@ -3579,13 +3579,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: JUJUBA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'JUJUBA' LIMIT 1;
+    -- Alocação: Jujuba (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Jujuba') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - JUJUBA - ' || 'ANA LUISA',
+        'Diária - Jujuba - ' || 'ANA LUISA',
         'despesa',
         180.0,
         '2025-02-03'::DATE,
@@ -3649,13 +3649,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 290.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 290.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'TATA',
+        'Diária - Poc - ' || 'TATA',
         'despesa',
         290.0,
         '2025-03-03'::DATE,
@@ -3679,13 +3679,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: JUJUBA (R$ 270.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'JUJUBA' LIMIT 1;
+    -- Alocação: Jujuba (R$ 270.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Jujuba') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - JUJUBA - ' || 'TATA',
+        'Diária - Jujuba - ' || 'TATA',
         'despesa',
         270.0,
         '2025-03-03'::DATE,
@@ -3749,13 +3749,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: FELICIA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'FELICIA' LIMIT 1;
+    -- Alocação: Felicia (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Felicia') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - FELICIA - ' || 'MANIA DE BRINCAR',
+        'Diária - Felicia - ' || 'MANIA DE BRINCAR',
         'despesa',
         180.0,
         '2025-09-03'::DATE,
@@ -3779,13 +3779,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: JUJUBA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'JUJUBA' LIMIT 1;
+    -- Alocação: Jujuba (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Jujuba') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - JUJUBA - ' || 'MANIA DE BRINCAR',
+        'Diária - Jujuba - ' || 'MANIA DE BRINCAR',
         'despesa',
         180.0,
         '2025-09-03'::DATE,
@@ -3849,13 +3849,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: PLUTOS (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'PLUTOS' LIMIT 1;
+    -- Alocação: Plutos (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Plutos') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - PLUTOS - ' || 'CAMILA',
+        'Diária - Plutos - ' || 'CAMILA',
         'despesa',
         180.0,
         '2025-09-03'::DATE,
@@ -3879,13 +3879,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: PLUTOS (R$ 30.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'PLUTOS' LIMIT 1;
+    -- Alocação: Plutos (R$ 30.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Plutos') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - PLUTOS - ' || 'CAMILA',
+        'Diária - Plutos - ' || 'CAMILA',
         'despesa',
         30.0,
         '2025-09-03'::DATE,
@@ -3909,13 +3909,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: DORA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'DORA' LIMIT 1;
+    -- Alocação: Dora (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Dora') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - DORA - ' || 'CAMILA',
+        'Diária - Dora - ' || 'CAMILA',
         'despesa',
         180.0,
         '2025-09-03'::DATE,
@@ -3979,13 +3979,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: BACON (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'BACON' LIMIT 1;
+    -- Alocação: Bacon (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Bacon') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - BACON - ' || 'BRUNA',
+        'Diária - Bacon - ' || 'BRUNA',
         'despesa',
         180.0,
         '2025-09-03'::DATE,
@@ -4009,13 +4009,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: SORRISO (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'SORRISO' LIMIT 1;
+    -- Alocação: Sorriso (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Sorriso') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - SORRISO - ' || 'BRUNA',
+        'Diária - Sorriso - ' || 'BRUNA',
         'despesa',
         180.0,
         '2025-09-03'::DATE,
@@ -4079,13 +4079,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'BRUNA',
+        'Diária - Poc - ' || 'BRUNA',
         'despesa',
         200.0,
         '2025-09-03'::DATE,
@@ -4149,13 +4149,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'ANGÉLICA',
+        'Diária - Poc - ' || 'ANGÉLICA',
         'despesa',
         200.0,
         '2025-10-03'::DATE,
@@ -4179,13 +4179,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: JUJUBA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'JUJUBA' LIMIT 1;
+    -- Alocação: Jujuba (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Jujuba') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - JUJUBA - ' || 'ANGÉLICA',
+        'Diária - Jujuba - ' || 'ANGÉLICA',
         'despesa',
         180.0,
         '2025-10-03'::DATE,
@@ -4249,13 +4249,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: PUCCA (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'PUCCA' LIMIT 1;
+    -- Alocação: Pucca (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Pucca') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - PUCCA - ' || 'GISELIA',
+        'Diária - Pucca - ' || 'GISELIA',
         'despesa',
         200.0,
         '2025-10-03'::DATE,
@@ -4305,13 +4305,13 @@ BEGIN
     )
     RETURNING id INTO v_evento_id;
 
-    -- Alocação: POC (R$ 260.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 260.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'EXCELSIOR',
+        'Diária - Poc - ' || 'EXCELSIOR',
         'despesa',
         260.0,
         '2025-02-25'::DATE,
@@ -4335,13 +4335,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: PLUTOS (R$ 240.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'PLUTOS' LIMIT 1;
+    -- Alocação: Plutos (R$ 240.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Plutos') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - PLUTOS - ' || 'EXCELSIOR',
+        'Diária - Plutos - ' || 'EXCELSIOR',
         'despesa',
         240.0,
         '2025-02-25'::DATE,
@@ -4365,13 +4365,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: PLUTOS (R$ 30.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'PLUTOS' LIMIT 1;
+    -- Alocação: Plutos (R$ 30.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Plutos') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - PLUTOS - ' || 'EXCELSIOR',
+        'Diária - Plutos - ' || 'EXCELSIOR',
         'despesa',
         30.0,
         '2025-02-25'::DATE,
@@ -4395,13 +4395,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: DORA (R$ 150.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'DORA' LIMIT 1;
+    -- Alocação: Dora (R$ 150.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Dora') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - DORA - ' || 'EXCELSIOR',
+        'Diária - Dora - ' || 'EXCELSIOR',
         'despesa',
         150.0,
         '2025-02-25'::DATE,
@@ -4465,13 +4465,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: BACON (R$ 150.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'BACON' LIMIT 1;
+    -- Alocação: Bacon (R$ 150.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Bacon') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - BACON - ' || 'MASCOTE BONJA',
+        'Diária - Bacon - ' || 'MASCOTE BONJA',
         'despesa',
         150.0,
         '2025-02-25'::DATE,
@@ -4535,13 +4535,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: BACON (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'BACON' LIMIT 1;
+    -- Alocação: Bacon (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Bacon') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - BACON - ' || 'JACY BENÍCIO',
+        'Diária - Bacon - ' || 'JACY BENÍCIO',
         'despesa',
         180.0,
         '2025-02-27'::DATE,
@@ -4565,13 +4565,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: PLUTOS (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'PLUTOS' LIMIT 1;
+    -- Alocação: Plutos (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Plutos') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - PLUTOS - ' || 'JACY BENÍCIO',
+        'Diária - Plutos - ' || 'JACY BENÍCIO',
         'despesa',
         180.0,
         '2025-02-27'::DATE,
@@ -4595,13 +4595,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: PLUTOS (R$ 30.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'PLUTOS' LIMIT 1;
+    -- Alocação: Plutos (R$ 30.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Plutos') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - PLUTOS - ' || 'JACY BENÍCIO',
+        'Diária - Plutos - ' || 'JACY BENÍCIO',
         'despesa',
         30.0,
         '2025-02-27'::DATE,
@@ -4665,13 +4665,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 600.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 600.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'FAZENDA EVARISTO',
+        'Diária - Poc - ' || 'FAZENDA EVARISTO',
         'despesa',
         600.0,
         '2025-03-16'::DATE,
@@ -4695,13 +4695,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: BACON (R$ 600.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'BACON' LIMIT 1;
+    -- Alocação: Bacon (R$ 600.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Bacon') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - BACON - ' || 'FAZENDA EVARISTO',
+        'Diária - Bacon - ' || 'FAZENDA EVARISTO',
         'despesa',
         600.0,
         '2025-03-16'::DATE,
@@ -4765,13 +4765,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: LEKA (R$ 510.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'LEKA' LIMIT 1;
+    -- Alocação: Leka (R$ 510.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Leka') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - LEKA - ' || 'MARAMBAIA CARNAVAL',
+        'Diária - Leka - ' || 'MARAMBAIA CARNAVAL',
         'despesa',
         510.0,
         '2025-03-16'::DATE,
@@ -4795,13 +4795,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: LEKA (R$ 340.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'LEKA' LIMIT 1;
+    -- Alocação: Leka (R$ 340.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Leka') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - LEKA - ' || 'MARAMBAIA CARNAVAL',
+        'Diária - Leka - ' || 'MARAMBAIA CARNAVAL',
         'despesa',
         340.0,
         '2025-03-16'::DATE,
@@ -4825,13 +4825,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: RAVENA (R$ 510.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'RAVENA' LIMIT 1;
+    -- Alocação: Ravena (R$ 510.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Ravena') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - RAVENA - ' || 'MARAMBAIA CARNAVAL',
+        'Diária - Ravena - ' || 'MARAMBAIA CARNAVAL',
         'despesa',
         510.0,
         '2025-03-16'::DATE,
@@ -4895,13 +4895,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: ESTRELA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'ESTRELA' LIMIT 1;
+    -- Alocação: Estrela (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Estrela') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - ESTRELA - ' || 'JENNI',
+        'Diária - Estrela - ' || 'JENNI',
         'despesa',
         180.0,
         '2025-03-16'::DATE,
@@ -4925,13 +4925,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: JUJUBA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'JUJUBA' LIMIT 1;
+    -- Alocação: Jujuba (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Jujuba') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - JUJUBA - ' || 'JENNI',
+        'Diária - Jujuba - ' || 'JENNI',
         'despesa',
         180.0,
         '2025-03-16'::DATE,
@@ -4995,13 +4995,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: FELICIA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'FELICIA' LIMIT 1;
+    -- Alocação: Felicia (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Felicia') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - FELICIA - ' || 'OSTERFEST',
+        'Diária - Felicia - ' || 'OSTERFEST',
         'despesa',
         180.0,
         '2025-03-16'::DATE,
@@ -5065,13 +5065,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 185.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 185.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'ANA CAROLINE',
+        'Diária - Poc - ' || 'ANA CAROLINE',
         'despesa',
         185.0,
         '2025-03-22'::DATE,
@@ -5095,13 +5095,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: BACON (R$ 165.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'BACON' LIMIT 1;
+    -- Alocação: Bacon (R$ 165.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Bacon') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - BACON - ' || 'ANA CAROLINE',
+        'Diária - Bacon - ' || 'ANA CAROLINE',
         'despesa',
         165.0,
         '2025-03-22'::DATE,
@@ -5165,13 +5165,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: ESTRELA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'ESTRELA' LIMIT 1;
+    -- Alocação: Estrela (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Estrela') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - ESTRELA - ' || 'PATRICIA',
+        'Diária - Estrela - ' || 'PATRICIA',
         'despesa',
         180.0,
         '2025-03-22'::DATE,
@@ -5195,13 +5195,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: JUJUBA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'JUJUBA' LIMIT 1;
+    -- Alocação: Jujuba (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Jujuba') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - JUJUBA - ' || 'PATRICIA',
+        'Diária - Jujuba - ' || 'PATRICIA',
         'despesa',
         180.0,
         '2025-03-22'::DATE,
@@ -5265,13 +5265,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: BACON (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'BACON' LIMIT 1;
+    -- Alocação: Bacon (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Bacon') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - BACON - ' || 'LARISSA',
+        'Diária - Bacon - ' || 'LARISSA',
         'despesa',
         180.0,
         '2025-03-23'::DATE,
@@ -5295,13 +5295,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: SORRISO (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'SORRISO' LIMIT 1;
+    -- Alocação: Sorriso (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Sorriso') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - SORRISO - ' || 'LARISSA',
+        'Diária - Sorriso - ' || 'LARISSA',
         'despesa',
         180.0,
         '2025-03-23'::DATE,
@@ -5325,13 +5325,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: DORA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'DORA' LIMIT 1;
+    -- Alocação: Dora (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Dora') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - DORA - ' || 'LARISSA',
+        'Diária - Dora - ' || 'LARISSA',
         'despesa',
         180.0,
         '2025-03-23'::DATE,
@@ -5395,13 +5395,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: JOJO (R$ 210.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'JOJO' LIMIT 1;
+    -- Alocação: Jojo (R$ 210.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Jojo') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - JOJO - ' || 'ANA',
+        'Diária - Jojo - ' || 'ANA',
         'despesa',
         210.0,
         '2025-03-23'::DATE,
@@ -5425,13 +5425,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: MARI (R$ 210.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'MARI' LIMIT 1;
+    -- Alocação: Mari (R$ 210.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Mari') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - MARI - ' || 'ANA',
+        'Diária - Mari - ' || 'ANA',
         'despesa',
         210.0,
         '2025-03-23'::DATE,
@@ -5495,13 +5495,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 230.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 230.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'SUELEN',
+        'Diária - Poc - ' || 'SUELEN',
         'despesa',
         230.0,
         '2025-03-23'::DATE,
@@ -5525,13 +5525,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: DORA (R$ 210.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'DORA' LIMIT 1;
+    -- Alocação: Dora (R$ 210.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Dora') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - DORA - ' || 'SUELEN',
+        'Diária - Dora - ' || 'SUELEN',
         'despesa',
         210.0,
         '2025-03-23'::DATE,
@@ -5555,13 +5555,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: JUJUBA (R$ 210.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'JUJUBA' LIMIT 1;
+    -- Alocação: Jujuba (R$ 210.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Jujuba') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - JUJUBA - ' || 'SUELEN',
+        'Diária - Jujuba - ' || 'SUELEN',
         'despesa',
         210.0,
         '2025-03-23'::DATE,
@@ -5625,13 +5625,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: ESTRELA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'ESTRELA' LIMIT 1;
+    -- Alocação: Estrela (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Estrela') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - ESTRELA - ' || 'GREICE',
+        'Diária - Estrela - ' || 'GREICE',
         'despesa',
         180.0,
         '2025-03-24'::DATE,
@@ -5695,13 +5695,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: BACON (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'BACON' LIMIT 1;
+    -- Alocação: Bacon (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Bacon') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - BACON - ' || 'KARINE',
+        'Diária - Bacon - ' || 'KARINE',
         'despesa',
         180.0,
         '2025-03-24'::DATE,
@@ -5765,13 +5765,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: BACON (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'BACON' LIMIT 1;
+    -- Alocação: Bacon (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Bacon') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - BACON - ' || 'CARLA',
+        'Diária - Bacon - ' || 'CARLA',
         'despesa',
         180.0,
         '2025-03-24'::DATE,
@@ -5795,13 +5795,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: POC (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'CARLA',
+        'Diária - Poc - ' || 'CARLA',
         'despesa',
         200.0,
         '2025-03-24'::DATE,
@@ -5825,13 +5825,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: FELICIA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'FELICIA' LIMIT 1;
+    -- Alocação: Felicia (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Felicia') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - FELICIA - ' || 'CARLA',
+        'Diária - Felicia - ' || 'CARLA',
         'despesa',
         180.0,
         '2025-03-24'::DATE,
@@ -5855,13 +5855,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: JOJO (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'JOJO' LIMIT 1;
+    -- Alocação: Jojo (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Jojo') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - JOJO - ' || 'CARLA',
+        'Diária - Jojo - ' || 'CARLA',
         'despesa',
         180.0,
         '2025-03-24'::DATE,
@@ -5925,13 +5925,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 320.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 320.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'FESTIVAL DA CERVEJA',
+        'Diária - Poc - ' || 'FESTIVAL DA CERVEJA',
         'despesa',
         320.0,
         '2025-03-27'::DATE,
@@ -5955,13 +5955,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: BACON (R$ 300.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'BACON' LIMIT 1;
+    -- Alocação: Bacon (R$ 300.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Bacon') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - BACON - ' || 'FESTIVAL DA CERVEJA',
+        'Diária - Bacon - ' || 'FESTIVAL DA CERVEJA',
         'despesa',
         300.0,
         '2025-03-27'::DATE,
@@ -5985,13 +5985,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: FELICIA (R$ 300.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'FELICIA' LIMIT 1;
+    -- Alocação: Felicia (R$ 300.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Felicia') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - FELICIA - ' || 'FESTIVAL DA CERVEJA',
+        'Diária - Felicia - ' || 'FESTIVAL DA CERVEJA',
         'despesa',
         300.0,
         '2025-03-27'::DATE,
@@ -6015,13 +6015,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: JOJO (R$ 300.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'JOJO' LIMIT 1;
+    -- Alocação: Jojo (R$ 300.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Jojo') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - JOJO - ' || 'FESTIVAL DA CERVEJA',
+        'Diária - Jojo - ' || 'FESTIVAL DA CERVEJA',
         'despesa',
         300.0,
         '2025-03-27'::DATE,
@@ -6085,13 +6085,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: BACON (R$ 240.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'BACON' LIMIT 1;
+    -- Alocação: Bacon (R$ 240.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Bacon') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - BACON - ' || 'FESTIVAL DA CERVEJA',
+        'Diária - Bacon - ' || 'FESTIVAL DA CERVEJA',
         'despesa',
         240.0,
         '2025-03-29'::DATE,
@@ -6115,13 +6115,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: JOJO (R$ 240.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'JOJO' LIMIT 1;
+    -- Alocação: Jojo (R$ 240.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Jojo') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - JOJO - ' || 'FESTIVAL DA CERVEJA',
+        'Diária - Jojo - ' || 'FESTIVAL DA CERVEJA',
         'despesa',
         240.0,
         '2025-03-29'::DATE,
@@ -6145,13 +6145,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: JUJUBA (R$ 240.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'JUJUBA' LIMIT 1;
+    -- Alocação: Jujuba (R$ 240.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Jujuba') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - JUJUBA - ' || 'FESTIVAL DA CERVEJA',
+        'Diária - Jujuba - ' || 'FESTIVAL DA CERVEJA',
         'despesa',
         240.0,
         '2025-03-29'::DATE,
@@ -6215,13 +6215,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: ESTRELA (R$ 150.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'ESTRELA' LIMIT 1;
+    -- Alocação: Estrela (R$ 150.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Estrela') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - ESTRELA - ' || 'FESTIVAL DA CERVEJA',
+        'Diária - Estrela - ' || 'FESTIVAL DA CERVEJA',
         'despesa',
         150.0,
         '2025-03-30'::DATE,
@@ -6245,13 +6245,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: SAMURAI (R$ 150.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'SAMURAI' LIMIT 1;
+    -- Alocação: Samurai (R$ 150.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Samurai') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - SAMURAI - ' || 'FESTIVAL DA CERVEJA',
+        'Diária - Samurai - ' || 'FESTIVAL DA CERVEJA',
         'despesa',
         150.0,
         '2025-03-30'::DATE,
@@ -6315,13 +6315,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: BABALU (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'BABALU' LIMIT 1;
+    -- Alocação: Babalu (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Babalu') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - BABALU - ' || 'EVENTO AD HERING',
+        'Diária - Babalu - ' || 'EVENTO AD HERING',
         'despesa',
         200.0,
         '2025-03-30'::DATE,
@@ -6385,13 +6385,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: JUJUBA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'JUJUBA' LIMIT 1;
+    -- Alocação: Jujuba (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Jujuba') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - JUJUBA - ' || 'GAUCHO',
+        'Diária - Jujuba - ' || 'GAUCHO',
         'despesa',
         180.0,
         '2025-03-30'::DATE,
@@ -6415,13 +6415,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: DORA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'DORA' LIMIT 1;
+    -- Alocação: Dora (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Dora') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - DORA - ' || 'GAUCHO',
+        'Diária - Dora - ' || 'GAUCHO',
         'despesa',
         180.0,
         '2025-03-30'::DATE,
@@ -6485,13 +6485,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: PLUTOS (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'PLUTOS' LIMIT 1;
+    -- Alocação: Plutos (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Plutos') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - PLUTOS - ' || 'NATALIA',
+        'Diária - Plutos - ' || 'NATALIA',
         'despesa',
         180.0,
         '2025-03-31'::DATE,
@@ -6515,13 +6515,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: PLUTOS (R$ 30.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'PLUTOS' LIMIT 1;
+    -- Alocação: Plutos (R$ 30.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Plutos') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - PLUTOS - ' || 'NATALIA',
+        'Diária - Plutos - ' || 'NATALIA',
         'despesa',
         30.0,
         '2025-03-31'::DATE,
@@ -6545,13 +6545,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: JOJO (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'JOJO' LIMIT 1;
+    -- Alocação: Jojo (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Jojo') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - JOJO - ' || 'NATALIA',
+        'Diária - Jojo - ' || 'NATALIA',
         'despesa',
         180.0,
         '2025-03-31'::DATE,
@@ -6615,13 +6615,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: BACON (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'BACON' LIMIT 1;
+    -- Alocação: Bacon (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Bacon') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - BACON - ' || 'RAFAELA',
+        'Diária - Bacon - ' || 'RAFAELA',
         'despesa',
         180.0,
         '2025-03-31'::DATE,
@@ -6645,13 +6645,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: SAMURAI (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'SAMURAI' LIMIT 1;
+    -- Alocação: Samurai (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Samurai') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - SAMURAI - ' || 'RAFAELA',
+        'Diária - Samurai - ' || 'RAFAELA',
         'despesa',
         180.0,
         '2025-03-31'::DATE,
@@ -6715,13 +6715,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: ESTRELA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'ESTRELA' LIMIT 1;
+    -- Alocação: Estrela (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Estrela') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - ESTRELA - ' || 'BRUNA',
+        'Diária - Estrela - ' || 'BRUNA',
         'despesa',
         180.0,
         '2025-03-31'::DATE,
@@ -6745,13 +6745,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: JUCI (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'JUCI' LIMIT 1;
+    -- Alocação: Juci (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Juci') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - JUCI - ' || 'BRUNA',
+        'Diária - Juci - ' || 'BRUNA',
         'despesa',
         180.0,
         '2025-03-31'::DATE,
@@ -6815,13 +6815,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'SABRINA',
+        'Diária - Poc - ' || 'SABRINA',
         'despesa',
         200.0,
         '2025-03-31'::DATE,
@@ -6845,13 +6845,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: BACON (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'BACON' LIMIT 1;
+    -- Alocação: Bacon (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Bacon') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - BACON - ' || 'SABRINA',
+        'Diária - Bacon - ' || 'SABRINA',
         'despesa',
         180.0,
         '2025-03-31'::DATE,
@@ -6915,13 +6915,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: ESTRELA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'ESTRELA' LIMIT 1;
+    -- Alocação: Estrela (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Estrela') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - ESTRELA - ' || 'ELISABETH',
+        'Diária - Estrela - ' || 'ELISABETH',
         'despesa',
         180.0,
         '2025-04-04'::DATE,
@@ -6945,13 +6945,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: MARI (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'MARI' LIMIT 1;
+    -- Alocação: Mari (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Mari') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - MARI - ' || 'ELISABETH',
+        'Diária - Mari - ' || 'ELISABETH',
         'despesa',
         180.0,
         '2025-04-04'::DATE,
@@ -7015,13 +7015,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: BACON (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'BACON' LIMIT 1;
+    -- Alocação: Bacon (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Bacon') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - BACON - ' || 'IVANA',
+        'Diária - Bacon - ' || 'IVANA',
         'despesa',
         180.0,
         '2025-06-04'::DATE,
@@ -7045,13 +7045,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: JUJUBA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'JUJUBA' LIMIT 1;
+    -- Alocação: Jujuba (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Jujuba') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - JUJUBA - ' || 'IVANA',
+        'Diária - Jujuba - ' || 'IVANA',
         'despesa',
         180.0,
         '2025-06-04'::DATE,
@@ -7115,13 +7115,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: ESTRELA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'ESTRELA' LIMIT 1;
+    -- Alocação: Estrela (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Estrela') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - ESTRELA - ' || 'MANIA DE BRINCAR',
+        'Diária - Estrela - ' || 'MANIA DE BRINCAR',
         'despesa',
         180.0,
         '2025-06-04'::DATE,
@@ -7145,13 +7145,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: ESTRELA (R$ 80.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'ESTRELA' LIMIT 1;
+    -- Alocação: Estrela (R$ 80.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Estrela') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - ESTRELA - ' || 'MANIA DE BRINCAR',
+        'Diária - Estrela - ' || 'MANIA DE BRINCAR',
         'despesa',
         80.0,
         '2025-06-04'::DATE,
@@ -7175,13 +7175,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: BACON (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'BACON' LIMIT 1;
+    -- Alocação: Bacon (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Bacon') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - BACON - ' || 'MANIA DE BRINCAR',
+        'Diária - Bacon - ' || 'MANIA DE BRINCAR',
         'despesa',
         180.0,
         '2025-06-04'::DATE,
@@ -7245,13 +7245,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: PLUTOS (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'PLUTOS' LIMIT 1;
+    -- Alocação: Plutos (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Plutos') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - PLUTOS - ' || 'ALINE',
+        'Diária - Plutos - ' || 'ALINE',
         'despesa',
         180.0,
         '2025-07-04'::DATE,
@@ -7275,13 +7275,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: PLUTOS (R$ 30.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'PLUTOS' LIMIT 1;
+    -- Alocação: Plutos (R$ 30.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Plutos') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - PLUTOS - ' || 'ALINE',
+        'Diária - Plutos - ' || 'ALINE',
         'despesa',
         30.0,
         '2025-07-04'::DATE,
@@ -7305,13 +7305,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: BACON (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'BACON' LIMIT 1;
+    -- Alocação: Bacon (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Bacon') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - BACON - ' || 'ALINE',
+        'Diária - Bacon - ' || 'ALINE',
         'despesa',
         180.0,
         '2025-07-04'::DATE,
@@ -7415,13 +7415,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: ESTRELA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'ESTRELA' LIMIT 1;
+    -- Alocação: Estrela (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Estrela') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - ESTRELA - ' || 'GISELE',
+        'Diária - Estrela - ' || 'GISELE',
         'despesa',
         180.0,
         '2025-04-13'::DATE,
@@ -7445,13 +7445,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: MORANGUINHO (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'MORANGUINHO' LIMIT 1;
+    -- Alocação: Moranguinho (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Moranguinho') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - MORANGUINHO - ' || 'GISELE',
+        'Diária - Moranguinho - ' || 'GISELE',
         'despesa',
         180.0,
         '2025-04-13'::DATE,
@@ -7515,13 +7515,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'JAQUELINE',
+        'Diária - Poc - ' || 'JAQUELINE',
         'despesa',
         200.0,
         '2025-04-13'::DATE,
@@ -7585,13 +7585,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: ESTRELA (R$ 210.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'ESTRELA' LIMIT 1;
+    -- Alocação: Estrela (R$ 210.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Estrela') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - ESTRELA - ' || 'CAMILA',
+        'Diária - Estrela - ' || 'CAMILA',
         'despesa',
         210.0,
         '2025-04-13'::DATE,
@@ -7615,13 +7615,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: MORANGUINHO (R$ 210.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'MORANGUINHO' LIMIT 1;
+    -- Alocação: Moranguinho (R$ 210.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Moranguinho') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - MORANGUINHO - ' || 'CAMILA',
+        'Diária - Moranguinho - ' || 'CAMILA',
         'despesa',
         210.0,
         '2025-04-13'::DATE,
@@ -7685,13 +7685,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: BACON (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'BACON' LIMIT 1;
+    -- Alocação: Bacon (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Bacon') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - BACON - ' || 'JOSY',
+        'Diária - Bacon - ' || 'JOSY',
         'despesa',
         180.0,
         '2025-04-14'::DATE,
@@ -7715,13 +7715,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: JUJUBA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'JUJUBA' LIMIT 1;
+    -- Alocação: Jujuba (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Jujuba') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - JUJUBA - ' || 'JOSY',
+        'Diária - Jujuba - ' || 'JOSY',
         'despesa',
         180.0,
         '2025-04-14'::DATE,
@@ -7785,13 +7785,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: PLUTOS (R$ 150.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'PLUTOS' LIMIT 1;
+    -- Alocação: Plutos (R$ 150.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Plutos') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - PLUTOS - ' || 'PAULA',
+        'Diária - Plutos - ' || 'PAULA',
         'despesa',
         150.0,
         '2025-04-14'::DATE,
@@ -7815,13 +7815,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: PLUTOS (R$ 30.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'PLUTOS' LIMIT 1;
+    -- Alocação: Plutos (R$ 30.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Plutos') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - PLUTOS - ' || 'PAULA',
+        'Diária - Plutos - ' || 'PAULA',
         'despesa',
         30.0,
         '2025-04-14'::DATE,
@@ -7871,13 +7871,13 @@ BEGIN
     )
     RETURNING id INTO v_evento_id;
 
-    -- Alocação: JOJO (R$ 900.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'JOJO' LIMIT 1;
+    -- Alocação: Jojo (R$ 900.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Jojo') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - JOJO - ' || 'ESPAÇO KIDS',
+        'Diária - Jojo - ' || 'ESPAÇO KIDS',
         'despesa',
         900.0,
         '2025-05-05'::DATE,
@@ -7901,13 +7901,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: PEPE (R$ 400.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'PEPE' LIMIT 1;
+    -- Alocação: Pepe (R$ 400.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Pepe') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - PEPE - ' || 'ESPAÇO KIDS',
+        'Diária - Pepe - ' || 'ESPAÇO KIDS',
         'despesa',
         400.0,
         '2025-05-05'::DATE,
@@ -8037,13 +8037,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: PLUTOS (R$ 240.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'PLUTOS' LIMIT 1;
+    -- Alocação: Plutos (R$ 240.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Plutos') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - PLUTOS - ' || 'CORINGAS',
+        'Diária - Plutos - ' || 'CORINGAS',
         'despesa',
         240.0,
         '2025-04-20'::DATE,
@@ -8067,13 +8067,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: PLUTOS (R$ 30.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'PLUTOS' LIMIT 1;
+    -- Alocação: Plutos (R$ 30.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Plutos') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - PLUTOS - ' || 'CORINGAS',
+        'Diária - Plutos - ' || 'CORINGAS',
         'despesa',
         30.0,
         '2025-04-20'::DATE,
@@ -8097,13 +8097,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: LADY (R$ 240.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'LADY' LIMIT 1;
+    -- Alocação: Lady (R$ 240.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Lady') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - LADY - ' || 'CORINGAS',
+        'Diária - Lady - ' || 'CORINGAS',
         'despesa',
         240.0,
         '2025-04-20'::DATE,
@@ -8167,13 +8167,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: BACON (R$ 240.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'BACON' LIMIT 1;
+    -- Alocação: Bacon (R$ 240.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Bacon') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - BACON - ' || 'BUCHMANN',
+        'Diária - Bacon - ' || 'BUCHMANN',
         'despesa',
         240.0,
         '2025-04-20'::DATE,
@@ -8197,13 +8197,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: MARI (R$ 240.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'MARI' LIMIT 1;
+    -- Alocação: Mari (R$ 240.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Mari') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - MARI - ' || 'BUCHMANN',
+        'Diária - Mari - ' || 'BUCHMANN',
         'despesa',
         240.0,
         '2025-04-20'::DATE,
@@ -8267,13 +8267,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: MORANGUINHO (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'MORANGUINHO' LIMIT 1;
+    -- Alocação: Moranguinho (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Moranguinho') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - MORANGUINHO - ' || 'TÂNIA',
+        'Diária - Moranguinho - ' || 'TÂNIA',
         'despesa',
         180.0,
         '2025-04-20'::DATE,
@@ -8337,13 +8337,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 290.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 290.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'MARLON',
+        'Diária - Poc - ' || 'MARLON',
         'despesa',
         290.0,
         '2025-04-20'::DATE,
@@ -8367,13 +8367,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: PLUTOS (R$ 30.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'PLUTOS' LIMIT 1;
+    -- Alocação: Plutos (R$ 30.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Plutos') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - PLUTOS - ' || 'MARLON',
+        'Diária - Plutos - ' || 'MARLON',
         'despesa',
         30.0,
         '2025-04-20'::DATE,
@@ -8397,13 +8397,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: PLUTOS (R$ 240.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'PLUTOS' LIMIT 1;
+    -- Alocação: Plutos (R$ 240.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Plutos') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - PLUTOS - ' || 'MARLON',
+        'Diária - Plutos - ' || 'MARLON',
         'despesa',
         240.0,
         '2025-04-20'::DATE,
@@ -8427,13 +8427,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: MARI (R$ 270.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'MARI' LIMIT 1;
+    -- Alocação: Mari (R$ 270.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Mari') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - MARI - ' || 'MARLON',
+        'Diária - Mari - ' || 'MARLON',
         'despesa',
         270.0,
         '2025-04-20'::DATE,
@@ -8497,13 +8497,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: BACON (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'BACON' LIMIT 1;
+    -- Alocação: Bacon (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Bacon') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - BACON - ' || 'EVENTO BREITKOPF',
+        'Diária - Bacon - ' || 'EVENTO BREITKOPF',
         'despesa',
         180.0,
         '2025-04-21'::DATE,
@@ -8527,13 +8527,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: DORA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'DORA' LIMIT 1;
+    -- Alocação: Dora (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Dora') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - DORA - ' || 'EVENTO BREITKOPF',
+        'Diária - Dora - ' || 'EVENTO BREITKOPF',
         'despesa',
         180.0,
         '2025-04-21'::DATE,
@@ -8597,13 +8597,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: ESTRELA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'ESTRELA' LIMIT 1;
+    -- Alocação: Estrela (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Estrela') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - ESTRELA - ' || 'CRISTIANE',
+        'Diária - Estrela - ' || 'CRISTIANE',
         'despesa',
         180.0,
         '2025-04-21'::DATE,
@@ -8627,13 +8627,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: MORANGUINHO (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'MORANGUINHO' LIMIT 1;
+    -- Alocação: Moranguinho (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Moranguinho') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - MORANGUINHO - ' || 'CRISTIANE',
+        'Diária - Moranguinho - ' || 'CRISTIANE',
         'despesa',
         180.0,
         '2025-04-21'::DATE,
@@ -8657,13 +8657,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: ESTRELA (R$ 80.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'ESTRELA' LIMIT 1;
+    -- Alocação: Estrela (R$ 80.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Estrela') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - ESTRELA - ' || 'CRISTIANE',
+        'Diária - Estrela - ' || 'CRISTIANE',
         'despesa',
         80.0,
         '2025-04-21'::DATE,
@@ -8727,13 +8727,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: BACON (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'BACON' LIMIT 1;
+    -- Alocação: Bacon (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Bacon') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - BACON - ' || 'MARCELA',
+        'Diária - Bacon - ' || 'MARCELA',
         'despesa',
         180.0,
         '2025-04-21'::DATE,
@@ -8757,13 +8757,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: CRYSTAL (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'CRYSTAL' LIMIT 1;
+    -- Alocação: Crystal (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Crystal') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - CRYSTAL - ' || 'MARCELA',
+        'Diária - Crystal - ' || 'MARCELA',
         'despesa',
         180.0,
         '2025-04-21'::DATE,
@@ -8827,13 +8827,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 350.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 350.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'PAULA',
+        'Diária - Poc - ' || 'PAULA',
         'despesa',
         350.0,
         '2025-04-24'::DATE,
@@ -8857,13 +8857,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: ESTRELA (R$ 350.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'ESTRELA' LIMIT 1;
+    -- Alocação: Estrela (R$ 350.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Estrela') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - ESTRELA - ' || 'PAULA',
+        'Diária - Estrela - ' || 'PAULA',
         'despesa',
         350.0,
         '2025-04-24'::DATE,
@@ -8887,13 +8887,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: BACON (R$ 350.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'BACON' LIMIT 1;
+    -- Alocação: Bacon (R$ 350.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Bacon') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - BACON - ' || 'PAULA',
+        'Diária - Bacon - ' || 'PAULA',
         'despesa',
         350.0,
         '2025-04-24'::DATE,
@@ -8917,13 +8917,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: PEPE (R$ 350.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'PEPE' LIMIT 1;
+    -- Alocação: Pepe (R$ 350.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Pepe') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - PEPE - ' || 'PAULA',
+        'Diária - Pepe - ' || 'PAULA',
         'despesa',
         350.0,
         '2025-04-24'::DATE,
@@ -8947,13 +8947,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: SORRISO (R$ 350.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'SORRISO' LIMIT 1;
+    -- Alocação: Sorriso (R$ 350.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Sorriso') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - SORRISO - ' || 'PAULA',
+        'Diária - Sorriso - ' || 'PAULA',
         'despesa',
         350.0,
         '2025-04-24'::DATE,
@@ -9017,13 +9017,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'UNICAMP',
+        'Diária - Poc - ' || 'UNICAMP',
         'despesa',
         200.0,
         '2025-10-05'::DATE,
@@ -9047,13 +9047,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: JUJUBA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'JUJUBA' LIMIT 1;
+    -- Alocação: Jujuba (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Jujuba') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - JUJUBA - ' || 'UNICAMP',
+        'Diária - Jujuba - ' || 'UNICAMP',
         'despesa',
         180.0,
         '2025-10-05'::DATE,
@@ -9077,13 +9077,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: SAMURAI (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'SAMURAI' LIMIT 1;
+    -- Alocação: Samurai (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Samurai') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - SAMURAI - ' || 'UNICAMP',
+        'Diária - Samurai - ' || 'UNICAMP',
         'despesa',
         180.0,
         '2025-10-05'::DATE,
@@ -9107,13 +9107,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: ANA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'ANA' LIMIT 1;
+    -- Alocação: Ana (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Ana') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - ANA - ' || 'UNICAMP',
+        'Diária - Ana - ' || 'UNICAMP',
         'despesa',
         180.0,
         '2025-10-05'::DATE,
@@ -9137,13 +9137,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: NANDA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'NANDA' LIMIT 1;
+    -- Alocação: Nanda (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Nanda') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - NANDA - ' || 'UNICAMP',
+        'Diária - Nanda - ' || 'UNICAMP',
         'despesa',
         180.0,
         '2025-10-05'::DATE,
@@ -9167,13 +9167,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: PLUTOS (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'PLUTOS' LIMIT 1;
+    -- Alocação: Plutos (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Plutos') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - PLUTOS - ' || 'UNICAMP',
+        'Diária - Plutos - ' || 'UNICAMP',
         'despesa',
         180.0,
         '2025-10-05'::DATE,
@@ -9197,13 +9197,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: MARI (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'MARI' LIMIT 1;
+    -- Alocação: Mari (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Mari') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - MARI - ' || 'UNICAMP',
+        'Diária - Mari - ' || 'UNICAMP',
         'despesa',
         180.0,
         '2025-10-05'::DATE,
@@ -9227,13 +9227,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: CRYSTAL (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'CRYSTAL' LIMIT 1;
+    -- Alocação: Crystal (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Crystal') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - CRYSTAL - ' || 'UNICAMP',
+        'Diária - Crystal - ' || 'UNICAMP',
         'despesa',
         180.0,
         '2025-10-05'::DATE,
@@ -9257,13 +9257,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: PAOLA (R$ 100.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'PAOLA' LIMIT 1;
+    -- Alocação: Paola (R$ 100.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Paola') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - PAOLA - ' || 'UNICAMP',
+        'Diária - Paola - ' || 'UNICAMP',
         'despesa',
         100.0,
         '2025-10-05'::DATE,
@@ -9287,13 +9287,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: JOJO (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'JOJO' LIMIT 1;
+    -- Alocação: Jojo (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Jojo') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - JOJO - ' || 'UNICAMP',
+        'Diária - Jojo - ' || 'UNICAMP',
         'despesa',
         180.0,
         '2025-10-05'::DATE,
@@ -9317,13 +9317,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: NEIA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'NEIA' LIMIT 1;
+    -- Alocação: Neia (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Neia') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - NEIA - ' || 'UNICAMP',
+        'Diária - Neia - ' || 'UNICAMP',
         'despesa',
         180.0,
         '2025-10-05'::DATE,
@@ -9387,13 +9387,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 440.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 440.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'SAGRADA',
+        'Diária - Poc - ' || 'SAGRADA',
         'despesa',
         440.0,
         '2025-04-27'::DATE,
@@ -9417,13 +9417,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: JOJO (R$ 440.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'JOJO' LIMIT 1;
+    -- Alocação: Jojo (R$ 440.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Jojo') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - JOJO - ' || 'SAGRADA',
+        'Diária - Jojo - ' || 'SAGRADA',
         'despesa',
         440.0,
         '2025-04-27'::DATE,
@@ -9447,13 +9447,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: PAOLA (R$ 230.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'PAOLA' LIMIT 1;
+    -- Alocação: Paola (R$ 230.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Paola') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - PAOLA - ' || 'SAGRADA',
+        'Diária - Paola - ' || 'SAGRADA',
         'despesa',
         230.0,
         '2025-04-27'::DATE,
@@ -9477,13 +9477,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: CINTIA (R$ 300.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'CINTIA' LIMIT 1;
+    -- Alocação: Cintia (R$ 300.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Cintia') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - CINTIA - ' || 'SAGRADA',
+        'Diária - Cintia - ' || 'SAGRADA',
         'despesa',
         300.0,
         '2025-04-27'::DATE,
@@ -9507,13 +9507,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: SAMURAI (R$ 240.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'SAMURAI' LIMIT 1;
+    -- Alocação: Samurai (R$ 240.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Samurai') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - SAMURAI - ' || 'SAGRADA',
+        'Diária - Samurai - ' || 'SAGRADA',
         'despesa',
         240.0,
         '2025-04-27'::DATE,
@@ -9537,13 +9537,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: ANA SAMURAI (R$ 240.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'ANA SAMURAI' LIMIT 1;
+    -- Alocação: Ana Samurai (R$ 240.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Ana Samurai') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - ANA SAMURAI - ' || 'SAGRADA',
+        'Diária - Ana Samurai - ' || 'SAGRADA',
         'despesa',
         240.0,
         '2025-04-27'::DATE,
@@ -9567,13 +9567,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: JUJUBA (R$ 240.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'JUJUBA' LIMIT 1;
+    -- Alocação: Jujuba (R$ 240.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Jujuba') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - JUJUBA - ' || 'SAGRADA',
+        'Diária - Jujuba - ' || 'SAGRADA',
         'despesa',
         240.0,
         '2025-04-27'::DATE,
@@ -9597,13 +9597,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: MARI (R$ 240.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'MARI' LIMIT 1;
+    -- Alocação: Mari (R$ 240.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Mari') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - MARI - ' || 'SAGRADA',
+        'Diária - Mari - ' || 'SAGRADA',
         'despesa',
         240.0,
         '2025-04-27'::DATE,
@@ -9627,13 +9627,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: NANDA (R$ 240.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'NANDA' LIMIT 1;
+    -- Alocação: Nanda (R$ 240.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Nanda') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - NANDA - ' || 'SAGRADA',
+        'Diária - Nanda - ' || 'SAGRADA',
         'despesa',
         240.0,
         '2025-04-27'::DATE,
@@ -9697,13 +9697,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: PLUTOS (R$ 150.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'PLUTOS' LIMIT 1;
+    -- Alocação: Plutos (R$ 150.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Plutos') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - PLUTOS - ' || 'OMAS HAUS',
+        'Diária - Plutos - ' || 'OMAS HAUS',
         'despesa',
         150.0,
         '2025-05-25'::DATE,
@@ -9727,13 +9727,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: PLUTOS (R$ 30.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'PLUTOS' LIMIT 1;
+    -- Alocação: Plutos (R$ 30.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Plutos') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - PLUTOS - ' || 'OMAS HAUS',
+        'Diária - Plutos - ' || 'OMAS HAUS',
         'despesa',
         30.0,
         '2025-05-25'::DATE,
@@ -9757,13 +9757,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: MARI (R$ 150.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'MARI' LIMIT 1;
+    -- Alocação: Mari (R$ 150.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Mari') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - MARI - ' || 'OMAS HAUS',
+        'Diária - Mari - ' || 'OMAS HAUS',
         'despesa',
         150.0,
         '2025-05-25'::DATE,
@@ -9827,13 +9827,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'LU',
+        'Diária - Poc - ' || 'LU',
         'despesa',
         200.0,
         '2025-04-27'::DATE,
@@ -9897,13 +9897,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: ESTRELA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'ESTRELA' LIMIT 1;
+    -- Alocação: Estrela (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Estrela') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - ESTRELA - ' || 'AMANDA',
+        'Diária - Estrela - ' || 'AMANDA',
         'despesa',
         180.0,
         '2025-04-27'::DATE,
@@ -9927,13 +9927,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: PEPE (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'PEPE' LIMIT 1;
+    -- Alocação: Pepe (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Pepe') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - PEPE - ' || 'AMANDA',
+        'Diária - Pepe - ' || 'AMANDA',
         'despesa',
         200.0,
         '2025-04-27'::DATE,
@@ -9997,13 +9997,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'GILSON',
+        'Diária - Poc - ' || 'GILSON',
         'despesa',
         200.0,
         '2025-04-27'::DATE,
@@ -10027,13 +10027,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: PEPE (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'PEPE' LIMIT 1;
+    -- Alocação: Pepe (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Pepe') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - PEPE - ' || 'GILSON',
+        'Diária - Pepe - ' || 'GILSON',
         'despesa',
         200.0,
         '2025-04-27'::DATE,
@@ -10057,13 +10057,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: SAMURAI (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'SAMURAI' LIMIT 1;
+    -- Alocação: Samurai (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Samurai') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - SAMURAI - ' || 'GILSON',
+        'Diária - Samurai - ' || 'GILSON',
         'despesa',
         180.0,
         '2025-04-27'::DATE,
@@ -10087,13 +10087,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: ANA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'ANA' LIMIT 1;
+    -- Alocação: Ana (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Ana') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - ANA - ' || 'GILSON',
+        'Diária - Ana - ' || 'GILSON',
         'despesa',
         180.0,
         '2025-04-27'::DATE,
@@ -10117,13 +10117,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: BACON (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'BACON' LIMIT 1;
+    -- Alocação: Bacon (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Bacon') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - BACON - ' || 'GILSON',
+        'Diária - Bacon - ' || 'GILSON',
         'despesa',
         180.0,
         '2025-04-27'::DATE,
@@ -10147,13 +10147,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: JOJO (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'JOJO' LIMIT 1;
+    -- Alocação: Jojo (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Jojo') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - JOJO - ' || 'GILSON',
+        'Diária - Jojo - ' || 'GILSON',
         'despesa',
         180.0,
         '2025-04-27'::DATE,
@@ -10217,13 +10217,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: ESTRELA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'ESTRELA' LIMIT 1;
+    -- Alocação: Estrela (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Estrela') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - ESTRELA - ' || 'PÁSCOA BVCC',
+        'Diária - Estrela - ' || 'PÁSCOA BVCC',
         'despesa',
         180.0,
         '2025-04-28'::DATE,
@@ -10247,13 +10247,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: ESTRELA (R$ 80.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'ESTRELA' LIMIT 1;
+    -- Alocação: Estrela (R$ 80.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Estrela') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - ESTRELA - ' || 'PÁSCOA BVCC',
+        'Diária - Estrela - ' || 'PÁSCOA BVCC',
         'despesa',
         80.0,
         '2025-04-28'::DATE,
@@ -10277,13 +10277,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: PLUTOS (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'PLUTOS' LIMIT 1;
+    -- Alocação: Plutos (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Plutos') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - PLUTOS - ' || 'PÁSCOA BVCC',
+        'Diária - Plutos - ' || 'PÁSCOA BVCC',
         'despesa',
         180.0,
         '2025-04-28'::DATE,
@@ -10307,13 +10307,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: PLUTOS (R$ 30.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'PLUTOS' LIMIT 1;
+    -- Alocação: Plutos (R$ 30.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Plutos') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - PLUTOS - ' || 'PÁSCOA BVCC',
+        'Diária - Plutos - ' || 'PÁSCOA BVCC',
         'despesa',
         30.0,
         '2025-04-28'::DATE,
@@ -10337,13 +10337,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: PAOLA (R$ 100.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'PAOLA' LIMIT 1;
+    -- Alocação: Paola (R$ 100.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Paola') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - PAOLA - ' || 'PÁSCOA BVCC',
+        'Diária - Paola - ' || 'PÁSCOA BVCC',
         'despesa',
         100.0,
         '2025-04-28'::DATE,
@@ -10367,13 +10367,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: MARI (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'MARI' LIMIT 1;
+    -- Alocação: Mari (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Mari') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - MARI - ' || 'PÁSCOA BVCC',
+        'Diária - Mari - ' || 'PÁSCOA BVCC',
         'despesa',
         180.0,
         '2025-04-28'::DATE,
@@ -10437,13 +10437,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'PÁSCOA BAND',
+        'Diária - Poc - ' || 'PÁSCOA BAND',
         'despesa',
         200.0,
         '2025-04-28'::DATE,
@@ -10507,13 +10507,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'SUSANA',
+        'Diária - Poc - ' || 'SUSANA',
         'despesa',
         200.0,
         '2025-04-28'::DATE,
@@ -10537,13 +10537,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: PEPE (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'PEPE' LIMIT 1;
+    -- Alocação: Pepe (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Pepe') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - PEPE - ' || 'SUSANA',
+        'Diária - Pepe - ' || 'SUSANA',
         'despesa',
         200.0,
         '2025-04-28'::DATE,
@@ -10607,13 +10607,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 230.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 230.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'MAÇONARIA JULIO',
+        'Diária - Poc - ' || 'MAÇONARIA JULIO',
         'despesa',
         230.0,
         '2025-01-05'::DATE,
@@ -10637,13 +10637,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: PEPE (R$ 230.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'PEPE' LIMIT 1;
+    -- Alocação: Pepe (R$ 230.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Pepe') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - PEPE - ' || 'MAÇONARIA JULIO',
+        'Diária - Pepe - ' || 'MAÇONARIA JULIO',
         'despesa',
         230.0,
         '2025-01-05'::DATE,
@@ -10667,13 +10667,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: BACON (R$ 210.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'BACON' LIMIT 1;
+    -- Alocação: Bacon (R$ 210.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Bacon') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - BACON - ' || 'MAÇONARIA JULIO',
+        'Diária - Bacon - ' || 'MAÇONARIA JULIO',
         'despesa',
         210.0,
         '2025-01-05'::DATE,
@@ -10697,13 +10697,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: PLUTOS (R$ 210.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'PLUTOS' LIMIT 1;
+    -- Alocação: Plutos (R$ 210.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Plutos') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - PLUTOS - ' || 'MAÇONARIA JULIO',
+        'Diária - Plutos - ' || 'MAÇONARIA JULIO',
         'despesa',
         210.0,
         '2025-01-05'::DATE,
@@ -10727,13 +10727,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: PLUTOS (R$ 30.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'PLUTOS' LIMIT 1;
+    -- Alocação: Plutos (R$ 30.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Plutos') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - PLUTOS - ' || 'MAÇONARIA JULIO',
+        'Diária - Plutos - ' || 'MAÇONARIA JULIO',
         'despesa',
         30.0,
         '2025-01-05'::DATE,
@@ -10797,13 +10797,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: SORRISO (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'SORRISO' LIMIT 1;
+    -- Alocação: Sorriso (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Sorriso') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - SORRISO - ' || 'NOITE DO SONINHO UNI',
+        'Diária - Sorriso - ' || 'NOITE DO SONINHO UNI',
         'despesa',
         180.0,
         '2025-01-05'::DATE,
@@ -10827,13 +10827,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: ESTRELA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'ESTRELA' LIMIT 1;
+    -- Alocação: Estrela (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Estrela') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - ESTRELA - ' || 'NOITE DO SONINHO UNI',
+        'Diária - Estrela - ' || 'NOITE DO SONINHO UNI',
         'despesa',
         180.0,
         '2025-01-05'::DATE,
@@ -10897,13 +10897,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: PEPE (R$ 510.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'PEPE' LIMIT 1;
+    -- Alocação: Pepe (R$ 510.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Pepe') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - PEPE - ' || 'JEANI',
+        'Diária - Pepe - ' || 'JEANI',
         'despesa',
         510.0,
         '2025-02-05'::DATE,
@@ -10927,13 +10927,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: BACON (R$ 510.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'BACON' LIMIT 1;
+    -- Alocação: Bacon (R$ 510.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Bacon') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - BACON - ' || 'JEANI',
+        'Diária - Bacon - ' || 'JEANI',
         'despesa',
         510.0,
         '2025-02-05'::DATE,
@@ -10997,13 +10997,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'MARAMBAIA PÁSCOA',
+        'Diária - Poc - ' || 'MARAMBAIA PÁSCOA',
         'despesa',
         200.0,
         '2025-03-05'::DATE,
@@ -11067,13 +11067,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 400.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 400.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'REBECCA',
+        'Diária - Poc - ' || 'REBECCA',
         'despesa',
         400.0,
         '2025-03-05'::DATE,
@@ -11097,13 +11097,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: JUJUBA (R$ 400.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'JUJUBA' LIMIT 1;
+    -- Alocação: Jujuba (R$ 400.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Jujuba') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - JUJUBA - ' || 'REBECCA',
+        'Diária - Jujuba - ' || 'REBECCA',
         'despesa',
         400.0,
         '2025-03-05'::DATE,
@@ -11167,13 +11167,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: ESTRELA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'ESTRELA' LIMIT 1;
+    -- Alocação: Estrela (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Estrela') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - ESTRELA - ' || 'FAZENDA EVARISTO',
+        'Diária - Estrela - ' || 'FAZENDA EVARISTO',
         'despesa',
         180.0,
         '2025-04-05'::DATE,
@@ -11197,13 +11197,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: DOCINHO (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'DOCINHO' LIMIT 1;
+    -- Alocação: Docinho (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Docinho') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - DOCINHO - ' || 'FAZENDA EVARISTO',
+        'Diária - Docinho - ' || 'FAZENDA EVARISTO',
         'despesa',
         180.0,
         '2025-04-05'::DATE,
@@ -11227,13 +11227,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: DOCINHO (R$ 36.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'DOCINHO' LIMIT 1;
+    -- Alocação: Docinho (R$ 36.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Docinho') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - DOCINHO - ' || 'FAZENDA EVARISTO',
+        'Diária - Docinho - ' || 'FAZENDA EVARISTO',
         'despesa',
         36.0,
         '2025-04-05'::DATE,
@@ -11297,13 +11297,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: ESTRELA (R$ 270.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'ESTRELA' LIMIT 1;
+    -- Alocação: Estrela (R$ 270.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Estrela') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - ESTRELA - ' || 'ADRIANA',
+        'Diária - Estrela - ' || 'ADRIANA',
         'despesa',
         270.0,
         '2025-04-05'::DATE,
@@ -11327,13 +11327,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: JUCI (R$ 270.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'JUCI' LIMIT 1;
+    -- Alocação: Juci (R$ 270.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Juci') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - JUCI - ' || 'ADRIANA',
+        'Diária - Juci - ' || 'ADRIANA',
         'despesa',
         270.0,
         '2025-04-05'::DATE,
@@ -11397,13 +11397,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'TABAJARA PÁSCOA',
+        'Diária - Poc - ' || 'TABAJARA PÁSCOA',
         'despesa',
         200.0,
         '2025-05-05'::DATE,
@@ -11427,13 +11427,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: PEPE (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'PEPE' LIMIT 1;
+    -- Alocação: Pepe (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Pepe') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - PEPE - ' || 'TABAJARA PÁSCOA',
+        'Diária - Pepe - ' || 'TABAJARA PÁSCOA',
         'despesa',
         200.0,
         '2025-05-05'::DATE,
@@ -11497,13 +11497,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'CAROLINA',
+        'Diária - Poc - ' || 'CAROLINA',
         'despesa',
         200.0,
         '2025-09-05'::DATE,
@@ -11567,13 +11567,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: BACON (R$ 150.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'BACON' LIMIT 1;
+    -- Alocação: Bacon (R$ 150.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Bacon') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - BACON - ' || 'PAOLA',
+        'Diária - Bacon - ' || 'PAOLA',
         'despesa',
         150.0,
         '2025-10-05'::DATE,
@@ -11597,13 +11597,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: SORRISO (R$ 150.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'SORRISO' LIMIT 1;
+    -- Alocação: Sorriso (R$ 150.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Sorriso') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - SORRISO - ' || 'PAOLA',
+        'Diária - Sorriso - ' || 'PAOLA',
         'despesa',
         150.0,
         '2025-10-05'::DATE,
@@ -11667,13 +11667,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: PEPE (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'PEPE' LIMIT 1;
+    -- Alocação: Pepe (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Pepe') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - PEPE - ' || 'CAMILA',
+        'Diária - Pepe - ' || 'CAMILA',
         'despesa',
         200.0,
         '2025-10-05'::DATE,
@@ -11737,13 +11737,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'RAFAEL',
+        'Diária - Poc - ' || 'RAFAEL',
         'despesa',
         200.0,
         '2025-11-05'::DATE,
@@ -11767,13 +11767,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: BACON (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'BACON' LIMIT 1;
+    -- Alocação: Bacon (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Bacon') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - BACON - ' || 'RAFAEL',
+        'Diária - Bacon - ' || 'RAFAEL',
         'despesa',
         180.0,
         '2025-11-05'::DATE,
@@ -11797,13 +11797,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: SORRISO (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'SORRISO' LIMIT 1;
+    -- Alocação: Sorriso (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Sorriso') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - SORRISO - ' || 'RAFAEL',
+        'Diária - Sorriso - ' || 'RAFAEL',
         'despesa',
         180.0,
         '2025-11-05'::DATE,
@@ -11867,13 +11867,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: ESTRELA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'ESTRELA' LIMIT 1;
+    -- Alocação: Estrela (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Estrela') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - ESTRELA - ' || 'DANIELA',
+        'Diária - Estrela - ' || 'DANIELA',
         'despesa',
         180.0,
         '2025-11-05'::DATE,
@@ -11937,13 +11937,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: BABALU (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'BABALU' LIMIT 1;
+    -- Alocação: Babalu (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Babalu') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - BABALU - ' || 'TATIANA',
+        'Diária - Babalu - ' || 'TATIANA',
         'despesa',
         200.0,
         '2025-11-05'::DATE,
@@ -11967,13 +11967,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: JUJUBA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'JUJUBA' LIMIT 1;
+    -- Alocação: Jujuba (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Jujuba') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - JUJUBA - ' || 'TATIANA',
+        'Diária - Jujuba - ' || 'TATIANA',
         'despesa',
         180.0,
         '2025-11-05'::DATE,
@@ -12037,13 +12037,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'KRISLEY',
+        'Diária - Poc - ' || 'KRISLEY',
         'despesa',
         200.0,
         '2025-11-05'::DATE,
@@ -12147,13 +12147,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: BABALU (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'BABALU' LIMIT 1;
+    -- Alocação: Babalu (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Babalu') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - BABALU - ' || 'GISLENE',
+        'Diária - Babalu - ' || 'GISLENE',
         'despesa',
         200.0,
         '2025-05-16'::DATE,
@@ -12217,13 +12217,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'GAUCHO',
+        'Diária - Poc - ' || 'GAUCHO',
         'despesa',
         200.0,
         '2025-05-16'::DATE,
@@ -12247,13 +12247,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: BACON (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'BACON' LIMIT 1;
+    -- Alocação: Bacon (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Bacon') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - BACON - ' || 'GAUCHO',
+        'Diária - Bacon - ' || 'GAUCHO',
         'despesa',
         180.0,
         '2025-05-16'::DATE,
@@ -12317,13 +12317,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 400.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 400.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'TATIANA',
+        'Diária - Poc - ' || 'TATIANA',
         'despesa',
         400.0,
         '2025-05-16'::DATE,
@@ -12347,13 +12347,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: SORRISO (R$ 400.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'SORRISO' LIMIT 1;
+    -- Alocação: Sorriso (R$ 400.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Sorriso') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - SORRISO - ' || 'TATIANA',
+        'Diária - Sorriso - ' || 'TATIANA',
         'despesa',
         400.0,
         '2025-05-16'::DATE,
@@ -12417,13 +12417,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: BACON (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'BACON' LIMIT 1;
+    -- Alocação: Bacon (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Bacon') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - BACON - ' || 'FAZENDA EVARISTO',
+        'Diária - Bacon - ' || 'FAZENDA EVARISTO',
         'despesa',
         180.0,
         '2025-05-17'::DATE,
@@ -12447,13 +12447,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: DETONA RALPH (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'DETONA RALPH' LIMIT 1;
+    -- Alocação: Detona Ralph (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Detona Ralph') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - DETONA RALPH - ' || 'FAZENDA EVARISTO',
+        'Diária - Detona Ralph - ' || 'FAZENDA EVARISTO',
         'despesa',
         180.0,
         '2025-05-17'::DATE,
@@ -12517,13 +12517,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: ESTRELA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'ESTRELA' LIMIT 1;
+    -- Alocação: Estrela (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Estrela') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - ESTRELA - ' || 'SIMONE',
+        'Diária - Estrela - ' || 'SIMONE',
         'despesa',
         180.0,
         '2025-05-18'::DATE,
@@ -12547,13 +12547,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: DORA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'DORA' LIMIT 1;
+    -- Alocação: Dora (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Dora') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - DORA - ' || 'SIMONE',
+        'Diária - Dora - ' || 'SIMONE',
         'despesa',
         180.0,
         '2025-05-18'::DATE,
@@ -12617,13 +12617,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: BABALU (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'BABALU' LIMIT 1;
+    -- Alocação: Babalu (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Babalu') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - BABALU - ' || 'BIANKA',
+        'Diária - Babalu - ' || 'BIANKA',
         'despesa',
         200.0,
         '2025-05-18'::DATE,
@@ -12687,13 +12687,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: JUJUBA (R$ 270.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'JUJUBA' LIMIT 1;
+    -- Alocação: Jujuba (R$ 270.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Jujuba') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - JUJUBA - ' || 'DAVID',
+        'Diária - Jujuba - ' || 'DAVID',
         'despesa',
         270.0,
         '2025-05-18'::DATE,
@@ -12757,13 +12757,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'CASAMENTO BRUNA',
+        'Diária - Poc - ' || 'CASAMENTO BRUNA',
         'despesa',
         200.0,
         '2025-05-18'::DATE,
@@ -12787,13 +12787,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: SORRISO (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'SORRISO' LIMIT 1;
+    -- Alocação: Sorriso (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Sorriso') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - SORRISO - ' || 'CASAMENTO BRUNA',
+        'Diária - Sorriso - ' || 'CASAMENTO BRUNA',
         'despesa',
         180.0,
         '2025-05-18'::DATE,
@@ -12857,13 +12857,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: BABALU (R$ 170.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'BABALU' LIMIT 1;
+    -- Alocação: Babalu (R$ 170.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Babalu') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - BABALU - ' || 'MANIA DE BRINCAR',
+        'Diária - Babalu - ' || 'MANIA DE BRINCAR',
         'despesa',
         170.0,
         '2025-05-19'::DATE,
@@ -12927,13 +12927,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'RESTAURANTE HEIMAT',
+        'Diária - Poc - ' || 'RESTAURANTE HEIMAT',
         'despesa',
         200.0,
         '2025-05-19'::DATE,
@@ -12957,13 +12957,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: BACON (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'BACON' LIMIT 1;
+    -- Alocação: Bacon (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Bacon') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - BACON - ' || 'RESTAURANTE HEIMAT',
+        'Diária - Bacon - ' || 'RESTAURANTE HEIMAT',
         'despesa',
         180.0,
         '2025-05-19'::DATE,
@@ -13067,13 +13067,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: BACON (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'BACON' LIMIT 1;
+    -- Alocação: Bacon (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Bacon') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - BACON - ' || 'LUANA',
+        'Diária - Bacon - ' || 'LUANA',
         'despesa',
         180.0,
         '2025-05-19'::DATE,
@@ -13097,13 +13097,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: SORRISO (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'SORRISO' LIMIT 1;
+    -- Alocação: Sorriso (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Sorriso') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - SORRISO - ' || 'LUANA',
+        'Diária - Sorriso - ' || 'LUANA',
         'despesa',
         180.0,
         '2025-05-19'::DATE,
@@ -13167,13 +13167,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'FERNANDA',
+        'Diária - Poc - ' || 'FERNANDA',
         'despesa',
         200.0,
         '2025-05-23'::DATE,
@@ -13197,13 +13197,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: SORRISO (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'SORRISO' LIMIT 1;
+    -- Alocação: Sorriso (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Sorriso') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - SORRISO - ' || 'FERNANDA',
+        'Diária - Sorriso - ' || 'FERNANDA',
         'despesa',
         180.0,
         '2025-05-23'::DATE,
@@ -13267,13 +13267,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: ESTRELA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'ESTRELA' LIMIT 1;
+    -- Alocação: Estrela (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Estrela') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - ESTRELA - ' || 'RAFAELA',
+        'Diária - Estrela - ' || 'RAFAELA',
         'despesa',
         180.0,
         '2025-05-24'::DATE,
@@ -13337,13 +13337,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: SORRISO (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'SORRISO' LIMIT 1;
+    -- Alocação: Sorriso (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Sorriso') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - SORRISO - ' || 'BRUNA',
+        'Diária - Sorriso - ' || 'BRUNA',
         'despesa',
         180.0,
         '2025-05-24'::DATE,
@@ -13407,13 +13407,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: BACON (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'BACON' LIMIT 1;
+    -- Alocação: Bacon (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Bacon') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - BACON - ' || 'ROBERTA RDK',
+        'Diária - Bacon - ' || 'ROBERTA RDK',
         'despesa',
         180.0,
         '2025-05-25'::DATE,
@@ -13437,13 +13437,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: DORA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'DORA' LIMIT 1;
+    -- Alocação: Dora (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Dora') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - DORA - ' || 'ROBERTA RDK',
+        'Diária - Dora - ' || 'ROBERTA RDK',
         'despesa',
         180.0,
         '2025-05-25'::DATE,
@@ -13547,13 +13547,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: GISA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'GISA' LIMIT 1;
+    -- Alocação: Gisa (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Gisa') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - GISA - ' || 'UNI PIPOCA',
+        'Diária - Gisa - ' || 'UNI PIPOCA',
         'despesa',
         180.0,
         '2025-05-24'::DATE,
@@ -13617,13 +13617,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: BACON (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'BACON' LIMIT 1;
+    -- Alocação: Bacon (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Bacon') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - BACON - ' || 'RESTAURANTE HEIMAT',
+        'Diária - Bacon - ' || 'RESTAURANTE HEIMAT',
         'despesa',
         180.0,
         '2025-05-26'::DATE,
@@ -13687,13 +13687,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: ESTRELA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'ESTRELA' LIMIT 1;
+    -- Alocação: Estrela (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Estrela') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - ESTRELA - ' || 'REBECCA',
+        'Diária - Estrela - ' || 'REBECCA',
         'despesa',
         180.0,
         '2025-05-26'::DATE,
@@ -13717,13 +13717,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: SORRISO (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'SORRISO' LIMIT 1;
+    -- Alocação: Sorriso (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Sorriso') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - SORRISO - ' || 'REBECCA',
+        'Diária - Sorriso - ' || 'REBECCA',
         'despesa',
         180.0,
         '2025-05-26'::DATE,
@@ -13787,13 +13787,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'ALINE',
+        'Diária - Poc - ' || 'ALINE',
         'despesa',
         200.0,
         '2025-05-26'::DATE,
@@ -13817,13 +13817,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: SORRISO (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'SORRISO' LIMIT 1;
+    -- Alocação: Sorriso (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Sorriso') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - SORRISO - ' || 'ALINE',
+        'Diária - Sorriso - ' || 'ALINE',
         'despesa',
         180.0,
         '2025-05-26'::DATE,
@@ -13887,13 +13887,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 230.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 230.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'JENNIFER',
+        'Diária - Poc - ' || 'JENNIFER',
         'despesa',
         230.0,
         '2025-05-29'::DATE,
@@ -13917,13 +13917,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: SORRISO (R$ 210.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'SORRISO' LIMIT 1;
+    -- Alocação: Sorriso (R$ 210.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Sorriso') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - SORRISO - ' || 'JENNIFER',
+        'Diária - Sorriso - ' || 'JENNIFER',
         'despesa',
         210.0,
         '2025-05-29'::DATE,
@@ -13987,13 +13987,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: SORRISO (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'SORRISO' LIMIT 1;
+    -- Alocação: Sorriso (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Sorriso') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - SORRISO - ' || 'BARBARA',
+        'Diária - Sorriso - ' || 'BARBARA',
         'despesa',
         180.0,
         '2025-05-31'::DATE,
@@ -14057,13 +14057,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: BACON (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'BACON' LIMIT 1;
+    -- Alocação: Bacon (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Bacon') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - BACON - ' || 'KAUE',
+        'Diária - Bacon - ' || 'KAUE',
         'despesa',
         180.0,
         '2025-01-06'::DATE,
@@ -14127,13 +14127,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'CARLA',
+        'Diária - Poc - ' || 'CARLA',
         'despesa',
         200.0,
         '2025-01-06'::DATE,
@@ -14197,13 +14197,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'ANA CAROLINA',
+        'Diária - Poc - ' || 'ANA CAROLINA',
         'despesa',
         200.0,
         '2025-01-06'::DATE,
@@ -14267,13 +14267,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: BACON (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'BACON' LIMIT 1;
+    -- Alocação: Bacon (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Bacon') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - BACON - ' || 'MEIRIELLY',
+        'Diária - Bacon - ' || 'MEIRIELLY',
         'despesa',
         180.0,
         '2025-02-06'::DATE,
@@ -14297,13 +14297,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: SORRISO (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'SORRISO' LIMIT 1;
+    -- Alocação: Sorriso (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Sorriso') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - SORRISO - ' || 'MEIRIELLY',
+        'Diária - Sorriso - ' || 'MEIRIELLY',
         'despesa',
         180.0,
         '2025-02-06'::DATE,
@@ -14367,13 +14367,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: ESTRELA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'ESTRELA' LIMIT 1;
+    -- Alocação: Estrela (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Estrela') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - ESTRELA - ' || 'TAUHANA',
+        'Diária - Estrela - ' || 'TAUHANA',
         'despesa',
         180.0,
         '2025-02-06'::DATE,
@@ -14397,13 +14397,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: DORA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'DORA' LIMIT 1;
+    -- Alocação: Dora (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Dora') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - DORA - ' || 'TAUHANA',
+        'Diária - Dora - ' || 'TAUHANA',
         'despesa',
         180.0,
         '2025-02-06'::DATE,
@@ -14467,13 +14467,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'MARCELA',
+        'Diária - Poc - ' || 'MARCELA',
         'despesa',
         200.0,
         '2025-02-06'::DATE,
@@ -14537,13 +14537,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 250.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 250.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'ISA',
+        'Diária - Poc - ' || 'ISA',
         'despesa',
         250.0,
         '2025-05-06'::DATE,
@@ -14567,13 +14567,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: BACON (R$ 250.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'BACON' LIMIT 1;
+    -- Alocação: Bacon (R$ 250.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Bacon') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - BACON - ' || 'ISA',
+        'Diária - Bacon - ' || 'ISA',
         'despesa',
         250.0,
         '2025-05-06'::DATE,
@@ -14637,13 +14637,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: ESTRELA (R$ 240.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'ESTRELA' LIMIT 1;
+    -- Alocação: Estrela (R$ 240.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Estrela') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - ESTRELA - ' || 'EMPREENDER GO',
+        'Diária - Estrela - ' || 'EMPREENDER GO',
         'despesa',
         240.0,
         '2025-06-06'::DATE,
@@ -14667,13 +14667,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: SORRISO (R$ 240.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'SORRISO' LIMIT 1;
+    -- Alocação: Sorriso (R$ 240.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Sorriso') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - SORRISO - ' || 'EMPREENDER GO',
+        'Diária - Sorriso - ' || 'EMPREENDER GO',
         'despesa',
         240.0,
         '2025-06-06'::DATE,
@@ -14697,13 +14697,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: BACON (R$ 240.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'BACON' LIMIT 1;
+    -- Alocação: Bacon (R$ 240.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Bacon') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - BACON - ' || 'EMPREENDER GO',
+        'Diária - Bacon - ' || 'EMPREENDER GO',
         'despesa',
         240.0,
         '2025-06-06'::DATE,
@@ -14767,13 +14767,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: BABALU (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'BABALU' LIMIT 1;
+    -- Alocação: Babalu (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Babalu') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - BABALU - ' || 'TANIA',
+        'Diária - Babalu - ' || 'TANIA',
         'despesa',
         180.0,
         '2025-08-06'::DATE,
@@ -14837,13 +14837,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: BACON (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'BACON' LIMIT 1;
+    -- Alocação: Bacon (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Bacon') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - BACON - ' || 'RESTAURANTE HEIMAT',
+        'Diária - Bacon - ' || 'RESTAURANTE HEIMAT',
         'despesa',
         180.0,
         '2025-09-06'::DATE,
@@ -14907,13 +14907,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'REBECCA',
+        'Diária - Poc - ' || 'REBECCA',
         'despesa',
         200.0,
         '2025-09-06'::DATE,
@@ -14937,13 +14937,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: JUJUBA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'JUJUBA' LIMIT 1;
+    -- Alocação: Jujuba (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Jujuba') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - JUJUBA - ' || 'REBECCA',
+        'Diária - Jujuba - ' || 'REBECCA',
         'despesa',
         180.0,
         '2025-09-06'::DATE,
@@ -15007,13 +15007,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: SORRISO (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'SORRISO' LIMIT 1;
+    -- Alocação: Sorriso (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Sorriso') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - SORRISO - ' || 'MONIQUE',
+        'Diária - Sorriso - ' || 'MONIQUE',
         'despesa',
         180.0,
         '2025-09-06'::DATE,
@@ -15037,13 +15037,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: DORA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'DORA' LIMIT 1;
+    -- Alocação: Dora (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Dora') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - DORA - ' || 'MONIQUE',
+        'Diária - Dora - ' || 'MONIQUE',
         'despesa',
         180.0,
         '2025-09-06'::DATE,
@@ -15107,13 +15107,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'JOSEANE',
+        'Diária - Poc - ' || 'JOSEANE',
         'despesa',
         200.0,
         '2025-09-06'::DATE,
@@ -15137,13 +15137,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: BACON (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'BACON' LIMIT 1;
+    -- Alocação: Bacon (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Bacon') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - BACON - ' || 'JOSEANE',
+        'Diária - Bacon - ' || 'JOSEANE',
         'despesa',
         180.0,
         '2025-09-06'::DATE,
@@ -15207,13 +15207,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'ANA PAULA',
+        'Diária - Poc - ' || 'ANA PAULA',
         'despesa',
         200.0,
         '2025-10-06'::DATE,
@@ -15237,13 +15237,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: BACON (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'BACON' LIMIT 1;
+    -- Alocação: Bacon (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Bacon') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - BACON - ' || 'ANA PAULA',
+        'Diária - Bacon - ' || 'ANA PAULA',
         'despesa',
         180.0,
         '2025-10-06'::DATE,
@@ -15347,13 +15347,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'ANA PAULA',
+        'Diária - Poc - ' || 'ANA PAULA',
         'despesa',
         200.0,
         '2025-06-15'::DATE,
@@ -15417,13 +15417,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: BACON (R$ 150.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'BACON' LIMIT 1;
+    -- Alocação: Bacon (R$ 150.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Bacon') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - BACON - ' || 'CAMILA',
+        'Diária - Bacon - ' || 'CAMILA',
         'despesa',
         150.0,
         '2025-06-15'::DATE,
@@ -15447,13 +15447,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: SORRISO (R$ 150.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'SORRISO' LIMIT 1;
+    -- Alocação: Sorriso (R$ 150.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Sorriso') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - SORRISO - ' || 'CAMILA',
+        'Diária - Sorriso - ' || 'CAMILA',
         'despesa',
         150.0,
         '2025-06-15'::DATE,
@@ -15517,13 +15517,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: FELICIA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'FELICIA' LIMIT 1;
+    -- Alocação: Felicia (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Felicia') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - FELICIA - ' || 'CRISTIANE',
+        'Diária - Felicia - ' || 'CRISTIANE',
         'despesa',
         180.0,
         '2025-06-15'::DATE,
@@ -15547,13 +15547,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: BABALU (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'BABALU' LIMIT 1;
+    -- Alocação: Babalu (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Babalu') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - BABALU - ' || 'CRISTIANE',
+        'Diária - Babalu - ' || 'CRISTIANE',
         'despesa',
         200.0,
         '2025-06-15'::DATE,
@@ -15617,13 +15617,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: ESTRELA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'ESTRELA' LIMIT 1;
+    -- Alocação: Estrela (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Estrela') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - ESTRELA - ' || 'JERUSA',
+        'Diária - Estrela - ' || 'JERUSA',
         'despesa',
         180.0,
         '2025-06-15'::DATE,
@@ -15647,13 +15647,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: DOCINHO (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'DOCINHO' LIMIT 1;
+    -- Alocação: Docinho (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Docinho') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - DOCINHO - ' || 'JERUSA',
+        'Diária - Docinho - ' || 'JERUSA',
         'despesa',
         180.0,
         '2025-06-15'::DATE,
@@ -15717,13 +15717,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: ESTRELA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'ESTRELA' LIMIT 1;
+    -- Alocação: Estrela (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Estrela') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - ESTRELA - ' || 'ANA',
+        'Diária - Estrela - ' || 'ANA',
         'despesa',
         180.0,
         '2025-06-15'::DATE,
@@ -15747,13 +15747,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: FELICIA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'FELICIA' LIMIT 1;
+    -- Alocação: Felicia (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Felicia') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - FELICIA - ' || 'ANA',
+        'Diária - Felicia - ' || 'ANA',
         'despesa',
         180.0,
         '2025-06-15'::DATE,
@@ -15817,13 +15817,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: GISA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'GISA' LIMIT 1;
+    -- Alocação: Gisa (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Gisa') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - GISA - ' || 'JULIANE',
+        'Diária - Gisa - ' || 'JULIANE',
         'despesa',
         180.0,
         '2025-06-16'::DATE,
@@ -15887,13 +15887,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: JUJUBA (R$ 150.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'JUJUBA' LIMIT 1;
+    -- Alocação: Jujuba (R$ 150.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Jujuba') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - JUJUBA - ' || 'RESTAURANTE HEIMAT',
+        'Diária - Jujuba - ' || 'RESTAURANTE HEIMAT',
         'despesa',
         150.0,
         '2025-06-16'::DATE,
@@ -15943,13 +15943,13 @@ BEGIN
     )
     RETURNING id INTO v_evento_id;
 
-    -- Alocação: JUJUBA (R$ 150.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'JUJUBA' LIMIT 1;
+    -- Alocação: Jujuba (R$ 150.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Jujuba') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - JUJUBA - ' || 'ESPAÇO KIDS',
+        'Diária - Jujuba - ' || 'ESPAÇO KIDS',
         'despesa',
         150.0,
         '2025-05-23'::DATE,
@@ -15999,13 +15999,13 @@ BEGIN
     )
     RETURNING id INTO v_evento_id;
 
-    -- Alocação: POC (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'ESPAÇO KIDS',
+        'Diária - Poc - ' || 'ESPAÇO KIDS',
         'despesa',
         200.0,
         '2025-05-06'::DATE,
@@ -16069,13 +16069,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: SORRISO (R$ 150.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'SORRISO' LIMIT 1;
+    -- Alocação: Sorriso (R$ 150.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Sorriso') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - SORRISO - ' || 'WILLIAM',
+        'Diária - Sorriso - ' || 'WILLIAM',
         'despesa',
         150.0,
         '2025-06-18'::DATE,
@@ -16139,13 +16139,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 170.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 170.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'TALITA',
+        'Diária - Poc - ' || 'TALITA',
         'despesa',
         170.0,
         '2025-06-21'::DATE,
@@ -16169,13 +16169,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: SORRISO (R$ 150.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'SORRISO' LIMIT 1;
+    -- Alocação: Sorriso (R$ 150.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Sorriso') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - SORRISO - ' || 'TALITA',
+        'Diária - Sorriso - ' || 'TALITA',
         'despesa',
         150.0,
         '2025-06-21'::DATE,
@@ -16239,13 +16239,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: FELICIA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'FELICIA' LIMIT 1;
+    -- Alocação: Felicia (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Felicia') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - FELICIA - ' || 'ANA CAROLINE',
+        'Diária - Felicia - ' || 'ANA CAROLINE',
         'despesa',
         180.0,
         '2025-06-21'::DATE,
@@ -16309,13 +16309,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POLLY (R$ 260.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POLLY' LIMIT 1;
+    -- Alocação: Polly (R$ 260.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Polly') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POLLY - ' || 'JAISON',
+        'Diária - Polly - ' || 'JAISON',
         'despesa',
         260.0,
         '2025-06-22'::DATE,
@@ -16339,13 +16339,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: CINTHIA (R$ 240.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'CINTHIA' LIMIT 1;
+    -- Alocação: Cinthia (R$ 240.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Cinthia') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - CINTHIA - ' || 'JAISON',
+        'Diária - Cinthia - ' || 'JAISON',
         'despesa',
         240.0,
         '2025-06-22'::DATE,
@@ -16369,13 +16369,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: DORA (R$ 240.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'DORA' LIMIT 1;
+    -- Alocação: Dora (R$ 240.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Dora') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - DORA - ' || 'JAISON',
+        'Diária - Dora - ' || 'JAISON',
         'despesa',
         240.0,
         '2025-06-22'::DATE,
@@ -16399,13 +16399,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: NANDA (R$ 240.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'NANDA' LIMIT 1;
+    -- Alocação: Nanda (R$ 240.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Nanda') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - NANDA - ' || 'JAISON',
+        'Diária - Nanda - ' || 'JAISON',
         'despesa',
         240.0,
         '2025-06-22'::DATE,
@@ -16469,13 +16469,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: ESTRELA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'ESTRELA' LIMIT 1;
+    -- Alocação: Estrela (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Estrela') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - ESTRELA - ' || 'JUNINA AD HERING',
+        'Diária - Estrela - ' || 'JUNINA AD HERING',
         'despesa',
         180.0,
         '2025-06-22'::DATE,
@@ -16499,13 +16499,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: CACA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'CACA' LIMIT 1;
+    -- Alocação: Caca (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Caca') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - CACA - ' || 'JUNINA AD HERING',
+        'Diária - Caca - ' || 'JUNINA AD HERING',
         'despesa',
         180.0,
         '2025-06-22'::DATE,
@@ -16569,13 +16569,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'BRUNA',
+        'Diária - Poc - ' || 'BRUNA',
         'despesa',
         200.0,
         '2025-06-22'::DATE,
@@ -16599,13 +16599,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: JUJUBA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'JUJUBA' LIMIT 1;
+    -- Alocação: Jujuba (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Jujuba') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - JUJUBA - ' || 'BRUNA',
+        'Diária - Jujuba - ' || 'BRUNA',
         'despesa',
         180.0,
         '2025-06-22'::DATE,
@@ -16669,13 +16669,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: GISA (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'GISA' LIMIT 1;
+    -- Alocação: Gisa (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Gisa') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - GISA - ' || 'NATALIA',
+        'Diária - Gisa - ' || 'NATALIA',
         'despesa',
         200.0,
         '2025-06-22'::DATE,
@@ -16739,13 +16739,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: SORRISO (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'SORRISO' LIMIT 1;
+    -- Alocação: Sorriso (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Sorriso') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - SORRISO - ' || 'TALITA',
+        'Diária - Sorriso - ' || 'TALITA',
         'despesa',
         180.0,
         '2025-06-22'::DATE,
@@ -16849,13 +16849,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: SORRISO (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'SORRISO' LIMIT 1;
+    -- Alocação: Sorriso (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Sorriso') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - SORRISO - ' || 'LILIAN',
+        'Diária - Sorriso - ' || 'LILIAN',
         'despesa',
         180.0,
         '2025-06-23'::DATE,
@@ -16879,13 +16879,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: DINHO (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'DINHO' LIMIT 1;
+    -- Alocação: Dinho (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Dinho') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - DINHO - ' || 'LILIAN',
+        'Diária - Dinho - ' || 'LILIAN',
         'despesa',
         180.0,
         '2025-06-23'::DATE,
@@ -16949,13 +16949,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: JUJUBA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'JUJUBA' LIMIT 1;
+    -- Alocação: Jujuba (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Jujuba') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - JUJUBA - ' || 'ZECA',
+        'Diária - Jujuba - ' || 'ZECA',
         'despesa',
         180.0,
         '2025-06-23'::DATE,
@@ -16979,13 +16979,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: FELICIA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'FELICIA' LIMIT 1;
+    -- Alocação: Felicia (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Felicia') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - FELICIA - ' || 'ZECA',
+        'Diária - Felicia - ' || 'ZECA',
         'despesa',
         180.0,
         '2025-06-23'::DATE,
@@ -17049,13 +17049,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'FERNANDA',
+        'Diária - Poc - ' || 'FERNANDA',
         'despesa',
         200.0,
         '2025-06-23'::DATE,
@@ -17079,13 +17079,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: POC (R$ 60.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 60.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'FERNANDA',
+        'Diária - Poc - ' || 'FERNANDA',
         'despesa',
         60.0,
         '2025-06-23'::DATE,
@@ -17189,13 +17189,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'LUCAS',
+        'Diária - Poc - ' || 'LUCAS',
         'despesa',
         200.0,
         '2025-06-26'::DATE,
@@ -17339,13 +17339,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: JUJUBA (R$ 360.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'JUJUBA' LIMIT 1;
+    -- Alocação: Jujuba (R$ 360.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Jujuba') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - JUJUBA - ' || 'SABRINA',
+        'Diária - Jujuba - ' || 'SABRINA',
         'despesa',
         360.0,
         '2025-06-29'::DATE,
@@ -17369,13 +17369,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: FELICIA (R$ 210.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'FELICIA' LIMIT 1;
+    -- Alocação: Felicia (R$ 210.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Felicia') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - FELICIA - ' || 'SABRINA',
+        'Diária - Felicia - ' || 'SABRINA',
         'despesa',
         210.0,
         '2025-06-29'::DATE,
@@ -17425,13 +17425,13 @@ BEGIN
     )
     RETURNING id INTO v_evento_id;
 
-    -- Alocação: POC (R$ 400.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 400.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'BAND',
+        'Diária - Poc - ' || 'BAND',
         'despesa',
         400.0,
         '2025-06-29'::DATE,
@@ -17455,13 +17455,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: JOJO (R$ 400.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'JOJO' LIMIT 1;
+    -- Alocação: Jojo (R$ 400.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Jojo') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - JOJO - ' || 'BAND',
+        'Diária - Jojo - ' || 'BAND',
         'despesa',
         400.0,
         '2025-06-29'::DATE,
@@ -17485,13 +17485,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: NANDA (R$ 400.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'NANDA' LIMIT 1;
+    -- Alocação: Nanda (R$ 400.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Nanda') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - NANDA - ' || 'BAND',
+        'Diária - Nanda - ' || 'BAND',
         'despesa',
         400.0,
         '2025-06-29'::DATE,
@@ -17515,13 +17515,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: NEIA (R$ 400.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'NEIA' LIMIT 1;
+    -- Alocação: Neia (R$ 400.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Neia') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - NEIA - ' || 'BAND',
+        'Diária - Neia - ' || 'BAND',
         'despesa',
         400.0,
         '2025-06-29'::DATE,
@@ -17545,13 +17545,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: MARI (R$ 400.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'MARI' LIMIT 1;
+    -- Alocação: Mari (R$ 400.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Mari') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - MARI - ' || 'BAND',
+        'Diária - Mari - ' || 'BAND',
         'despesa',
         400.0,
         '2025-06-29'::DATE,
@@ -17575,13 +17575,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: DORA (R$ 400.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'DORA' LIMIT 1;
+    -- Alocação: Dora (R$ 400.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Dora') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - DORA - ' || 'BAND',
+        'Diária - Dora - ' || 'BAND',
         'despesa',
         400.0,
         '2025-06-29'::DATE,
@@ -17605,13 +17605,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: BABALU (R$ 400.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'BABALU' LIMIT 1;
+    -- Alocação: Babalu (R$ 400.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Babalu') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - BABALU - ' || 'BAND',
+        'Diária - Babalu - ' || 'BAND',
         'despesa',
         400.0,
         '2025-06-29'::DATE,
@@ -17635,13 +17635,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: ESTRELA (R$ 400.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'ESTRELA' LIMIT 1;
+    -- Alocação: Estrela (R$ 400.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Estrela') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - ESTRELA - ' || 'BAND',
+        'Diária - Estrela - ' || 'BAND',
         'despesa',
         400.0,
         '2025-06-29'::DATE,
@@ -17665,13 +17665,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: CACA (R$ 400.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'CACA' LIMIT 1;
+    -- Alocação: Caca (R$ 400.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Caca') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - CACA - ' || 'BAND',
+        'Diária - Caca - ' || 'BAND',
         'despesa',
         400.0,
         '2025-06-29'::DATE,
@@ -17735,13 +17735,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: VERTINHO (R$ 400.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'VERTINHO' LIMIT 1;
+    -- Alocação: Vertinho (R$ 400.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Vertinho') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - VERTINHO - ' || 'BVCC JUNINA',
+        'Diária - Vertinho - ' || 'BVCC JUNINA',
         'despesa',
         400.0,
         '2025-06-29'::DATE,
@@ -17765,13 +17765,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: SORRISO (R$ 400.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'SORRISO' LIMIT 1;
+    -- Alocação: Sorriso (R$ 400.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Sorriso') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - SORRISO - ' || 'BVCC JUNINA',
+        'Diária - Sorriso - ' || 'BVCC JUNINA',
         'despesa',
         400.0,
         '2025-06-29'::DATE,
@@ -17795,13 +17795,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: GISA (R$ 400.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'GISA' LIMIT 1;
+    -- Alocação: Gisa (R$ 400.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Gisa') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - GISA - ' || 'BVCC JUNINA',
+        'Diária - Gisa - ' || 'BVCC JUNINA',
         'despesa',
         400.0,
         '2025-06-29'::DATE,
@@ -17891,13 +17891,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: JUJUBA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'JUJUBA' LIMIT 1;
+    -- Alocação: Jujuba (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Jujuba') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - JUJUBA - ' || 'JULIA CLARA',
+        'Diária - Jujuba - ' || 'JULIA CLARA',
         'despesa',
         180.0,
         '2025-06-30'::DATE,
@@ -17921,13 +17921,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: FELICIA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'FELICIA' LIMIT 1;
+    -- Alocação: Felicia (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Felicia') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - FELICIA - ' || 'JULIA CLARA',
+        'Diária - Felicia - ' || 'JULIA CLARA',
         'despesa',
         180.0,
         '2025-06-30'::DATE,
@@ -17991,13 +17991,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: GISA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'GISA' LIMIT 1;
+    -- Alocação: Gisa (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Gisa') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - GISA - ' || 'FILIPE',
+        'Diária - Gisa - ' || 'FILIPE',
         'despesa',
         180.0,
         '2025-06-30'::DATE,
@@ -18061,13 +18061,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 400.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 400.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'RESTAURANTE HEIMAT',
+        'Diária - Poc - ' || 'RESTAURANTE HEIMAT',
         'despesa',
         400.0,
         '2025-06-30'::DATE,
@@ -18211,13 +18211,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: ESTRELA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'ESTRELA' LIMIT 1;
+    -- Alocação: Estrela (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Estrela') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - ESTRELA - ' || 'BILLY',
+        'Diária - Estrela - ' || 'BILLY',
         'despesa',
         180.0,
         '2025-06-07'::DATE,
@@ -18241,13 +18241,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: JUJUBA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'JUJUBA' LIMIT 1;
+    -- Alocação: Jujuba (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Jujuba') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - JUJUBA - ' || 'BILLY',
+        'Diária - Jujuba - ' || 'BILLY',
         'despesa',
         180.0,
         '2025-06-07'::DATE,
@@ -18311,13 +18311,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: FELICIA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'FELICIA' LIMIT 1;
+    -- Alocação: Felicia (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Felicia') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - FELICIA - ' || 'JACY',
+        'Diária - Felicia - ' || 'JACY',
         'despesa',
         180.0,
         '2025-06-07'::DATE,
@@ -18381,13 +18381,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: ESTRELA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'ESTRELA' LIMIT 1;
+    -- Alocação: Estrela (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Estrela') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - ESTRELA - ' || 'CAROLINA',
+        'Diária - Estrela - ' || 'CAROLINA',
         'despesa',
         180.0,
         '2025-06-07'::DATE,
@@ -18411,13 +18411,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: FELICIA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'FELICIA' LIMIT 1;
+    -- Alocação: Felicia (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Felicia') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - FELICIA - ' || 'CAROLINA',
+        'Diária - Felicia - ' || 'CAROLINA',
         'despesa',
         180.0,
         '2025-06-07'::DATE,
@@ -18481,13 +18481,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'MARIA JULIA',
+        'Diária - Poc - ' || 'MARIA JULIA',
         'despesa',
         200.0,
         '2025-07-07'::DATE,
@@ -18591,13 +18591,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: SORRISO (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'SORRISO' LIMIT 1;
+    -- Alocação: Sorriso (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Sorriso') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - SORRISO - ' || 'FABI',
+        'Diária - Sorriso - ' || 'FABI',
         'despesa',
         180.0,
         '2025-07-13'::DATE,
@@ -18741,13 +18741,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: FELICIA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'FELICIA' LIMIT 1;
+    -- Alocação: Felicia (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Felicia') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - FELICIA - ' || 'MAPLE BEAR',
+        'Diária - Felicia - ' || 'MAPLE BEAR',
         'despesa',
         180.0,
         '2025-07-20'::DATE,
@@ -18811,13 +18811,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'RENATA',
+        'Diária - Poc - ' || 'RENATA',
         'despesa',
         200.0,
         '2025-07-20'::DATE,
@@ -18881,13 +18881,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: FELICIA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'FELICIA' LIMIT 1;
+    -- Alocação: Felicia (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Felicia') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - FELICIA - ' || 'CAROL',
+        'Diária - Felicia - ' || 'CAROL',
         'despesa',
         180.0,
         '2025-07-20'::DATE,
@@ -18951,13 +18951,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'SILMARA',
+        'Diária - Poc - ' || 'SILMARA',
         'despesa',
         200.0,
         '2025-07-21'::DATE,
@@ -19021,13 +19021,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: SORRISO (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'SORRISO' LIMIT 1;
+    -- Alocação: Sorriso (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Sorriso') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - SORRISO - ' || 'SUZY',
+        'Diária - Sorriso - ' || 'SUZY',
         'despesa',
         180.0,
         '2025-07-21'::DATE,
@@ -19091,13 +19091,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: SORRISO (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'SORRISO' LIMIT 1;
+    -- Alocação: Sorriso (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Sorriso') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - SORRISO - ' || 'LUCIANA',
+        'Diária - Sorriso - ' || 'LUCIANA',
         'despesa',
         180.0,
         '2025-07-26'::DATE,
@@ -19121,13 +19121,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: RAVENA (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'RAVENA' LIMIT 1;
+    -- Alocação: Ravena (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Ravena') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - RAVENA - ' || 'LUCIANA',
+        'Diária - Ravena - ' || 'LUCIANA',
         'despesa',
         200.0,
         '2025-07-26'::DATE,
@@ -19191,13 +19191,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: ESTRELA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'ESTRELA' LIMIT 1;
+    -- Alocação: Estrela (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Estrela') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - ESTRELA - ' || 'ISADORA',
+        'Diária - Estrela - ' || 'ISADORA',
         'despesa',
         180.0,
         '2025-07-27'::DATE,
@@ -19341,13 +19341,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: JUJUBA (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'JUJUBA' LIMIT 1;
+    -- Alocação: Jujuba (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Jujuba') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - JUJUBA - ' || 'INFLAVEIS MAPLE BEAR',
+        'Diária - Jujuba - ' || 'INFLAVEIS MAPLE BEAR',
         'despesa',
         200.0,
         '2025-07-31'::DATE,
@@ -19411,13 +19411,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: JUJUBA (R$ 150.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'JUJUBA' LIMIT 1;
+    -- Alocação: Jujuba (R$ 150.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Jujuba') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - JUJUBA - ' || 'GIOVANA',
+        'Diária - Jujuba - ' || 'GIOVANA',
         'despesa',
         150.0,
         '2025-07-31'::DATE,
@@ -19481,13 +19481,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: PEPE (R$ 260.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'PEPE' LIMIT 1;
+    -- Alocação: Pepe (R$ 260.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Pepe') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - PEPE - ' || 'EVENTO TAISE',
+        'Diária - Pepe - ' || 'EVENTO TAISE',
         'despesa',
         260.0,
         '2025-02-08'::DATE,
@@ -19511,13 +19511,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: ESTRELA (R$ 240.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'ESTRELA' LIMIT 1;
+    -- Alocação: Estrela (R$ 240.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Estrela') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - ESTRELA - ' || 'EVENTO TAISE',
+        'Diária - Estrela - ' || 'EVENTO TAISE',
         'despesa',
         240.0,
         '2025-02-08'::DATE,
@@ -19541,13 +19541,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: SORRISO (R$ 240.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'SORRISO' LIMIT 1;
+    -- Alocação: Sorriso (R$ 240.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Sorriso') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - SORRISO - ' || 'EVENTO TAISE',
+        'Diária - Sorriso - ' || 'EVENTO TAISE',
         'despesa',
         240.0,
         '2025-02-08'::DATE,
@@ -19571,13 +19571,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: BABALU (R$ 260.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'BABALU' LIMIT 1;
+    -- Alocação: Babalu (R$ 260.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Babalu') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - BABALU - ' || 'EVENTO TAISE',
+        'Diária - Babalu - ' || 'EVENTO TAISE',
         'despesa',
         260.0,
         '2025-02-08'::DATE,
@@ -19641,13 +19641,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: FELICIA (R$ 210.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'FELICIA' LIMIT 1;
+    -- Alocação: Felicia (R$ 210.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Felicia') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - FELICIA - ' || 'FEIJOADA TO INDO',
+        'Diária - Felicia - ' || 'FEIJOADA TO INDO',
         'despesa',
         210.0,
         '2025-03-08'::DATE,
@@ -19711,13 +19711,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 350.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 350.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'TÂNIA',
+        'Diária - Poc - ' || 'TÂNIA',
         'despesa',
         350.0,
         '2025-03-08'::DATE,
@@ -19741,13 +19741,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: PEDRITA (R$ 350.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'PEDRITA' LIMIT 1;
+    -- Alocação: Pedrita (R$ 350.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Pedrita') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - PEDRITA - ' || 'TÂNIA',
+        'Diária - Pedrita - ' || 'TÂNIA',
         'despesa',
         350.0,
         '2025-03-08'::DATE,
@@ -19771,13 +19771,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: MU (R$ 350.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'MU' LIMIT 1;
+    -- Alocação: Mu (R$ 350.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Mu') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - MU - ' || 'TÂNIA',
+        'Diária - Mu - ' || 'TÂNIA',
         'despesa',
         350.0,
         '2025-03-08'::DATE,
@@ -19801,13 +19801,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: JOJO (R$ 350.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'JOJO' LIMIT 1;
+    -- Alocação: Jojo (R$ 350.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Jojo') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - JOJO - ' || 'TÂNIA',
+        'Diária - Jojo - ' || 'TÂNIA',
         'despesa',
         350.0,
         '2025-03-08'::DATE,
@@ -19871,13 +19871,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: JOJO (R$ 100.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'JOJO' LIMIT 1;
+    -- Alocação: Jojo (R$ 100.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Jojo') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - JOJO - ' || 'FEIJOADA OMAS HAUS',
+        'Diária - Jojo - ' || 'FEIJOADA OMAS HAUS',
         'despesa',
         100.0,
         '2025-03-08'::DATE,
@@ -19927,13 +19927,13 @@ BEGIN
     )
     RETURNING id INTO v_evento_id;
 
-    -- Alocação: JOJO (R$ 100.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'JOJO' LIMIT 1;
+    -- Alocação: Jojo (R$ 100.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Jojo') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - JOJO - ' || 'ESPAÇO KIDS',
+        'Diária - Jojo - ' || 'ESPAÇO KIDS',
         'despesa',
         100.0,
         '2025-07-30'::DATE,
@@ -20063,13 +20063,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: ALICE (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'ALICE' LIMIT 1;
+    -- Alocação: Alice (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Alice') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - ALICE - ' || 'ANDERSON',
+        'Diária - Alice - ' || 'ANDERSON',
         'despesa',
         180.0,
         '2025-10-08'::DATE,
@@ -20093,13 +20093,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: JOJO (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'JOJO' LIMIT 1;
+    -- Alocação: Jojo (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Jojo') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - JOJO - ' || 'ANDERSON',
+        'Diária - Jojo - ' || 'ANDERSON',
         'despesa',
         180.0,
         '2025-10-08'::DATE,
@@ -20123,13 +20123,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: BABALU (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'BABALU' LIMIT 1;
+    -- Alocação: Babalu (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Babalu') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - BABALU - ' || 'ANDERSON',
+        'Diária - Babalu - ' || 'ANDERSON',
         'despesa',
         180.0,
         '2025-10-08'::DATE,
@@ -20193,13 +20193,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: SORRISO (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'SORRISO' LIMIT 1;
+    -- Alocação: Sorriso (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Sorriso') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - SORRISO - ' || 'EVENTO  D10',
+        'Diária - Sorriso - ' || 'EVENTO  D10',
         'despesa',
         180.0,
         '2025-10-08'::DATE,
@@ -20263,13 +20263,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: FELICIA (R$ 150.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'FELICIA' LIMIT 1;
+    -- Alocação: Felicia (R$ 150.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Felicia') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - FELICIA - ' || 'BETINA',
+        'Diária - Felicia - ' || 'BETINA',
         'despesa',
         150.0,
         '2025-10-08'::DATE,
@@ -20333,13 +20333,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: FELICIA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'FELICIA' LIMIT 1;
+    -- Alocação: Felicia (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Felicia') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - FELICIA - ' || 'IVY',
+        'Diária - Felicia - ' || 'IVY',
         'despesa',
         180.0,
         '2025-10-08'::DATE,
@@ -20403,13 +20403,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: ESTRELA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'ESTRELA' LIMIT 1;
+    -- Alocação: Estrela (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Estrela') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - ESTRELA - ' || 'CAROLINA',
+        'Diária - Estrela - ' || 'CAROLINA',
         'despesa',
         180.0,
         '2025-11-08'::DATE,
@@ -20473,13 +20473,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: JUJUBA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'JUJUBA' LIMIT 1;
+    -- Alocação: Jujuba (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Jujuba') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - JUJUBA - ' || 'MARIANE',
+        'Diária - Jujuba - ' || 'MARIANE',
         'despesa',
         180.0,
         '2025-11-08'::DATE,
@@ -20543,13 +20543,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 400.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 400.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'TETE',
+        'Diária - Poc - ' || 'TETE',
         'despesa',
         400.0,
         '2025-08-14'::DATE,
@@ -20573,13 +20573,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: PEDRITA (R$ 400.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'PEDRITA' LIMIT 1;
+    -- Alocação: Pedrita (R$ 400.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Pedrita') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - PEDRITA - ' || 'TETE',
+        'Diária - Pedrita - ' || 'TETE',
         'despesa',
         400.0,
         '2025-08-14'::DATE,
@@ -20683,13 +20683,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: JUJUBA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'JUJUBA' LIMIT 1;
+    -- Alocação: Jujuba (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Jujuba') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - JUJUBA - ' || 'JOSI',
+        'Diária - Jujuba - ' || 'JOSI',
         'despesa',
         180.0,
         '2025-11-08'::DATE,
@@ -20753,13 +20753,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 170.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 170.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'TETE',
+        'Diária - Poc - ' || 'TETE',
         'despesa',
         170.0,
         '2025-08-14'::DATE,
@@ -20823,13 +20823,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 170.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 170.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'MARI',
+        'Diária - Poc - ' || 'MARI',
         'despesa',
         170.0,
         '2025-08-17'::DATE,
@@ -20893,13 +20893,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'MANIA DE BRINCAR',
+        'Diária - Poc - ' || 'MANIA DE BRINCAR',
         'despesa',
         200.0,
         '2025-08-20'::DATE,
@@ -20923,13 +20923,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: GABE (R$ 120.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'GABE' LIMIT 1;
+    -- Alocação: Gabe (R$ 120.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Gabe') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - GABE - ' || 'MANIA DE BRINCAR',
+        'Diária - Gabe - ' || 'MANIA DE BRINCAR',
         'despesa',
         120.0,
         '2025-08-20'::DATE,
@@ -20953,13 +20953,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: FELICIA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'FELICIA' LIMIT 1;
+    -- Alocação: Felicia (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Felicia') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - FELICIA - ' || 'MANIA DE BRINCAR',
+        'Diária - Felicia - ' || 'MANIA DE BRINCAR',
         'despesa',
         180.0,
         '2025-08-20'::DATE,
@@ -20983,13 +20983,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: POLLY (R$ 120.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POLLY' LIMIT 1;
+    -- Alocação: Polly (R$ 120.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Polly') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POLLY - ' || 'MANIA DE BRINCAR',
+        'Diária - Polly - ' || 'MANIA DE BRINCAR',
         'despesa',
         120.0,
         '2025-08-20'::DATE,
@@ -21013,13 +21013,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: DORA (R$ 120.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'DORA' LIMIT 1;
+    -- Alocação: Dora (R$ 120.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Dora') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - DORA - ' || 'MANIA DE BRINCAR',
+        'Diária - Dora - ' || 'MANIA DE BRINCAR',
         'despesa',
         120.0,
         '2025-08-20'::DATE,
@@ -21043,13 +21043,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: GISA (R$ 120.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'GISA' LIMIT 1;
+    -- Alocação: Gisa (R$ 120.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Gisa') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - GISA - ' || 'MANIA DE BRINCAR',
+        'Diária - Gisa - ' || 'MANIA DE BRINCAR',
         'despesa',
         120.0,
         '2025-08-20'::DATE,
@@ -21113,13 +21113,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: ESTRELA (R$ 170.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'ESTRELA' LIMIT 1;
+    -- Alocação: Estrela (R$ 170.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Estrela') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - ESTRELA - ' || 'GINCANA MADRE',
+        'Diária - Estrela - ' || 'GINCANA MADRE',
         'despesa',
         170.0,
         '2025-08-23'::DATE,
@@ -21183,13 +21183,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: FELICIA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'FELICIA' LIMIT 1;
+    -- Alocação: Felicia (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Felicia') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - FELICIA - ' || 'ELISANGELA',
+        'Diária - Felicia - ' || 'ELISANGELA',
         'despesa',
         180.0,
         '2025-08-24'::DATE,
@@ -21213,13 +21213,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: DORA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'DORA' LIMIT 1;
+    -- Alocação: Dora (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Dora') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - DORA - ' || 'ELISANGELA',
+        'Diária - Dora - ' || 'ELISANGELA',
         'despesa',
         180.0,
         '2025-08-24'::DATE,
@@ -21283,13 +21283,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'LUIZA',
+        'Diária - Poc - ' || 'LUIZA',
         'despesa',
         200.0,
         '2025-08-24'::DATE,
@@ -21313,13 +21313,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: JOJO (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'JOJO' LIMIT 1;
+    -- Alocação: Jojo (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Jojo') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - JOJO - ' || 'LUIZA',
+        'Diária - Jojo - ' || 'LUIZA',
         'despesa',
         180.0,
         '2025-08-24'::DATE,
@@ -21463,13 +21463,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'REBECCA',
+        'Diária - Poc - ' || 'REBECCA',
         'despesa',
         200.0,
         '2025-08-25'::DATE,
@@ -21519,13 +21519,13 @@ BEGIN
     )
     RETURNING id INTO v_evento_id;
 
-    -- Alocação: POC (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'EVENTO SAGRADA',
+        'Diária - Poc - ' || 'EVENTO SAGRADA',
         'despesa',
         200.0,
         '2025-08-26'::DATE,
@@ -21589,13 +21589,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: FELICIA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'FELICIA' LIMIT 1;
+    -- Alocação: Felicia (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Felicia') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - FELICIA - ' || 'MANIA DE BRINCAR',
+        'Diária - Felicia - ' || 'MANIA DE BRINCAR',
         'despesa',
         180.0,
         '2025-08-31'::DATE,
@@ -21659,13 +21659,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'FEIJOADA FELIPE',
+        'Diária - Poc - ' || 'FEIJOADA FELIPE',
         'despesa',
         200.0,
         '2025-01-09'::DATE,
@@ -21689,13 +21689,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: DORA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'DORA' LIMIT 1;
+    -- Alocação: Dora (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Dora') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - DORA - ' || 'FEIJOADA FELIPE',
+        'Diária - Dora - ' || 'FEIJOADA FELIPE',
         'despesa',
         180.0,
         '2025-01-09'::DATE,
@@ -21759,13 +21759,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: FELICIA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'FELICIA' LIMIT 1;
+    -- Alocação: Felicia (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Felicia') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - FELICIA - ' || 'FERNANDA',
+        'Diária - Felicia - ' || 'FERNANDA',
         'despesa',
         180.0,
         '2025-01-09'::DATE,
@@ -21829,13 +21829,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: ESTRELA (R$ 150.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'ESTRELA' LIMIT 1;
+    -- Alocação: Estrela (R$ 150.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Estrela') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - ESTRELA - ' || 'CAMILA',
+        'Diária - Estrela - ' || 'CAMILA',
         'despesa',
         150.0,
         '2025-07-09'::DATE,
@@ -21899,13 +21899,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: ESTRELA (R$ 150.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'ESTRELA' LIMIT 1;
+    -- Alocação: Estrela (R$ 150.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Estrela') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - ESTRELA - ' || 'VANESSA',
+        'Diária - Estrela - ' || 'VANESSA',
         'despesa',
         150.0,
         '2025-08-09'::DATE,
@@ -21929,13 +21929,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: JUJUBA (R$ 150.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'JUJUBA' LIMIT 1;
+    -- Alocação: Jujuba (R$ 150.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Jujuba') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - JUJUBA - ' || 'VANESSA',
+        'Diária - Jujuba - ' || 'VANESSA',
         'despesa',
         150.0,
         '2025-08-09'::DATE,
@@ -21959,13 +21959,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: FELICIA (R$ 150.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'FELICIA' LIMIT 1;
+    -- Alocação: Felicia (R$ 150.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Felicia') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - FELICIA - ' || 'VANESSA',
+        'Diária - Felicia - ' || 'VANESSA',
         'despesa',
         150.0,
         '2025-08-09'::DATE,
@@ -22029,13 +22029,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'MADRE',
+        'Diária - Poc - ' || 'MADRE',
         'despesa',
         200.0,
         '2026-09-13'::DATE,
@@ -22059,13 +22059,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: PEPE (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'PEPE' LIMIT 1;
+    -- Alocação: Pepe (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Pepe') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - PEPE - ' || 'MADRE',
+        'Diária - Pepe - ' || 'MADRE',
         'despesa',
         200.0,
         '2026-09-13'::DATE,
@@ -22129,13 +22129,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'PAMELA',
+        'Diária - Poc - ' || 'PAMELA',
         'despesa',
         200.0,
         '2026-09-14'::DATE,
@@ -22199,13 +22199,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: GISA (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'GISA' LIMIT 1;
+    -- Alocação: Gisa (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Gisa') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - GISA - ' || 'THIAGO',
+        'Diária - Gisa - ' || 'THIAGO',
         'despesa',
         200.0,
         '2025-09-15'::DATE,
@@ -22269,13 +22269,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: PEPE (R$ 230.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'PEPE' LIMIT 1;
+    -- Alocação: Pepe (R$ 230.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Pepe') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - PEPE - ' || 'JULIANA',
+        'Diária - Pepe - ' || 'JULIANA',
         'despesa',
         230.0,
         '2026-09-15'::DATE,
@@ -22299,13 +22299,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: FELICIA (R$ 210.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'FELICIA' LIMIT 1;
+    -- Alocação: Felicia (R$ 210.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Felicia') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - FELICIA - ' || 'JULIANA',
+        'Diária - Felicia - ' || 'JULIANA',
         'despesa',
         210.0,
         '2026-09-15'::DATE,
@@ -22329,13 +22329,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: JOJO (R$ 210.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'JOJO' LIMIT 1;
+    -- Alocação: Jojo (R$ 210.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Jojo') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - JOJO - ' || 'JULIANA',
+        'Diária - Jojo - ' || 'JULIANA',
         'despesa',
         210.0,
         '2026-09-15'::DATE,
@@ -22359,13 +22359,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: MARI (R$ 210.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'MARI' LIMIT 1;
+    -- Alocação: Mari (R$ 210.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Mari') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - MARI - ' || 'JULIANA',
+        'Diária - Mari - ' || 'JULIANA',
         'despesa',
         210.0,
         '2026-09-15'::DATE,
@@ -22389,13 +22389,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: DORA (R$ 210.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'DORA' LIMIT 1;
+    -- Alocação: Dora (R$ 210.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Dora') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - DORA - ' || 'JULIANA',
+        'Diária - Dora - ' || 'JULIANA',
         'despesa',
         210.0,
         '2026-09-15'::DATE,
@@ -22459,13 +22459,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: FELICIA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'FELICIA' LIMIT 1;
+    -- Alocação: Felicia (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Felicia') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - FELICIA - ' || 'GCB',
+        'Diária - Felicia - ' || 'GCB',
         'despesa',
         180.0,
         '2025-09-15'::DATE,
@@ -22529,13 +22529,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: JUJUBA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'JUJUBA' LIMIT 1;
+    -- Alocação: Jujuba (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Jujuba') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - JUJUBA - ' || 'PRISCILA',
+        'Diária - Jujuba - ' || 'PRISCILA',
         'despesa',
         180.0,
         '2025-09-20'::DATE,
@@ -22559,13 +22559,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: PAÇOCA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'PAÇOCA' LIMIT 1;
+    -- Alocação: Paçoca (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Paçoca') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - PAÇOCA - ' || 'PRISCILA',
+        'Diária - Paçoca - ' || 'PRISCILA',
         'despesa',
         180.0,
         '2025-09-20'::DATE,
@@ -22589,13 +22589,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: PAÇOCA (R$ 42.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'PAÇOCA' LIMIT 1;
+    -- Alocação: Paçoca (R$ 42.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Paçoca') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - PAÇOCA - ' || 'PRISCILA',
+        'Diária - Paçoca - ' || 'PRISCILA',
         'despesa',
         42.0,
         '2025-09-20'::DATE,
@@ -22659,13 +22659,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: ESTRELA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'ESTRELA' LIMIT 1;
+    -- Alocação: Estrela (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Estrela') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - ESTRELA - ' || 'BAND',
+        'Diária - Estrela - ' || 'BAND',
         'despesa',
         180.0,
         '2025-09-21'::DATE,
@@ -22689,13 +22689,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: FELICIA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'FELICIA' LIMIT 1;
+    -- Alocação: Felicia (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Felicia') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - FELICIA - ' || 'BAND',
+        'Diária - Felicia - ' || 'BAND',
         'despesa',
         180.0,
         '2025-09-21'::DATE,
@@ -22759,13 +22759,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: PEPE (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'PEPE' LIMIT 1;
+    -- Alocação: Pepe (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Pepe') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - PEPE - ' || 'LUIZ',
+        'Diária - Pepe - ' || 'LUIZ',
         'despesa',
         200.0,
         '2025-09-21'::DATE,
@@ -22789,13 +22789,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: RAVENA (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'RAVENA' LIMIT 1;
+    -- Alocação: Ravena (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Ravena') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - RAVENA - ' || 'LUIZ',
+        'Diária - Ravena - ' || 'LUIZ',
         'despesa',
         200.0,
         '2025-09-21'::DATE,
@@ -22899,13 +22899,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: ESTRELA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'ESTRELA' LIMIT 1;
+    -- Alocação: Estrela (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Estrela') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - ESTRELA - ' || 'SANDRA',
+        'Diária - Estrela - ' || 'SANDRA',
         'despesa',
         180.0,
         '2025-09-21'::DATE,
@@ -22929,13 +22929,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: PEPE (R$ 200.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'PEPE' LIMIT 1;
+    -- Alocação: Pepe (R$ 200.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Pepe') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - PEPE - ' || 'SANDRA',
+        'Diária - Pepe - ' || 'SANDRA',
         'despesa',
         200.0,
         '2025-09-21'::DATE,
@@ -22985,13 +22985,13 @@ BEGIN
     )
     RETURNING id INTO v_evento_id;
 
-    -- Alocação: POC (R$ 400.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 400.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'BOLAGA',
+        'Diária - Poc - ' || 'BOLAGA',
         'despesa',
         400.0,
         '2025-09-22'::DATE,
@@ -23015,13 +23015,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: PEPE (R$ 400.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'PEPE' LIMIT 1;
+    -- Alocação: Pepe (R$ 400.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Pepe') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - PEPE - ' || 'BOLAGA',
+        'Diária - Pepe - ' || 'BOLAGA',
         'despesa',
         400.0,
         '2025-09-22'::DATE,
@@ -23045,13 +23045,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: ESTRELA (R$ 400.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'ESTRELA' LIMIT 1;
+    -- Alocação: Estrela (R$ 400.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Estrela') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - ESTRELA - ' || 'BOLAGA',
+        'Diária - Estrela - ' || 'BOLAGA',
         'despesa',
         400.0,
         '2025-09-22'::DATE,
@@ -23075,13 +23075,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: JUJUBA (R$ 400.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'JUJUBA' LIMIT 1;
+    -- Alocação: Jujuba (R$ 400.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Jujuba') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - JUJUBA - ' || 'BOLAGA',
+        'Diária - Jujuba - ' || 'BOLAGA',
         'despesa',
         400.0,
         '2025-09-22'::DATE,
@@ -23131,13 +23131,13 @@ BEGIN
     )
     RETURNING id INTO v_evento_id;
 
-    -- Alocação: ESTRELA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'ESTRELA' LIMIT 1;
+    -- Alocação: Estrela (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Estrela') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - ESTRELA - ' || 'ACAMPAMENTO SAGRADA',
+        'Diária - Estrela - ' || 'ACAMPAMENTO SAGRADA',
         'despesa',
         180.0,
         '2025-09-27'::DATE,
@@ -23201,13 +23201,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: FELICIA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'FELICIA' LIMIT 1;
+    -- Alocação: Felicia (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Felicia') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - FELICIA - ' || 'TALITA',
+        'Diária - Felicia - ' || 'TALITA',
         'despesa',
         180.0,
         '2025-09-28'::DATE,
@@ -23271,13 +23271,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: PEPE (R$ 150.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'PEPE' LIMIT 1;
+    -- Alocação: Pepe (R$ 150.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Pepe') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - PEPE - ' || 'MAIARA',
+        'Diária - Pepe - ' || 'MAIARA',
         'despesa',
         150.0,
         '2025-09-28'::DATE,
@@ -23341,13 +23341,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: FELICIA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'FELICIA' LIMIT 1;
+    -- Alocação: Felicia (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Felicia') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - FELICIA - ' || 'PAMELA',
+        'Diária - Felicia - ' || 'PAMELA',
         'despesa',
         180.0,
         '2025-09-28'::DATE,
@@ -23411,13 +23411,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 210.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 210.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'MANIA DE BRINCAR',
+        'Diária - Poc - ' || 'MANIA DE BRINCAR',
         'despesa',
         210.0,
         '2025-09-29'::DATE,
@@ -23521,13 +23521,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: ESTRELA (R$ 210.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'ESTRELA' LIMIT 1;
+    -- Alocação: Estrela (R$ 210.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Estrela') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - ESTRELA - ' || 'FERNANDA',
+        'Diária - Estrela - ' || 'FERNANDA',
         'despesa',
         210.0,
         '2025-06-10'::DATE,
@@ -23591,13 +23591,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 210.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 210.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'NATÁLIA',
+        'Diária - Poc - ' || 'NATÁLIA',
         'despesa',
         210.0,
         '2025-06-10'::DATE,
@@ -23661,13 +23661,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 210.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 210.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'ANA LUISA',
+        'Diária - Poc - ' || 'ANA LUISA',
         'despesa',
         210.0,
         '2025-09-10'::DATE,
@@ -23691,13 +23691,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: JUJUBA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'JUJUBA' LIMIT 1;
+    -- Alocação: Jujuba (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Jujuba') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - JUJUBA - ' || 'ANA LUISA',
+        'Diária - Jujuba - ' || 'ANA LUISA',
         'despesa',
         180.0,
         '2025-09-10'::DATE,
@@ -23761,13 +23761,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: ESTRELA (R$ 210.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'ESTRELA' LIMIT 1;
+    -- Alocação: Estrela (R$ 210.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Estrela') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - ESTRELA - ' || 'ANA',
+        'Diária - Estrela - ' || 'ANA',
         'despesa',
         210.0,
         '2025-11-10'::DATE,
@@ -23831,13 +23831,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: BABALU (R$ 230.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'BABALU' LIMIT 1;
+    -- Alocação: Babalu (R$ 230.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Babalu') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - BABALU - ' || 'CINARA',
+        'Diária - Babalu - ' || 'CINARA',
         'despesa',
         230.0,
         '2025-12-10'::DATE,
@@ -23901,13 +23901,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 210.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 210.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'GAUCHO',
+        'Diária - Poc - ' || 'GAUCHO',
         'despesa',
         210.0,
         '2025-12-10'::DATE,
@@ -23931,13 +23931,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: ESTRELA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'ESTRELA' LIMIT 1;
+    -- Alocação: Estrela (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Estrela') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - ESTRELA - ' || 'GAUCHO',
+        'Diária - Estrela - ' || 'GAUCHO',
         'despesa',
         180.0,
         '2025-12-10'::DATE,
@@ -24001,13 +24001,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: FELICIA (R$ 210.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'FELICIA' LIMIT 1;
+    -- Alocação: Felicia (R$ 210.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Felicia') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - FELICIA - ' || 'BVCC MEIA MARATONA',
+        'Diária - Felicia - ' || 'BVCC MEIA MARATONA',
         'despesa',
         210.0,
         '2025-10-13'::DATE,
@@ -24031,13 +24031,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: JUJUBA (R$ 210.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'JUJUBA' LIMIT 1;
+    -- Alocação: Jujuba (R$ 210.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Jujuba') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - JUJUBA - ' || 'BVCC MEIA MARATONA',
+        'Diária - Jujuba - ' || 'BVCC MEIA MARATONA',
         'despesa',
         210.0,
         '2025-10-13'::DATE,
@@ -24101,13 +24101,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 210.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 210.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'MICHEL',
+        'Diária - Poc - ' || 'MICHEL',
         'despesa',
         210.0,
         '2025-10-18'::DATE,
@@ -24171,13 +24171,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 210.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 210.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'AMANDA',
+        'Diária - Poc - ' || 'AMANDA',
         'despesa',
         210.0,
         '2025-10-18'::DATE,
@@ -24227,13 +24227,13 @@ BEGIN
     )
     RETURNING id INTO v_evento_id;
 
-    -- Alocação: ESTRELA (R$ 210.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'ESTRELA' LIMIT 1;
+    -- Alocação: Estrela (R$ 210.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Estrela') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - ESTRELA - ' || 'GINCANA EXCELSIOR',
+        'Diária - Estrela - ' || 'GINCANA EXCELSIOR',
         'despesa',
         210.0,
         '2025-10-19'::DATE,
@@ -24257,13 +24257,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: FELICIA (R$ 210.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'FELICIA' LIMIT 1;
+    -- Alocação: Felicia (R$ 210.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Felicia') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - FELICIA - ' || 'GINCANA EXCELSIOR',
+        'Diária - Felicia - ' || 'GINCANA EXCELSIOR',
         'despesa',
         210.0,
         '2025-10-19'::DATE,
@@ -24287,13 +24287,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: PAÇOCA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'PAÇOCA' LIMIT 1;
+    -- Alocação: Paçoca (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Paçoca') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - PAÇOCA - ' || 'GINCANA EXCELSIOR',
+        'Diária - Paçoca - ' || 'GINCANA EXCELSIOR',
         'despesa',
         180.0,
         '2025-10-19'::DATE,
@@ -24317,13 +24317,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: BATATA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'BATATA' LIMIT 1;
+    -- Alocação: Batata (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Batata') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - BATATA - ' || 'GINCANA EXCELSIOR',
+        'Diária - Batata - ' || 'GINCANA EXCELSIOR',
         'despesa',
         180.0,
         '2025-10-19'::DATE,
@@ -24387,13 +24387,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: POC (R$ 210.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'POC' LIMIT 1;
+    -- Alocação: Poc (R$ 210.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Poc') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - POC - ' || 'TANIA',
+        'Diária - Poc - ' || 'TANIA',
         'despesa',
         210.0,
         '2025-10-19'::DATE,
@@ -24417,13 +24417,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: ALICE (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'ALICE' LIMIT 1;
+    -- Alocação: Alice (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Alice') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - ALICE - ' || 'TANIA',
+        'Diária - Alice - ' || 'TANIA',
         'despesa',
         180.0,
         '2025-10-19'::DATE,
@@ -24487,13 +24487,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: BABALU (R$ 210.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'BABALU' LIMIT 1;
+    -- Alocação: Babalu (R$ 210.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Babalu') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - BABALU - ' || 'BETINA',
+        'Diária - Babalu - ' || 'BETINA',
         'despesa',
         210.0,
         '2025-10-19'::DATE,
@@ -24517,13 +24517,13 @@ BEGIN
       );
     END IF;
 
-    -- Alocação: DORA (R$ 180.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'DORA' LIMIT 1;
+    -- Alocação: Dora (R$ 180.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Dora') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - DORA - ' || 'BETINA',
+        'Diária - Dora - ' || 'BETINA',
         'despesa',
         180.0,
         '2025-10-19'::DATE,
@@ -24587,13 +24587,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: JUJUBA (R$ 210.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'JUJUBA' LIMIT 1;
+    -- Alocação: Jujuba (R$ 210.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Jujuba') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - JUJUBA - ' || 'TÁBATA',
+        'Diária - Jujuba - ' || 'TÁBATA',
         'despesa',
         210.0,
         '2025-10-19'::DATE,
@@ -24657,13 +24657,13 @@ BEGIN
       'Importado da planilha'
     );
 
-    -- Alocação: FELICIA (R$ 210.0)
-    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = 'FELICIA' LIMIT 1;
+    -- Alocação: Felicia (R$ 210.0)
+    SELECT id INTO v_membro_id FROM equipe WHERE UPPER(nome) = UPPER('Felicia') LIMIT 1;
     IF v_membro_id IS NOT NULL THEN
       -- Criar transação de despesa
       INSERT INTO transacoes_financeiras (descricao, tipo, valor, data_vencimento, data_pagamento, status, categoria_id, evento_id, observacoes)
       VALUES (
-        'Diária - FELICIA - ' || 'MARIANE',
+        'Diária - Felicia - ' || 'MARIANE',
         'despesa',
         210.0,
         '2025-10-19'::DATE,

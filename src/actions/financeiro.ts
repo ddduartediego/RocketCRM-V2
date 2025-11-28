@@ -312,13 +312,27 @@ export async function getResumoFinanceiro(mes?: string) {
   const supabase = await createClient();
 
   // Se não passar mês, usa o mês atual
-  const dataAtual = mes ? new Date(`${mes}-01`) : new Date();
-  const inicioMes = new Date(dataAtual.getFullYear(), dataAtual.getMonth(), 1)
-    .toISOString()
-    .split("T")[0];
-  const fimMes = new Date(dataAtual.getFullYear(), dataAtual.getMonth() + 1, 0)
-    .toISOString()
-    .split("T")[0];
+  // Usa abordagem timezone-safe para evitar problemas com UTC
+  let ano: number;
+  let mesNum: number;
+  
+  if (mes) {
+    // Formato esperado: "YYYY-MM"
+    const [anoStr, mesStr] = mes.split("-");
+    ano = parseInt(anoStr, 10);
+    mesNum = parseInt(mesStr, 10);
+  } else {
+    // Usa a data atual no timezone local do servidor
+    const agora = new Date();
+    ano = agora.getFullYear();
+    mesNum = agora.getMonth() + 1; // getMonth() retorna 0-11
+  }
+  
+  // Constrói as datas como strings para evitar conversões de timezone
+  const inicioMes = `${ano}-${String(mesNum).padStart(2, "0")}-01`;
+  // Último dia do mês: cria uma data do próximo mês e subtrai um dia
+  const ultimoDia = new Date(ano, mesNum, 0).getDate();
+  const fimMes = `${ano}-${String(mesNum).padStart(2, "0")}-${String(ultimoDia).padStart(2, "0")}`;
 
   // Buscar todas as transações do mês
   const { data: transacoes } = await supabase
@@ -375,13 +389,23 @@ export async function getResumoFinanceiro(mes?: string) {
 export async function getTransacoesPorCategoria(mes?: string, tipo?: string) {
   const supabase = await createClient();
 
-  const dataAtual = mes ? new Date(`${mes}-01`) : new Date();
-  const inicioMes = new Date(dataAtual.getFullYear(), dataAtual.getMonth(), 1)
-    .toISOString()
-    .split("T")[0];
-  const fimMes = new Date(dataAtual.getFullYear(), dataAtual.getMonth() + 1, 0)
-    .toISOString()
-    .split("T")[0];
+  // Usa abordagem timezone-safe para evitar problemas com UTC
+  let ano: number;
+  let mesNum: number;
+  
+  if (mes) {
+    const [anoStr, mesStr] = mes.split("-");
+    ano = parseInt(anoStr, 10);
+    mesNum = parseInt(mesStr, 10);
+  } else {
+    const agora = new Date();
+    ano = agora.getFullYear();
+    mesNum = agora.getMonth() + 1;
+  }
+  
+  const inicioMes = `${ano}-${String(mesNum).padStart(2, "0")}-01`;
+  const ultimoDia = new Date(ano, mesNum, 0).getDate();
+  const fimMes = `${ano}-${String(mesNum).padStart(2, "0")}-${String(ultimoDia).padStart(2, "0")}`;
 
   let query = supabase
     .from("transacoes_financeiras")

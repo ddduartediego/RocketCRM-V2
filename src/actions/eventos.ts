@@ -642,6 +642,71 @@ export async function recriarTransacoesEvento(
  * Sincroniza os membros alocados de um evento com o Google Calendar
  * Envia convites por email para todos os membros que possuem email cadastrado
  */
+// ==================== ESTATÍSTICAS DO DASHBOARD ====================
+
+export interface EstatisticasEventosMes {
+  total: number;
+  porStatus: {
+    planejamento: number;
+    confirmado: number;
+    realizado: number;
+    cancelado: number;
+  };
+}
+
+/**
+ * Retorna estatísticas de eventos para um mês específico
+ * Filtra por data_inicio do evento
+ */
+export async function getEstatisticasEventosMes(mes?: string): Promise<EstatisticasEventosMes> {
+  const supabase = await createClient();
+
+  // Calcula início e fim do mês de forma timezone-safe
+  let ano: number;
+  let mesNum: number;
+
+  if (mes) {
+    const [anoStr, mesStr] = mes.split("-");
+    ano = parseInt(anoStr, 10);
+    mesNum = parseInt(mesStr, 10);
+  } else {
+    const agora = new Date();
+    ano = agora.getFullYear();
+    mesNum = agora.getMonth() + 1;
+  }
+
+  const inicioMes = `${ano}-${String(mesNum).padStart(2, "0")}-01`;
+  const ultimoDia = new Date(ano, mesNum, 0).getDate();
+  const fimMes = `${ano}-${String(mesNum).padStart(2, "0")}-${String(ultimoDia).padStart(2, "0")}`;
+
+  // Buscar todos os eventos do mês
+  const { data: eventos } = await supabase
+    .from("eventos")
+    .select("status")
+    .gte("data_inicio", inicioMes)
+    .lte("data_inicio", fimMes);
+
+  // Calcular estatísticas
+  const stats: EstatisticasEventosMes = {
+    total: eventos?.length || 0,
+    porStatus: {
+      planejamento: 0,
+      confirmado: 0,
+      realizado: 0,
+      cancelado: 0,
+    },
+  };
+
+  eventos?.forEach((evento) => {
+    const status = evento.status as keyof typeof stats.porStatus;
+    if (stats.porStatus[status] !== undefined) {
+      stats.porStatus[status]++;
+    }
+  });
+
+  return stats;
+}
+
 export async function syncParticipantesEvento(eventoId: string) {
   const supabase = await createClient();
 
