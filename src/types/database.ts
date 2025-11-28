@@ -532,6 +532,13 @@ export type Database = {
             referencedRelation: "users"
             referencedColumns: ["id"]
           },
+          {
+            foreignKeyName: "eventos_tipo_id_fkey"
+            columns: ["tipo_id"]
+            isOneToOne: false
+            referencedRelation: "tipos_evento"
+            referencedColumns: ["id"]
+          },
         ]
       }
       interacoes: {
