@@ -30,7 +30,7 @@ export async function getEventos(filters: EventosFilters = {}) {
       *,
       contatos!eventos_cliente_id_fkey(id, nome),
       users!eventos_responsavel_id_fkey(id, nome, avatar_url),
-      tipos_evento!eventos_tipo_id_fkey(id, nome, icone, cor)
+      tipos_evento(id, nome, icone, cor)
     `,
       { count: "exact" }
     )
@@ -71,7 +71,7 @@ export async function getProximosEventos(limit = 5) {
       `
       id, nome, tipo_id, data_inicio, data_fim, local, status,
       contatos!eventos_cliente_id_fkey(id, nome),
-      tipos_evento!eventos_tipo_id_fkey(id, nome, icone, cor)
+      tipos_evento(id, nome, icone, cor)
     `
     )
     .gte("data_inicio", today)
@@ -102,7 +102,7 @@ export async function getEventosSemana(startDate: string, endDate: string) {
       *,
       contatos!eventos_cliente_id_fkey(id, nome),
       users!eventos_responsavel_id_fkey(id, nome, avatar_url),
-      tipos_evento!eventos_tipo_id_fkey(id, nome, icone, cor)
+      tipos_evento(id, nome, icone, cor)
     `
     )
     .or(
@@ -129,7 +129,7 @@ export async function getEventoById(id: string) {
       contatos!eventos_cliente_id_fkey(id, nome, telefone, email),
       leads(id, titulo),
       users!eventos_responsavel_id_fkey(id, nome, avatar_url),
-      tipos_evento!eventos_tipo_id_fkey(id, nome, icone, cor)
+      tipos_evento(id, nome, icone, cor)
     `
     )
     .eq("id", id)
