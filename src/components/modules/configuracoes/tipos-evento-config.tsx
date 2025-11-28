@@ -386,3 +386,4 @@ export function TiposEventoConfig({ initialTipos }: TiposEventoConfigProps) {
   );
 }
 
+

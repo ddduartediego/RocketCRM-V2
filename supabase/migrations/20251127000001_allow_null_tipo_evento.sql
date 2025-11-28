@@ -11,3 +11,4 @@ ALTER TABLE eventos ALTER COLUMN tipo DROP NOT NULL;
 -- Permitir NULL na coluna tipo_servico em leads também  
 ALTER TABLE leads ALTER COLUMN tipo_servico DROP NOT NULL;
 
+

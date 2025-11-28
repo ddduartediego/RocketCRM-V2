@@ -81,3 +81,4 @@ WHERE tipo_servico = 'outro';
 -- migration futura após confirmar que tudo funciona corretamente.
 -- =============================================
 
+

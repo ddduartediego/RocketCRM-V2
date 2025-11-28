@@ -219,3 +219,4 @@ Na migration, são criados 4 tipos de evento padrão:
 3. Implementar preferências do sistema (seção desabilitada)
 4. Considerar adicionar tipos de evento específicos por negócio
 
+
