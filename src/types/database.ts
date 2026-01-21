@@ -936,6 +936,9 @@ export type Database = {
           avatar_url: string | null
           created_at: string
           email: string
+          google_access_token: string | null
+          google_refresh_token: string | null
+          google_token_expires_at: string | null
           id: string
           nome: string
           perfil: Database["public"]["Enums"]["perfil_usuario"]
@@ -946,6 +949,9 @@ export type Database = {
           avatar_url?: string | null
           created_at?: string
           email: string
+          google_access_token?: string | null
+          google_refresh_token?: string | null
+          google_token_expires_at?: string | null
           id: string
           nome: string
           perfil?: Database["public"]["Enums"]["perfil_usuario"]
@@ -956,6 +962,9 @@ export type Database = {
           avatar_url?: string | null
           created_at?: string
           email?: string
+          google_access_token?: string | null
+          google_refresh_token?: string | null
+          google_token_expires_at?: string | null
           id?: string
           nome?: string
           perfil?: Database["public"]["Enums"]["perfil_usuario"]
