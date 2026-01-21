@@ -50,8 +50,9 @@ import { createEvento, updateEvento, recriarTransacoesEvento } from "@/actions/e
 import { getContatos } from "@/actions/leads";
 import { getTiposEvento } from "@/actions/configuracoes";
 import { toast } from "sonner";
-import { Calendar, DollarSign, Info, AlertTriangle } from "lucide-react";
-import type { Evento, TipoEventoRow } from "@/types/database";
+import { Calendar, DollarSign, Info, AlertTriangle, Plus } from "lucide-react";
+import type { Contato, Evento, TipoEventoRow } from "@/types/database";
+import { ContatoForm } from "@/components/modules/contatos/contato-form";
 
 interface EventoFormProps {
   open: boolean;
@@ -67,6 +68,7 @@ export function EventoForm({ open, onOpenChange, evento }: EventoFormProps) {
   const [showRecreateDialog, setShowRecreateDialog] = useState(false);
   const [pendingFormData, setPendingFormData] = useState<EventoFormData | null>(null);
   const [recreateTransacoes, setRecreateTransacoes] = useState(false);
+  const [contatoFormOpen, setContatoFormOpen] = useState(false);
 
   const form = useForm<EventoFormData>({
     resolver: zodResolver(eventoSchema) as Resolver<EventoFormData>,
@@ -263,6 +265,11 @@ export function EventoForm({ open, onOpenChange, evento }: EventoFormProps) {
     setPendingFormData(null);
   };
 
+  const handleContatoCreated = (novoContato: Contato) => {
+    setContatos((prev) => [...prev, { id: novoContato.id, nome: novoContato.nome }]);
+    form.setValue("cliente_id", novoContato.id);
+  };
+
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto">
@@ -371,22 +378,33 @@ export function EventoForm({ open, onOpenChange, evento }: EventoFormProps) {
                     control={form.control}
                     name="cliente_id"
                     render={({ field }) => (
-                      <FormItem>
+                      <FormItem className="flex-1">
                         <FormLabel>Cliente/Contato</FormLabel>
-                        <Select onValueChange={field.onChange} value={field.value || ""}>
-                          <FormControl>
-                            <SelectTrigger>
-                              <SelectValue placeholder="Selecione" />
-                            </SelectTrigger>
-                          </FormControl>
-                          <SelectContent>
-                            {contatos.map((contato) => (
-                              <SelectItem key={contato.id} value={contato.id}>
-                                {contato.nome}
-                              </SelectItem>
-                            ))}
-                          </SelectContent>
-                        </Select>
+                        <div className="flex gap-2">
+                          <Select onValueChange={field.onChange} value={field.value || ""}>
+                            <FormControl>
+                              <SelectTrigger>
+                                <SelectValue placeholder="Selecione" />
+                              </SelectTrigger>
+                            </FormControl>
+                            <SelectContent>
+                              {contatos.map((contato) => (
+                                <SelectItem key={contato.id} value={contato.id}>
+                                  {contato.nome}
+                                </SelectItem>
+                              ))}
+                            </SelectContent>
+                          </Select>
+                          <Button
+                            type="button"
+                            variant="outline"
+                            size="icon"
+                            onClick={() => setContatoFormOpen(true)}
+                            title="Novo cliente/contato"
+                          >
+                            <Plus className="w-4 h-4" />
+                          </Button>
+                        </div>
                         <FormMessage />
                       </FormItem>
                     )}
@@ -681,6 +699,12 @@ export function EventoForm({ open, onOpenChange, evento }: EventoFormProps) {
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>
+
+      <ContatoForm
+        open={contatoFormOpen}
+        onOpenChange={setContatoFormOpen}
+        onCreated={handleContatoCreated}
+      />
     </Dialog>
   );
 }

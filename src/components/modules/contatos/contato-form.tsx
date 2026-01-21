@@ -45,6 +45,7 @@ interface ContatoFormProps {
   onOpenChange: (open: boolean) => void;
   contato?: Contato | null;
   onSuccess?: () => void;
+  onCreated?: (contato: Contato) => void;
 }
 
 export function ContatoForm({
@@ -52,6 +53,7 @@ export function ContatoForm({
   onOpenChange,
   contato,
   onSuccess,
+  onCreated,
 }: ContatoFormProps) {
   const isEditing = !!contato;
 
@@ -123,6 +125,10 @@ export function ContatoForm({
 
       onOpenChange(false);
       onSuccess?.();
+      
+      if (!isEditing && result.data) {
+        onCreated?.(result.data);
+      }
     } catch {
       toast.error("Erro inesperado", {
         description: "Tente novamente mais tarde.",
