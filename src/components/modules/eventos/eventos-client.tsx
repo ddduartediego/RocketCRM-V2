@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { EventosTable } from "./eventos-table";
 import { EventoForm } from "./evento-form";
@@ -53,6 +53,10 @@ export function EventosClient({
   const [currentWeekStart, setCurrentWeekStart] = useState<Date>(getInitialWeekStart);
   const [weekEventos, setWeekEventos] = useState<EventoWithRelations[]>([]);
   const [isLoadingWeek, setIsLoadingWeek] = useState(false);
+  
+  // Gera uma "chave" única baseada nos IDs dos eventos para detectar mudanças
+  const eventosKey = eventos.map(e => e.id).sort().join(',');
+  const previousEventosKey = useRef(eventosKey);
 
   const fetchWeekEventos = useCallback(async (weekStart: Date) => {
     setIsLoadingWeek(true);
@@ -72,6 +76,16 @@ export function EventosClient({
       fetchWeekEventos(currentWeekStart);
     }
   }, [viewMode, currentWeekStart, fetchWeekEventos]);
+
+  // Recarrega eventos da semana quando os dados mudam (após router.refresh())
+  useEffect(() => {
+    if (eventosKey !== previousEventosKey.current) {
+      previousEventosKey.current = eventosKey;
+      if (viewMode === "week") {
+        fetchWeekEventos(currentWeekStart);
+      }
+    }
+  }, [eventosKey, viewMode, currentWeekStart, fetchWeekEventos]);
 
   const handleEdit = (evento: Evento) => {
     setSelectedEvento(evento);

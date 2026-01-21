@@ -43,21 +43,110 @@ const eventColorMap: Record<string, string> = {
 };
 
 /**
+ * Renova o access token do Google usando o refresh token
+ */
+async function refreshGoogleToken(refreshToken: string): Promise<{ access_token: string; expires_in: number } | null> {
+  try {
+    const clientId = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID;
+    const clientSecret = process.env.GOOGLE_CLIENT_SECRET;
+
+    if (!clientId || !clientSecret) {
+      console.error("NEXT_PUBLIC_GOOGLE_CLIENT_ID ou GOOGLE_CLIENT_SECRET não configurados");
+      return null;
+    }
+
+    const response = await fetch("https://oauth2.googleapis.com/token", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: new URLSearchParams({
+        client_id: clientId,
+        client_secret: clientSecret,
+        refresh_token: refreshToken,
+        grant_type: "refresh_token",
+      }),
+    });
+
+    if (!response.ok) {
+      const error = await response.json();
+      console.error("Erro ao renovar token do Google:", error);
+      return null;
+    }
+
+    const data = await response.json();
+    return {
+      access_token: data.access_token,
+      expires_in: data.expires_in || 3600,
+    };
+  } catch (error) {
+    console.error("Erro ao renovar token do Google:", error);
+    return null;
+  }
+}
+
+/**
  * Obtém os tokens do Google do usuário autenticado
+ * Busca do banco de dados e renova se expirado
  */
 async function getGoogleTokens(): Promise<GoogleTokens | null> {
   const supabase = await createClient();
   
-  const { data: { session } } = await supabase.auth.getSession();
+  // Obter usuário atual
+  const { data: { user } } = await supabase.auth.getUser();
   
-  if (!session?.provider_token) {
-    console.error("Usuário não possui token do Google");
+  if (!user) {
+    console.error("Usuário não autenticado");
     return null;
   }
 
+  // Buscar tokens do banco de dados
+  const { data: userData, error } = await supabase
+    .from("users")
+    .select("google_access_token, google_refresh_token, google_token_expires_at")
+    .eq("id", user.id)
+    .single();
+
+  if (error || !userData?.google_access_token) {
+    console.error("Usuário não possui token do Google armazenado");
+    return null;
+  }
+
+  const { google_access_token, google_refresh_token, google_token_expires_at } = userData;
+
+  // Verificar se o token expirou (com margem de 5 minutos)
+  const expiresAt = google_token_expires_at ? new Date(google_token_expires_at) : null;
+  const isExpired = expiresAt && expiresAt.getTime() < Date.now() + 5 * 60 * 1000;
+
+  if (isExpired && google_refresh_token) {
+    // Tentar renovar o token
+    const newTokens = await refreshGoogleToken(google_refresh_token);
+    
+    if (newTokens) {
+      // Atualizar tokens no banco
+      const newExpiresAt = new Date(Date.now() + newTokens.expires_in * 1000);
+      
+      await supabase
+        .from("users")
+        .update({
+          google_access_token: newTokens.access_token,
+          google_token_expires_at: newExpiresAt.toISOString(),
+        })
+        .eq("id", user.id);
+
+      return {
+        access_token: newTokens.access_token,
+        refresh_token: google_refresh_token,
+      };
+    } else {
+      console.error("Não foi possível renovar o token do Google");
+      return null;
+    }
+  }
+
   return {
-    access_token: session.provider_token,
-    refresh_token: session.provider_refresh_token || undefined,
+    access_token: google_access_token,
+    refresh_token: google_refresh_token || undefined,
   };
 }
 
