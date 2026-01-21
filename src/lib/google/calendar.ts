@@ -34,13 +34,12 @@ interface GoogleTokens {
   expires_at?: number;
 }
 
-// Mapeamento de tipos de evento para cores do Google Calendar
-const eventColorMap: Record<string, string> = {
-  colonia_ferias: "10",    // Verde
-  festa_infantil: "6",     // Laranja
-  gincana: "3",            // Roxo
-  outro: "8",              // Cinza
-};
+// Cor fixa para todos os eventos: Rosa Pink (Flamingo)
+// Cores disponíveis no Google Calendar:
+// "1": Lavanda, "2": Verde Sálvia, "3": Uva/Roxo, "4": Rosa/Pink (Flamingo)
+// "5": Amarelo, "6": Laranja, "7": Azul Pavão, "8": Grafite
+// "9": Azul, "10": Verde Manjericão, "11": Vermelho
+const GOOGLE_CALENDAR_EVENT_COLOR = "4"; // Rosa Pink (Flamingo)
 
 /**
  * Renova o access token do Google usando o refresh token
@@ -205,7 +204,7 @@ export async function createGoogleCalendarEvent(event: {
       end: endDateTime
         ? { dateTime: endDateTime, timeZone }
         : { date: endDate!, timeZone },
-      colorId: event.tipo ? (eventColorMap[event.tipo] || "8") : "8",
+      colorId: GOOGLE_CALENDAR_EVENT_COLOR,
     };
 
     const response = await fetch(
@@ -291,7 +290,7 @@ export async function updateGoogleCalendarEvent(
       end: endDateTime
         ? { dateTime: endDateTime, timeZone }
         : { date: endDate!, timeZone },
-      colorId: event.tipo ? (eventColorMap[event.tipo] || "8") : "8",
+      colorId: GOOGLE_CALENDAR_EVENT_COLOR,
     };
 
     const response = await fetch(
