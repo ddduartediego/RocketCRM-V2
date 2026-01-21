@@ -44,7 +44,9 @@ import {
 import { getContatos } from "@/actions/leads";
 import { getEventosSimples } from "@/actions/eventos";
 import type { TransacaoFinanceira, CategoriaFinanceira } from "@/types/database";
-import { DollarSign, FileText, Calendar, CalendarDays } from "lucide-react";
+import { DollarSign, FileText, Calendar, CalendarDays, Plus } from "lucide-react";
+import type { Contato } from "@/types/database";
+import { ContatoForm } from "@/components/modules/contatos/contato-form";
 
 interface TransacaoFormProps {
   open: boolean;
@@ -63,6 +65,7 @@ export function TransacaoForm({
   const [categorias, setCategorias] = useState<CategoriaFinanceira[]>([]);
   const [contatos, setContatos] = useState<{ id: string; nome: string }[]>([]);
   const [eventos, setEventos] = useState<{ id: string; nome: string; data_inicio: string; status: string }[]>([]);
+  const [contatoFormOpen, setContatoFormOpen] = useState(false);
 
   const form = useForm<TransacaoFormData>({
     resolver: zodResolver(transacaoSchema) as Resolver<TransacaoFormData>,
@@ -158,6 +161,11 @@ export function TransacaoForm({
       toast.error("Ocorreu um erro. Tente novamente.");
     }
   }
+
+  const handleContatoCreated = (novoContato: Contato) => {
+    setContatos((prev) => [...prev, { id: novoContato.id, nome: novoContato.nome }]);
+    form.setValue("contato_id", novoContato.id);
+  };
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -265,25 +273,36 @@ export function TransacaoForm({
                     control={form.control}
                     name="contato_id"
                     render={({ field }) => (
-                      <FormItem>
+                      <FormItem className="flex-1">
                         <FormLabel>Cliente/Fornecedor</FormLabel>
-                        <Select
-                          onValueChange={field.onChange}
-                          value={field.value || undefined}
-                        >
-                          <FormControl>
-                            <SelectTrigger>
-                              <SelectValue placeholder="Selecione (opcional)" />
-                            </SelectTrigger>
-                          </FormControl>
-                          <SelectContent>
-                            {contatos.map((contato) => (
-                              <SelectItem key={contato.id} value={contato.id}>
-                                {contato.nome}
-                              </SelectItem>
-                            ))}
-                          </SelectContent>
-                        </Select>
+                        <div className="flex gap-2">
+                          <Select
+                            onValueChange={field.onChange}
+                            value={field.value || undefined}
+                          >
+                            <FormControl>
+                              <SelectTrigger>
+                                <SelectValue placeholder="Selecione (opcional)" />
+                              </SelectTrigger>
+                            </FormControl>
+                            <SelectContent>
+                              {contatos.map((contato) => (
+                                <SelectItem key={contato.id} value={contato.id}>
+                                  {contato.nome}
+                                </SelectItem>
+                              ))}
+                            </SelectContent>
+                          </Select>
+                          <Button
+                            type="button"
+                            variant="outline"
+                            size="icon"
+                            onClick={() => setContatoFormOpen(true)}
+                            title="Novo cliente/fornecedor"
+                          >
+                            <Plus className="w-4 h-4" />
+                          </Button>
+                        </div>
                         <FormMessage />
                       </FormItem>
                     )}
@@ -489,6 +508,12 @@ export function TransacaoForm({
           </form>
         </Form>
       </DialogContent>
+
+      <ContatoForm
+        open={contatoFormOpen}
+        onOpenChange={setContatoFormOpen}
+        onCreated={handleContatoCreated}
+      />
     </Dialog>
   );
 }

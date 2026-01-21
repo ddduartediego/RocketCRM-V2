@@ -36,7 +36,9 @@ import {
 } from "@/lib/validations/lead";
 import { createLead, updateLead, getContatos } from "@/actions/leads";
 import { toast } from "sonner";
-import type { EtapaFunil, Lead } from "@/types/database";
+import { Plus } from "lucide-react";
+import type { Contato, EtapaFunil, Lead } from "@/types/database";
+import { ContatoForm } from "@/components/modules/contatos/contato-form";
 
 interface LeadFormProps {
   open: boolean;
@@ -48,6 +50,7 @@ interface LeadFormProps {
 export function LeadForm({ open, onOpenChange, lead, etapas }: LeadFormProps) {
   const isEditing = !!lead;
   const [contatos, setContatos] = useState<{ id: string; nome: string }[]>([]);
+  const [contatoFormOpen, setContatoFormOpen] = useState(false);
 
   const form = useForm<LeadFormData>({
     resolver: zodResolver(leadSchema) as Resolver<LeadFormData>,
@@ -122,6 +125,11 @@ export function LeadForm({ open, onOpenChange, lead, etapas }: LeadFormProps) {
         description: "Tente novamente mais tarde.",
       });
     }
+  };
+
+  const handleContatoCreated = (novoContato: Contato) => {
+    setContatos((prev) => [...prev, { id: novoContato.id, nome: novoContato.nome }]);
+    form.setValue("contato_id", novoContato.id);
   };
 
   return (
@@ -263,25 +271,36 @@ export function LeadForm({ open, onOpenChange, lead, etapas }: LeadFormProps) {
                 control={form.control}
                 name="contato_id"
                 render={({ field }) => (
-                  <FormItem>
+                  <FormItem className="flex-1">
                     <FormLabel>Contato</FormLabel>
-                    <Select
-                      onValueChange={field.onChange}
-                      value={field.value || ""}
-                    >
-                      <FormControl>
-                        <SelectTrigger>
-                          <SelectValue placeholder="Selecione" />
-                        </SelectTrigger>
-                      </FormControl>
-                      <SelectContent>
-                        {contatos.map((contato) => (
-                          <SelectItem key={contato.id} value={contato.id}>
-                            {contato.nome}
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
+                    <div className="flex gap-2">
+                      <Select
+                        onValueChange={field.onChange}
+                        value={field.value || ""}
+                      >
+                        <FormControl>
+                          <SelectTrigger>
+                            <SelectValue placeholder="Selecione" />
+                          </SelectTrigger>
+                        </FormControl>
+                        <SelectContent>
+                          {contatos.map((contato) => (
+                            <SelectItem key={contato.id} value={contato.id}>
+                              {contato.nome}
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
+                      <Button
+                        type="button"
+                        variant="outline"
+                        size="icon"
+                        onClick={() => setContatoFormOpen(true)}
+                        title="Novo contato"
+                      >
+                        <Plus className="w-4 h-4" />
+                      </Button>
+                    </div>
                     <FormMessage />
                   </FormItem>
                 )}
@@ -340,6 +359,12 @@ export function LeadForm({ open, onOpenChange, lead, etapas }: LeadFormProps) {
           </form>
         </Form>
       </DialogContent>
+
+      <ContatoForm
+        open={contatoFormOpen}
+        onOpenChange={setContatoFormOpen}
+        onCreated={handleContatoCreated}
+      />
     </Dialog>
   );
 }
