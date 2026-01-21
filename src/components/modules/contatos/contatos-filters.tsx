@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Input } from "@/components/ui/input";
 import {
@@ -12,13 +12,25 @@ import {
 } from "@/components/ui/select";
 import { Search } from "lucide-react";
 import { tipoContatoOptions } from "@/lib/validations/contato";
+import { useDebounce } from "@/hooks/use-debounce";
 
 export function ContatosFilters() {
   const router = useRouter();
   const searchParams = useSearchParams();
 
-  const search = searchParams.get("search") || "";
+  // Estado local para input imediato
+  const [searchInput, setSearchInput] = useState(searchParams.get("search") || "");
+  const debouncedSearch = useDebounce(searchInput, 400);
+
   const tipo = searchParams.get("tipo") || "todos";
+
+  // Sincroniza input quando searchParams muda externamente
+  useEffect(() => {
+    const urlSearch = searchParams.get("search") || "";
+    if (urlSearch !== searchInput && urlSearch !== debouncedSearch) {
+      setSearchInput(urlSearch);
+    }
+  }, [searchParams]);
 
   const updateParams = useCallback(
     (key: string, value: string) => {
@@ -34,14 +46,22 @@ export function ContatosFilters() {
     [router, searchParams]
   );
 
+  // Atualiza URL quando o valor com debounce muda
+  useEffect(() => {
+    const currentSearch = searchParams.get("search") || "";
+    if (debouncedSearch !== currentSearch) {
+      updateParams("search", debouncedSearch);
+    }
+  }, [debouncedSearch]);
+
   return (
     <div className="flex flex-col sm:flex-row gap-3">
       <div className="relative flex-1 max-w-md">
         <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
         <Input
           placeholder="Buscar por nome, email ou telefone..."
-          value={search}
-          onChange={(e) => updateParams("search", e.target.value)}
+          value={searchInput}
+          onChange={(e) => setSearchInput(e.target.value)}
           className="pl-9"
         />
       </div>

@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { Input } from "@/components/ui/input";
 import {
   Select,
@@ -10,6 +11,7 @@ import {
 } from "@/components/ui/select";
 import { Search } from "lucide-react";
 import { tiposRecurso } from "@/lib/validations/recurso";
+import { useDebounce } from "@/hooks/use-debounce";
 
 interface RecursosFiltersProps {
   search: string;
@@ -24,14 +26,32 @@ export function RecursosFilters({
   onSearchChange,
   onTipoChange,
 }: RecursosFiltersProps) {
+  // Estado local para input imediato
+  const [searchInput, setSearchInput] = useState(search);
+  const debouncedSearch = useDebounce(searchInput, 400);
+
+  // Sincroniza com prop externa
+  useEffect(() => {
+    if (search !== searchInput && search !== debouncedSearch) {
+      setSearchInput(search);
+    }
+  }, [search]);
+
+  // Chama callback quando debounce muda
+  useEffect(() => {
+    if (debouncedSearch !== search) {
+      onSearchChange(debouncedSearch);
+    }
+  }, [debouncedSearch]);
+
   return (
     <div className="flex flex-col sm:flex-row gap-4">
       <div className="relative flex-1">
         <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
         <Input
           placeholder="Buscar recursos..."
-          value={search}
-          onChange={(e) => onSearchChange(e.target.value)}
+          value={searchInput}
+          onChange={(e) => setSearchInput(e.target.value)}
           className="pl-9"
         />
       </div>

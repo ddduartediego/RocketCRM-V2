@@ -13,6 +13,7 @@ import {
 import { Search } from "lucide-react";
 import { statusEventoOptions } from "@/lib/validations/evento";
 import { getTiposEvento } from "@/actions/configuracoes";
+import { useDebounce } from "@/hooks/use-debounce";
 import type { TipoEventoRow } from "@/types/database";
 
 export function EventosFilters() {
@@ -20,7 +21,10 @@ export function EventosFilters() {
   const searchParams = useSearchParams();
   const [tiposEvento, setTiposEvento] = useState<TipoEventoRow[]>([]);
 
-  const search = searchParams.get("search") || "";
+  // Estado local para input imediato
+  const [searchInput, setSearchInput] = useState(searchParams.get("search") || "");
+  const debouncedSearch = useDebounce(searchInput, 400);
+
   const tipo = searchParams.get("tipo") || "todos";
   const status = searchParams.get("status") || "todos";
 
@@ -31,6 +35,14 @@ export function EventosFilters() {
     };
     loadTipos();
   }, []);
+
+  // Sincroniza input quando searchParams muda externamente
+  useEffect(() => {
+    const urlSearch = searchParams.get("search") || "";
+    if (urlSearch !== searchInput && urlSearch !== debouncedSearch) {
+      setSearchInput(urlSearch);
+    }
+  }, [searchParams]);
 
   const updateParams = useCallback(
     (key: string, value: string) => {
@@ -46,14 +58,22 @@ export function EventosFilters() {
     [router, searchParams]
   );
 
+  // Atualiza URL quando o valor com debounce muda
+  useEffect(() => {
+    const currentSearch = searchParams.get("search") || "";
+    if (debouncedSearch !== currentSearch) {
+      updateParams("search", debouncedSearch);
+    }
+  }, [debouncedSearch]);
+
   return (
     <div className="flex flex-col sm:flex-row gap-3">
       <div className="relative flex-1 max-w-md">
         <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
         <Input
           placeholder="Buscar por nome ou local..."
-          value={search}
-          onChange={(e) => updateParams("search", e.target.value)}
+          value={searchInput}
+          onChange={(e) => setSearchInput(e.target.value)}
           className="pl-9"
         />
       </div>
